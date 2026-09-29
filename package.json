@@ -1,0 +1,9 @@
+{
+  "name": "dinasti-musik-workspace",
+  "version": "1.0.0",
+  "description": "Dinasti Musik Workspace Runner",
+  "scripts": {
+    "start": "npm start --prefix \"dinasti music\"",
+    "dev": "npm start --prefix \"dinasti music\""
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "storeConfig": {
+    "name": "Dinasti Musik",
+    "ownerName": "Riski Ganjani",
+    "ownerRole": "Owner / Pemilik Dinasti Musik",
+    "whatsapp": "6289512430608",
+    "email": "admin@dinastimusik.com",
+    "address": "Jl. Pasir Rahayu IV, CC No. 22, Bandung",
+    "ownerPhoto": "/assets/owner/riski-ganjani.jpg",
+    "bio": "Dedikasi menyajikan instrumen musik kualitas dunia dan layanan profesional bagi musisi Indonesia.",
+    "established": 2018
+  },
+  "users": [
+    {
+      "id": "USR-OWNER",
+      "email": "admin@dinastimusik.com",
+      "password": "dinasti2026",
+      "name": "Riski Ganjani",
+      "role": "owner",
+      "phone": "+6289512430608"
+    },
+    {
+      "id": "USR-CUST-1",
+      "email": "customer@email.com",
+      "password": "customer123",
+      "name": "Budi Santoso",
+      "role": "customer",
+      "phone": "081298765432"
+    }
+  ],
+  "products": [
+    {
+      "id": "PROD-3184",
+      "name": "sepeda lipat",
+      "brand": "sunami",
+      "category": "Keyboard & Piano",
+      "price": 20000000,
+      "stock": 2,
+      "image": "https://media.polygonbikes.com/wp-content/uploads/2024/01/14142005/MY23-METRO-PINK-P-600x450.png",
+      "rating": 5,
+      "status": "In Stock",
+      "description": "gratis 2 ban, jok,rangka sepeda,dan ban dalam"
+    },
+    {
+      "id": "PROD-001",
+      "name": "Fender American Professional II Stratocaster",
+      "brand": "Fender",
+      "category": "Gitar",
+      "price": 28500000,
+      "stock": 4,
+      "image": "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.9,
+      "status": "In Stock",
+      "description": "Gitar listrik legendaris buatan AS dengan pickup V-Mod II single-coil, neck Deep C yang nyaman, dan finish Olympic White."
+    },
+    {
+      "id": "PROD-002",
+      "name": "Gibson Les Paul Standard '60s Bourbon Burst",
+      "brand": "Gibson",
+      "category": "Gitar",
+      "price": 38900000,
+      "stock": 0,
+      "image": "https://images.unsplash.com/photo-1550985616-10810253b84d?w=800&auto=format&fit=crop&q=80",
+      "rating": 5,
+      "status": "Out of Stock",
+      "description": "Les Paul klasik bernuansa warm vintage, bodi mahogany tebal, AA figured maple top, dan 60s Burstbucker pickups."
+    },
+    {
+      "id": "PROD-003",
+      "name": "Yamaha U1 Studio Upright Piano Black",
+      "brand": "Yamaha",
+      "category": "Keyboard & Piano",
+      "price": 95000000,
+      "stock": 2,
+      "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.9,
+      "status": "In Stock",
+      "description": "Piano tegak standar industri musik internasional dengan kualitas suara kaya dan mekanisme tuts presisi tinggi."
+    },
+    {
+      "id": "PROD-004",
+      "name": "Roland V-Drums TD-27KV2 Electronic Kit",
+      "brand": "Roland",
+      "category": "Drum & Perkusi",
+      "price": 46500000,
+      "stock": 4,
+      "image": "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.8,
+      "status": "In Stock",
+      "description": "Drum elektrik flagship dengan pad snare digital PD-140DS dan cymbal ride digital CY-18DR berespon ultra-natural."
+    },
+    {
+      "id": "PROD-005",
+      "name": "Martin D-28 Standard Dreadnought Acoustic",
+      "brand": "Martin",
+      "category": "Gitar",
+      "price": 44800000,
+      "stock": 3,
+      "image": "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&auto=format&fit=crop&q=80",
+      "rating": 5,
+      "status": "In Stock",
+      "description": "Standar akustik dunia dengan Sitka Spruce top solid dan East Indian Rosewood back/sides untuk tone hangat dan resonansi maksimal."
+    },
+    {
+      "id": "PROD-006",
+      "name": "Nord Stage 4 88-Key Fully Weighted Keyboard",
+      "brand": "Nord",
+      "category": "Keyboard & Piano",
+      "price": 72000000,
+      "stock": 3,
+      "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.9,
+      "status": "In Stock",
+      "description": "Keyboard stage flagship dari Swedia dengan engine organ, piano, dan synth kelas profesional serta triple sensor bed."
+    },
+    {
+      "id": "PROD-007",
+      "name": "Neumann U87 Ai Studio Condenser Microphone",
+      "brand": "Neumann",
+      "category": "Audio & Studio",
+      "price": 49500000,
+      "stock": 6,
+      "image": "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80",
+      "rating": 5,
+      "status": "In Stock",
+      "description": "Mikrofon studio legendaris standar rekaman vocal & instrumen dunia dengan 3 polar pattern switcher."
+    },
+    {
+      "id": "PROD-008",
+      "name": "Universal Audio Apollo Twin X Duo Heritage Edition",
+      "brand": "Universal Audio",
+      "category": "Audio & Studio",
+      "price": 16800000,
+      "stock": 8,
+      "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.8,
+      "status": "In Stock",
+      "description": "Audio interface Thunderbolt 3 dengan pemrosesan UAD DSP real-time dan konversi 24-bit/192 kHz terkemuka."
+    }
+  ],
+  "orders": [
+    {
+      "id": "TRX-20260914-337",
+      "date": "2026-09-14T07:34:12.046Z",
+      "customerId": "USR-CUST-1",
+      "customerName": "Budi Santoso",
+      "customerEmail": "customer@email.com",
+      "items": [
+        {
+          "productId": "PROD-002",
+          "name": "Gibson Les Paul Standard '60s Bourbon Burst",
+          "price": 38900000,
+          "image": "https://images.unsplash.com/photo-1550985616-10810253b84d?w=800&auto=format&fit=crop&q=80",
+          "qty": 3
+        }
+      ],
+      "subtotal": 116700000,
+      "total": 116700000,
+      "paymentMethod": "Transfer Bank (BCA)",
+      "status": "Pending"
+    },
+    {
+      "id": "TRX-20260912-709",
+      "date": "2026-09-12T10:34:07.046Z",
+      "customerId": "USR-CUST-1",
+      "customerName": "Budi Santoso",
+      "customerEmail": "customer@email.com",
+      "items": [
+        {
+          "productId": "PROD-001",
+          "qty": 1,
+          "price": 28500000
+        }
+      ],
+      "subtotal": 28500000,
+      "total": 28500000,
+      "paymentMethod": "QRIS",
+      "status": "Pending"
+    },
+    {
+      "id": "TRX-20260912-001",
+      "date": "2026-09-12T10:30:00.000Z",
+      "customerId": "USR-CUST-1",
+      "customerName": "Budi Santoso",
+      "customerEmail": "customer@email.com",
+      "items": [
+        {
+          "productId": "PROD-001",
+          "name": "Fender American Professional II Stratocaster",
+          "qty": 1,
+          "price": 28500000
+        }
+      ],
+      "subtotal": 28500000,
+      "total": 28500000,
+      "paymentMethod": "Transfer Bank (BCA)",
+      "status": "Completed"
+    }
+  ],
+  "carts": {}
+}

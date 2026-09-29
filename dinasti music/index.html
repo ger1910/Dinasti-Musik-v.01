@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinasti Musik — Premium Instruments & Creative Hub</title>
+    <meta name="description" content="Toko alat musik premium terlengkap. Gitar, Piano, Drum, Audio & Studio Equipment. Dinasti Musik Creative Store.">
+
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration with Strict 3-Color Palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        /* 3 Core Brand Colors */
+                        'dm-primary': '#0D1317',           /* 1. Obsidian Noir */
+                        'dm-surface': '#FFFFFF',           /* 2. Pure Canvas White */
+                        'dm-surface-light': '#F8F9FA',     /* 2 Tint: Clean Canvas */
+                        'dm-surface-lighter': '#F2F4F7',   /* 2 Tint: Subtle Border Surface */
+                        'dm-accent': '#C59B6D',            /* 3. Warm Brass Gold Accent */
+                        'dm-accent-light': '#D4AF85',
+                        'dm-accent-dark': '#A97E4F',
+                        'dm-dark': '#0D1317',
+                        'dm-dark-surface': '#141B20',
+                        'dm-card': '#FFFFFF',
+                        'dm-white': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'Georgia', 'serif'],
+                        'sans': ['"Inter"', '-apple-system', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 8px rgba(13, 19, 23, 0.05)',
+                        'elevated': '0 12px 36px rgba(13, 19, 23, 0.08)',
+                        'accent-glow': '0 4px 20px rgba(197, 155, 109, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased min-h-screen flex flex-col relative bg-[#F8F9FA] text-[#0D1317]">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed top-5 right-5 z-[9999] flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Floating WhatsApp Button (Customer Interface) -->
+    <a id="whatsapp-floating-btn" href="https://wa.me/6289512430608?text=Halo%20Dinasti%20Musik,%20saya%20ingin%20berkonsultasi%20mengenai%20produk."
+       target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn hidden" title="Hubungi Dinasti Musik via WhatsApp (+62 895-1243-0608)">
+        <i class="fab fa-whatsapp"></i>
+        <span class="pulse-badge"></span>
+    </a>
+
+    <!-- ============================================ -->
+    <!-- 1. LOGIN PAGE                                -->
+    <!-- ============================================ -->
+    <div id="login-page" class="login-page">
+        <!-- Left: Cinematic Hero -->
+        <div class="login-hero hidden md:flex">
+            <div class="login-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=85');"></div>
+            <div class="login-hero-overlay"></div>
+
+            <!-- Top: Brand Logo -->
+            <div class="relative z-10">
+                <div class="dm-brand-logo">
+                    <div class="dm-logo-icon">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl font-bold text-white block leading-none">Dinasti Musik</span>
+                        <span class="text-[0.6rem] uppercase tracking-[0.2em] text-[var(--color-accent)] font-semibold">Premium Store</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle: Headline -->
+            <div class="relative z-10 max-w-lg">
+                <span class="text-metadata text-[var(--color-accent)] tracking-[0.2em] mb-4 block">Premium Instrument Gallery</span>
+                <h1 class="text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white leading-tight mb-5">
+                    Harmoni Nada,<br>Mahakarya Musisi.
+                </h1>
+                <p class="text-[var(--text-inverse)] opacity-60 text-base lg:text-lg leading-relaxed max-w-md">
+                    Setiap instrumen adalah perwujudan jiwa seni. Temukan presisi akustik dan estetika abadi untuk panggung dan kreasi Anda.
+                </p>
+            </div>
+
+            <!-- Bottom: Status -->
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-xs text-white/70">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Toko Alat Musik Terlengkap &amp; Terpercaya</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Login Form -->
+        <div class="login-form-side">
+            <!-- Mobile Brand -->
+            <div class="flex items-center gap-3 mb-8 md:hidden">
+                <div class="dm-logo-icon">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                    </svg>
+                </div>
+                <span class="font-serif text-xl font-bold text-white">Dinasti Musik</span>
+            </div>
+
+            <div class="w-full max-w-sm mx-auto">
+                <!-- Role Toggle -->
+                <div id="login-role-toggle" class="flex bg-white/5 rounded-xl p-1 mb-8 border border-white/10">
+                    <button type="button" onclick="setLoginRole('customer')" id="role-tab-customer" class="flex-1 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 bg-[var(--color-accent)] text-white">
+                        <i class="fas fa-user mr-1.5"></i>Customer
+                    </button>
+                    <button type="button" onclick="setLoginRole('owner')" id="role-tab-owner" class="flex-1 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 text-white/50 hover:text-white/80">
+                        <i class="fas fa-shield-alt mr-1.5"></i>Owner Portal
+                    </button>
+                </div>
+
+                <!-- Heading -->
+                <div class="mb-8">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h2 id="login-heading" class="text-2xl lg:text-3xl font-serif font-bold text-white">Selamat Datang</h2>
+                        <span id="owner-badge-tag" class="hidden text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[var(--color-accent)]/20 text-[var(--color-accent)] border border-[var(--color-accent)]/30">Owner Mode</span>
+                    </div>
+                    <p id="login-subheading" class="text-sm text-white/40">Masuk ke akun Dinasti Musik Anda</p>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="space-y-5" onsubmit="handleLoginSubmit(event)">
+                    <!-- Email -->
+                    <div>
+                        <label class="label text-white/50 mb-2">Email</label>
+                        <div class="relative">
+                            <i class="fas fa-envelope input-icon text-white/25"></i>
+                            <input id="login-email" type="email" required placeholder="customer@email.com"
+                                   class="input input-dark input-with-icon">
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <label class="label text-white/50 mb-0">Kata Sandi</label>
+                            <button type="button" onclick="showToast('Password demo: customer123 (Customer) / dinasti2026 (Owner)', 'info')"
+                                    class="text-xs text-white/30 hover:text-[var(--color-accent)] transition">Bantuan Akses?</button>
+                        </div>
+                        <div class="relative">
+                            <i class="fas fa-lock input-icon text-white/25"></i>
+                            <input id="login-pwd" type="password" required placeholder="••••••••••••"
+                                   class="input input-dark input-with-icon pr-11">
+                            <button type="button" onclick="togglePwdVisibility('login-pwd', this)"
+                                    class="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition p-1">
+                                <i class="fas fa-eye text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" class="btn btn-primary btn-lg w-full mt-2" id="login-submit-btn">
+                        <span>Masuk ke Sistem</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </button>
+
+                    <!-- Secondary Actions -->
+                    <div class="space-y-3 pt-2">
+                        <button type="button" onclick="switchView('customer')"
+                                class="w-full flex items-center justify-center gap-2 text-xs text-white/40 hover:text-[var(--color-accent)] transition py-2 rounded-lg bg-white/5 border border-white/5">
+                            <i class="fas fa-store"></i>
+                            <span>Jelajahi Toko Produk (Mode Tamu)</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Footer -->
+                <div class="mt-10 text-center text-xs text-white/20 border-t border-white/5 pt-5">
+                    <p>© 2026 Dinasti Musik — Riski Ganjani (Owner)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================ -->
+    <!-- 2. CUSTOMER STOREFRONT                       -->
+    <!-- ============================================ -->
+    <div id="customer-wrapper" class="hidden flex-1 flex flex-col bg-[#F8F9FA] transition-opacity duration-300">
+
+        <!-- Customer Navbar -->
+        <header class="cust-navbar">
+            <div class="cust-navbar-inner">
+                <!-- Brand Logo -->
+                <a href="javascript:void(0)" onclick="showCustomerSection('home')" class="dm-brand-logo group">
+                    <div class="dm-logo-icon group-hover:scale-105 transition">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-serif text-lg font-bold text-white tracking-tight block leading-none">Dinasti Musik</span>
+                        <span class="text-[0.55rem] uppercase tracking-[0.2em] text-[var(--color-accent)] font-semibold block mt-0.5">Creative Store</span>
+                    </div>
+                </a>
+
+                <!-- Nav Links (Desktop) -->
+                <nav class="cust-nav-links hidden md:flex items-center gap-1">
+                    <button id="cust-nav-home" onclick="showCustomerSection('home')" class="cust-nav-link active">Beranda</button>
+                    <button id="cust-nav-catalog" onclick="showCustomerSection('catalog')" class="cust-nav-link">Katalog Produk</button>
+                    <button id="cust-nav-orders" onclick="showCustomerSection('orders')" class="cust-nav-link">Pesanan Saya</button>
+                    <button id="cust-nav-profile" onclick="showCustomerSection('profile')" class="cust-nav-link">Profil Saya</button>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-3">
+                    <!-- Owner Profile Card Trigger -->
+                    <button onclick="openOwnerProfileSheet()" class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/15 text-white/80 hover:text-white border border-white/10 text-xs transition" title="Lihat Profil Owner (Riski Ganjani)">
+                        <img src="assets/owner/riski-ganjani.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Riski+Ganjani&background=C59B6D&color=fff';" class="w-6 h-6 rounded-full object-cover border border-[var(--color-accent)] avatar-owner-img" style="object-position: 50% 18%;" alt="Riski Ganjani">
+                        <span class="font-medium text-[11px]">Owner Info</span>
+                    </button>
+
+                    <!-- Cart Drawer Trigger -->
+                    <button onclick="toggleCartDrawer()" class="relative w-9 h-9 rounded-lg bg-white/10 hover:bg-white/15 text-white flex items-center justify-center transition" title="Keranjang Belanja">
+                        <i class="fas fa-shopping-bag text-sm"></i>
+                        <span id="cust-cart-badge" class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[var(--color-accent)] text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow">0</span>
+                    </button>
+
+                    <!-- Auth State Button -->
+                    <div id="cust-user-status-area">
+                        <button onclick="switchView('login')" class="hidden sm:inline-flex items-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white px-3.5 py-2 rounded-lg text-xs font-semibold transition">
+                            <i class="fas fa-sign-in-alt text-xs"></i>
+                            <span>Masuk</span>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button onclick="toggleMobileCustomerNav()" class="md:hidden text-white p-2">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Nav Dropdown -->
+            <div id="mobile-cust-nav" class="hidden md:hidden border-t border-white/10 bg-[var(--color-primary)] px-6 py-4 space-y-2">
+                <button onclick="showCustomerSection('home'); toggleMobileCustomerNav();" class="block w-full text-left py-2 font-medium text-white text-sm">Beranda</button>
+                <button onclick="showCustomerSection('catalog'); toggleMobileCustomerNav();" class="block w-full text-left py-2 font-medium text-white/70 text-sm">Katalog Produk</button>
+                <button onclick="showCustomerSection('orders'); toggleMobileCustomerNav();" class="block w-full text-left py-2 font-medium text-white/70 text-sm">Pesanan Saya</button>
+                <button onclick="showCustomerSection('profile'); toggleMobileCustomerNav();" class="block w-full text-left py-2 font-medium text-white/70 text-sm">Profil Saya</button>
+                <div class="border-t border-white/10 pt-3 mt-2 flex flex-col gap-2">
+                    <button onclick="openOwnerProfileSheet(); toggleMobileCustomerNav();" class="w-full flex items-center gap-2 py-2 text-xs text-[var(--color-accent)] font-semibold">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Profil Owner (Riski Ganjani)</span>
+                    </button>
+                    <button onclick="logout()" class="w-full text-left py-2 text-xs text-red-400 font-semibold">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Keluar Akun
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- CUSTOMER VIEWS                               -->
+        <!-- ============================================ -->
+        <main class="flex-1">
+
+            <!-- 1. HOME VIEW -->
+            <section id="cust-home" class="cust-page-view">
+                <!-- Hero Section -->
+                <div class="cust-hero">
+                    <div class="cust-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+                    <div class="cust-hero-overlay"></div>
+                    <div class="relative z-10 max-w-3xl mx-auto text-center px-4">
+                        <span class="inline-block text-metadata text-[var(--color-accent)] tracking-[0.2em] mb-4">Dinasti Musik Store &amp; Gallery</span>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
+                            Temukan Instrumen yang<br>Sesuai dengan Musikmu.
+                        </h1>
+                        <p class="text-white/60 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
+                            Koleksi instrumen musik pilihan dari produsen ternama. Garansi autentik, pengiriman aman, dan garansi resmi.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                            <button onclick="showCustomerSection('catalog')" class="btn btn-primary btn-lg w-full sm:w-auto">
+                                <i class="fas fa-compass"></i>
+                                <span>Jelajahi Katalog Produk</span>
+                            </button>
+                            <button onclick="openOwnerProfileSheet()" class="btn btn-lg w-full sm:w-auto" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                                <i class="fas fa-user-tie text-[var(--color-accent)]"></i>
+                                <span>Profil Pemilik Toko</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Section -->
+                <div class="max-w-7xl mx-auto px-6 py-14">
+                    <div class="flex items-end justify-between mb-8">
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-serif font-bold text-[var(--text-primary)]">Kategori Pilihan</h2>
+                            <p class="text-caption mt-1">Pilih kategori untuk menyaring instrumen impian Anda</p>
+                        </div>
+                        <button onclick="filterCatalogByCategory('Semua')" class="text-xs font-semibold text-[var(--color-accent)] hover:underline hidden sm:block">Lihat Semua →</button>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div onclick="filterCatalogByCategory('Gitar')" class="card card-interactive cursor-pointer p-5 group text-center">
+                            <div class="w-12 h-12 rounded-xl bg-[var(--color-primary)]/8 text-[var(--color-primary)] flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--color-accent)] group-hover:text-white transition">
+                                <i class="fas fa-guitar text-lg"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-sm text-[var(--text-primary)]">Gitar</h3>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Akustik &amp; Listrik</p>
+                        </div>
+
+                        <div onclick="filterCatalogByCategory('Keyboard & Piano')" class="card card-interactive cursor-pointer p-5 group text-center">
+                            <div class="w-12 h-12 rounded-xl bg-[var(--color-primary)]/8 text-[var(--color-primary)] flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--color-accent)] group-hover:text-white transition">
+                                <i class="fas fa-music text-lg"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-sm text-[var(--text-primary)]">Keyboard &amp; Piano</h3>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Stage &amp; Upright</p>
+                        </div>
+
+                        <div onclick="filterCatalogByCategory('Drum & Perkusi')" class="card card-interactive cursor-pointer p-5 group text-center">
+                            <div class="w-12 h-12 rounded-xl bg-[var(--color-primary)]/8 text-[var(--color-primary)] flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--color-accent)] group-hover:text-white transition">
+                                <i class="fas fa-drum text-lg"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-sm text-[var(--text-primary)]">Drum &amp; Perkusi</h3>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">E-Drums &amp; Acoustic</p>
+                        </div>
+
+                        <div onclick="filterCatalogByCategory('Audio & Studio')" class="card card-interactive cursor-pointer p-5 group text-center">
+                            <div class="w-12 h-12 rounded-xl bg-[var(--color-primary)]/8 text-[var(--color-primary)] flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--color-accent)] group-hover:text-white transition">
+                                <i class="fas fa-headphones text-lg"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-sm text-[var(--text-primary)]">Audio &amp; Studio</h3>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Mic &amp; Interface</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. CATALOG VIEW -->
+            <section id="cust-catalog" class="cust-page-view hidden max-w-7xl mx-auto px-6 py-10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif font-bold text-[var(--text-primary)]">Katalog Instrumen</h2>
+                        <p class="text-caption mt-1">Jelajahi produk instrumen musik kualitas dunia</p>
+                    </div>
+
+                    <!-- Real-Time Search Bar -->
+                    <div class="relative w-full md:w-80">
+                        <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                        <input id="catalog-search-input" type="text" oninput="handleCatalogSearchInput(event)"
+                               placeholder="Cari Fender, Yamaha, Gitar..."
+                               class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-[var(--border-color)] bg-white text-sm focus:outline-none focus:border-[var(--color-accent)] shadow-sm transition">
+                        <button id="clear-search-btn" onclick="clearCatalogSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 p-1">
+                            <i class="fas fa-times text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Filter Pills -->
+                <div id="catalog-category-pills" class="flex flex-wrap gap-2 mb-8">
+                    <button onclick="filterCatalogByCategory('Semua')" class="cat-pill active btn btn-sm bg-[var(--color-primary)] text-white border-0">Semua Produk</button>
+                    <button onclick="filterCatalogByCategory('Gitar')" class="cat-pill btn btn-sm btn-outline bg-white">Gitar</button>
+                    <button onclick="filterCatalogByCategory('Keyboard & Piano')" class="cat-pill btn btn-sm btn-outline bg-white">Keyboard &amp; Piano</button>
+                    <button onclick="filterCatalogByCategory('Drum & Perkusi')" class="cat-pill btn btn-sm btn-outline bg-white">Drum &amp; Perkusi</button>
+                    <button onclick="filterCatalogByCategory('Audio & Studio')" class="cat-pill btn btn-sm btn-outline bg-white">Audio &amp; Studio</button>
+                </div>
+
+                <!-- Products Grid Container -->
+                <div id="customer-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Loaded dynamically via JavaScript -->
+                </div>
+            </section>
+
+            <!-- 3. ORDERS VIEW ("Pesanan Saya") -->
+            <section id="cust-orders" class="cust-page-view hidden max-w-4xl mx-auto px-6 py-10">
+                <div class="mb-8">
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-[var(--text-primary)]">Pesanan Saya</h2>
+                    <p class="text-caption mt-1">Daftar transaksi dan status riwayat pesanan Anda di Dinasti Musik</p>
+                </div>
+
+                <div id="customer-orders-container" class="space-y-4">
+                    <!-- Loaded dynamically via JavaScript -->
+                </div>
+            </section>
+
+            <!-- 4. PROFILE VIEW -->
+            <section id="cust-profile" class="cust-page-view hidden max-w-xl mx-auto px-6 py-12">
+                <div class="card p-8 text-center bg-white shadow-lg border border-[var(--border-color)]">
+                    <div class="w-20 h-20 rounded-full bg-[var(--color-primary)] text-[var(--color-accent)] text-2xl font-bold flex items-center justify-center mx-auto mb-4 border-2 border-[var(--color-accent)] shadow">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 id="cust-profile-name" class="font-serif text-2xl font-bold text-[var(--text-primary)]">Pelanggan Dinasti</h3>
+                    <p id="cust-profile-email" class="text-xs text-[var(--text-muted)] mt-1">customer@email.com</p>
+                    <span id="cust-profile-role" class="inline-block badge badge-accent mt-3">Customer Member</span>
+
+                    <div class="border-t border-[var(--border-color)] my-6 pt-6 text-left space-y-3 text-sm">
+                        <div class="flex justify-between py-1">
+                            <span class="text-[var(--text-muted)]">No. Telepon / WhatsApp:</span>
+                            <span id="cust-profile-phone" class="font-semibold">081298765432</span>
+                        </div>
+                        <div class="flex justify-between py-1">
+                            <span class="text-[var(--text-muted)]">Status Akun:</span>
+                            <span class="text-emerald-600 font-semibold flex items-center gap-1"><i class="fas fa-check-circle text-xs"></i> Terverifikasi</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                        <button onclick="showCustomerSection('orders')" class="btn btn-outline w-full py-2.5">
+                            <i class="fas fa-box text-xs"></i>
+                            <span>Lihat Riwayat Pesanan Saya</span>
+                        </button>
+                        <button onclick="logout()" class="btn btn-danger w-full py-2.5">
+                            <i class="fas fa-sign-out-alt text-xs"></i>
+                            <span>Keluar dari Akun</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Customer Footer -->
+        <footer class="bg-[var(--color-primary)] text-white border-t border-white/10 mt-16 py-10 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="dm-brand-logo mb-3">
+                        <div class="dm-logo-icon">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                            </svg>
+                        </div>
+                        <span class="font-serif text-lg font-bold text-white">Dinasti Musik</span>
+                    </div>
+                    <p class="text-xs text-white/50 leading-relaxed max-w-sm">
+                        Pusat instrumen musik premium terlengkap di Indonesia. Dikurasi oleh tenaga profesional dan didukung garansi resmi.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-sm text-[var(--color-accent)] mb-3">Pemilik &amp; Manajemen Toko</h4>
+                    <p class="text-xs text-white/80 font-medium">Riski Ganjani</p>
+                    <p class="text-xs text-white/50">Owner / Pemilik Dinasti Musik</p>
+                    <button onclick="openOwnerProfileSheet()" class="mt-2 text-xs text-[var(--color-accent)] hover:underline flex items-center gap-1 font-semibold">
+                        <i class="fas fa-id-card"></i> Lihat Kartu Profil Owner
+                    </button>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-sm text-[var(--color-accent)] mb-3">Kontak Resmi</h4>
+                    <p class="text-xs text-white/60 mb-1"><i class="fas fa-map-marker-alt mr-2 text-[var(--color-accent)]"></i>Jl. Pasir Rahayu IV, CC No. 22, Bandung</p>
+                    <p class="text-xs text-white/60 mb-3"><a href="https://wa.me/6289512430608" target="_blank" class="hover:text-white transition"><i class="fab fa-whatsapp mr-2 text-emerald-400"></i>+62 895-1243-0608</a></p>
+                    <p class="text-[10px] text-white/30">© 2026 Dinasti Musik. Hak Cipta Dilindungi.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- ============================================ -->
+    <!-- 3. OWNER DASHBOARD                           -->
+    <!-- ============================================ -->
+    <div id="admin-wrapper" class="hidden min-h-screen flex bg-[#F4F5F7]">
+
+        <!-- Sidebar Overlay (Mobile) -->
+        <div id="admin-sidebar-overlay" onclick="toggleAdminSidebar()" class="hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"></div>
+
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="sidebar fixed md:static inset-y-0 left-0 z-50 w-64 bg-[var(--color-primary)] text-white flex flex-col justify-between transition-transform duration-300 -translate-x-full md:translate-x-0">
+            <div>
+                <!-- Brand -->
+                <div class="p-6 border-b border-white/10">
+                    <div class="dm-brand-logo">
+                        <div class="dm-logo-icon">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-serif text-lg font-bold text-white block leading-none">Dinasti Musik</span>
+                            <span class="text-[0.6rem] uppercase tracking-[0.2em] text-[var(--color-accent)] font-semibold block mt-0.5">Owner Portal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Menu -->
+                <nav class="p-4 space-y-1 text-sm font-medium">
+                    <button id="nav-btn-dashboard" onclick="showAdminSection('dashboard')" class="nav-item active w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition">
+                        <i class="fas fa-chart-pie w-5 text-center"></i>
+                        <span>Dashboard Overview</span>
+                    </button>
+                    <button id="nav-btn-products" onclick="showAdminSection('products')" class="nav-item w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition">
+                        <i class="fas fa-guitar w-5 text-center"></i>
+                        <span>Kelola Produk (CRUD)</span>
+                    </button>
+                    <button id="nav-btn-stock" onclick="showAdminSection('stock')" class="nav-item w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition">
+                        <i class="fas fa-boxes w-5 text-center"></i>
+                        <span>Stok &amp; Inventaris</span>
+                    </button>
+                    <button id="nav-btn-transactions" onclick="showAdminSection('transactions')" class="nav-item w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition">
+                        <i class="fas fa-file-invoice-dollar w-5 text-center"></i>
+                        <span>Daftar Transaksi</span>
+                    </button>
+                    <button id="nav-btn-customers" onclick="showAdminSection('customers')" class="nav-item w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition">
+                        <i class="fas fa-users w-5 text-center"></i>
+                        <span>Pelanggan Terdaftar</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Sidebar Footer (Owner Info) -->
+            <div class="p-4 border-t border-white/10">
+                <div class="flex items-center gap-3 mb-3 px-2">
+                    <img src="assets/owner/riski-ganjani.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Riski+Ganjani&background=C59B6D&color=fff';" class="w-10 h-10 rounded-full object-cover border-2 border-[var(--color-accent)] avatar-owner-img" style="object-position: 50% 18%;" alt="Riski Ganjani">
+                    <div class="min-w-0 flex-1">
+                        <h4 class="font-bold text-xs text-white truncate">Riski Ganjani</h4>
+                        <span class="text-[10px] text-[var(--color-accent)] font-semibold block">Owner / Pemilik</span>
+                    </div>
+                </div>
+                <button onclick="logout()" class="w-full py-2 rounded-xl bg-white/5 hover:bg-white/10 text-red-400 text-xs font-semibold flex items-center justify-center gap-2 transition">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Keluar Portal</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col min-w-0">
+            <!-- Topbar -->
+            <header class="bg-white border-b border-[var(--border-color)] px-6 py-4 flex items-center justify-between shadow-xs">
+                <div class="flex items-center gap-3">
+                    <button onclick="toggleAdminSidebar()" class="md:hidden text-gray-700 p-1">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                    <h1 id="admin-page-title" class="font-serif text-xl font-bold text-[var(--text-primary)]">Dashboard Overview</h1>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="switchView('customer')" class="btn btn-outline btn-sm">
+                        <i class="fas fa-store text-xs mr-1"></i>Lihat Etalase Toko
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dynamic Admin Content -->
+            <main class="flex-1 p-6 overflow-y-auto">
+
+                <!-- 1. DASHBOARD OVERVIEW -->
+                <section id="sec-dashboard" class="admin-tab-content space-y-6">
+                    <!-- Metrics Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="card p-5 bg-white border border-[var(--border-color)] shadow-xs">
+                            <span class="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider block">Total Pendapatan</span>
+                            <div class="flex items-baseline justify-between mt-2">
+                                <span id="owner-stat-revenue" class="font-serif font-bold text-xl text-[var(--color-accent)]">Rp 0</span>
+                                <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-semibold">+Live</span>
+                            </div>
+                        </div>
+
+                        <div class="card p-5 bg-white border border-[var(--border-color)] shadow-xs">
+                            <span class="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider block">Total Pesanan</span>
+                            <div class="flex items-baseline justify-between mt-2">
+                                <span id="owner-stat-orders" class="font-serif font-bold text-2xl text-[var(--text-primary)]">0</span>
+                                <span class="text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded font-semibold">Transaksi</span>
+                            </div>
+                        </div>
+
+                        <div class="card p-5 bg-white border border-[var(--border-color)] shadow-xs">
+                            <span class="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider block">Total Produk Catalog</span>
+                            <div class="flex items-baseline justify-between mt-2">
+                                <span id="owner-stat-products" class="font-serif font-bold text-2xl text-[var(--text-primary)]">0</span>
+                                <span class="text-xs text-purple-600 bg-purple-50 px-2 py-0.5 rounded font-semibold">Item</span>
+                            </div>
+                        </div>
+
+                        <div class="card p-5 bg-white border border-[var(--border-color)] shadow-xs">
+                            <span class="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider block">Stok Kritis (&le; 3)</span>
+                            <div class="flex items-baseline justify-between mt-2">
+                                <span id="owner-stat-lowstock" class="font-serif font-bold text-2xl text-red-600">0</span>
+                                <span class="text-xs text-red-600 bg-red-50 px-2 py-0.5 rounded font-semibold">Perlu Restock</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders Table -->
+                    <div class="card p-6 bg-white border border-[var(--border-color)]">
+                        <h3 class="font-serif font-bold text-lg text-[var(--text-primary)] mb-4">Transaksi Terbaru</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead class="border-b border-gray-200 text-xs text-gray-500 uppercase bg-gray-50">
+                                    <tr>
+                                        <th class="p-3">ID Transaksi</th>
+                                        <th class="p-3">Tanggal</th>
+                                        <th class="p-3">Pelanggan</th>
+                                        <th class="p-3">Total</th>
+                                        <th class="p-3">Status</th>
+                                        <th class="p-3 text-right">Aksi Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="owner-recent-orders-body" class="divide-y divide-gray-100">
+                                    <!-- Rendered dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. PRODUCTS CRUD -->
+                <section id="sec-products" class="admin-tab-content hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <h3 class="font-serif font-bold text-xl">Manajemen Katalog Produk</h3>
+                        <button onclick="openAddProductModal()" class="btn btn-primary btn-sm">
+                            <i class="fas fa-plus mr-1"></i>Tambah Produk Baru
+                        </button>
+                    </div>
+
+                    <div class="card p-6 bg-white border border-[var(--border-color)]">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead class="border-b border-gray-200 text-xs text-gray-500 uppercase bg-gray-50">
+                                    <tr>
+                                        <th class="p-3">Produk</th>
+                                        <th class="p-3">Kategori</th>
+                                        <th class="p-3">Harga</th>
+                                        <th class="p-3">Stok</th>
+                                        <th class="p-3">Status</th>
+                                        <th class="p-3 text-right">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="owner-products-table-body" class="divide-y divide-gray-100">
+                                    <!-- Rendered dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. TRANSACTIONS LIST & STATUS EDIT -->
+                <section id="sec-transactions" class="admin-tab-content hidden space-y-6">
+                    <h3 class="font-serif font-bold text-xl">Kelola Transaksi &amp; Status Pesanan</h3>
+                    <div class="card p-6 bg-white border border-[var(--border-color)]">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead class="border-b border-gray-200 text-xs text-gray-500 uppercase bg-gray-50">
+                                    <tr>
+                                        <th class="p-3">No. Transaksi</th>
+                                        <th class="p-3">Tanggal</th>
+                                        <th class="p-3">Pelanggan</th>
+                                        <th class="p-3">Items</th>
+                                        <th class="p-3">Total</th>
+                                        <th class="p-3">Metode</th>
+                                        <th class="p-3">Status Pesanan</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="owner-all-orders-body" class="divide-y divide-gray-100">
+                                    <!-- Rendered dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. STOCK & INVENTORY -->
+                <section id="sec-stock" class="admin-tab-content hidden space-y-6">
+                    <h3 class="font-serif font-bold text-xl">Laporan Inventaris Stok Produk</h3>
+                    <div class="card p-6 bg-white border border-[var(--border-color)]">
+                        <div id="owner-stock-list" class="space-y-3">
+                            <!-- Rendered dynamically -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. CUSTOMERS -->
+                <section id="sec-customers" class="admin-tab-content hidden space-y-6">
+                    <h3 class="font-serif font-bold text-xl">Daftar Pelanggan Terdaftar</h3>
+                    <div class="card p-6 bg-white border border-[var(--border-color)]">
+                        <div id="owner-customers-list" class="divide-y divide-gray-100">
+                            <!-- Rendered dynamically -->
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+
+    <!-- ============================================ -->
+    <!-- MODALS & SHEETS                              -->
+    <!-- ============================================ -->
+
+    <!-- OWNER PROFILE SHEET MODAL (Riski Ganjani) -->
+    <div id="owner-sheet-backdrop" class="owner-sheet-backdrop" onclick="closeOwnerProfileSheet(event)">
+        <div class="owner-sheet-modal" onclick="event.stopPropagation()">
+            <!-- Banner Header -->
+            <div class="relative h-28 bg-[var(--color-primary)] p-4 flex items-start justify-end">
+                <button onclick="closeOwnerProfileSheet()" class="w-8 h-8 rounded-full bg-white/10 text-white/70 hover:text-white flex items-center justify-center transition">
+                    <i class="fas fa-times text-sm"></i>
+                </button>
+            </div>
+            <!-- Profile Info -->
+            <div class="px-6 pb-6 text-center relative -mt-14">
+                <div class="relative inline-block mb-3">
+                    <img src="assets/owner/riski-ganjani.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Riski+Ganjani&background=C59B6D&color=fff';" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-xl mx-auto avatar-owner-img" style="object-position: 50% 18%;" alt="Riski Ganjani">
+                    <span class="absolute bottom-1 right-1 w-6 h-6 rounded-full bg-[var(--color-accent)] text-white text-xs flex items-center justify-center shadow" title="Verified Owner">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Riski Ganjani</h3>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-accent)] mt-0.5">Owner / Pemilik Dinasti Musik</p>
+                <p class="text-xs text-[var(--text-secondary)] mt-1.5 flex items-center justify-center gap-1.5">
+                    <i class="fas fa-map-marker-alt text-[var(--color-accent)]"></i>
+                    <span>Jl. Pasir Rahayu IV, CC No. 22, Bandung</span>
+                </p>
+                <p class="text-xs text-[var(--text-secondary)] mt-2 leading-relaxed max-w-sm mx-auto">
+                    Dedikasi menyajikan instrumen musik kualitas dunia dan layanan profesional bagi musisi Indonesia.
+                </p>
+
+                <!-- Store Stats Grid -->
+                <div class="grid grid-cols-3 gap-2 my-5 py-3 px-3 bg-black/3 rounded-xl border border-black/5 text-center">
+                    <div>
+                        <span id="sheet-orders-count" class="block font-bold text-sm text-[var(--text-primary)]">Data belum tersedia</span>
+                        <span class="text-[9px] text-[var(--text-muted)] uppercase tracking-wider font-semibold">Total Pesanan</span>
+                    </div>
+                    <div>
+                        <span id="sheet-customers-count" class="block font-bold text-sm text-[var(--text-primary)]">Data belum tersedia</span>
+                        <span class="text-[9px] text-[var(--text-muted)] uppercase tracking-wider font-semibold">Pelanggan</span>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-sm text-[var(--color-accent)]">Est. 2018</span>
+                        <span class="text-[9px] text-[var(--text-muted)] uppercase tracking-wider font-semibold">Toko Resmi</span>
+                    </div>
+                </div>
+
+                <!-- Contact Button -->
+                <a href="https://wa.me/6289512430608?text=Halo%20Pak%20Riski%20Ganjani,%20saya%20ingin%20berkonsultasi%20mengenai%20produk%20Dinasti%20Musik."
+                   target="_blank" class="btn btn-primary w-full py-3 rounded-xl flex items-center justify-center gap-2 font-semibold shadow-sm">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span>Hubungi via WhatsApp (+62 895-1243-0608)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART DRAWER & CHECKOUT MODAL -->
+    <div id="cart-drawer-backdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden transition-opacity" onclick="toggleCartDrawer()"></div>
+    <aside id="cart-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white shadow-2xl flex flex-col transition-transform duration-300 translate-x-full">
+        <div class="p-5 border-b border-[var(--border-color)] flex items-center justify-between bg-[var(--color-primary)] text-white">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-shopping-bag text-[var(--color-accent)]"></i>
+                <h3 class="font-serif font-bold text-lg">Keranjang Belanja</h3>
+            </div>
+            <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-full bg-white/10 text-white/70 hover:text-white flex items-center justify-center transition">
+                <i class="fas fa-times text-sm"></i>
+            </button>
+        </div>
+
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+            <!-- Rendered dynamically -->
+        </div>
+
+        <div class="p-5 border-t border-[var(--border-color)] bg-gray-50 space-y-4">
+            <div class="flex justify-between items-center text-sm font-semibold">
+                <span>Subtotal Pembelian:</span>
+                <span id="cart-total-price" class="font-serif font-bold text-lg text-[var(--color-accent)]">Rp 0</span>
+            </div>
+            <button onclick="openCheckoutModal()" class="btn btn-primary w-full py-3">
+                <span>Proses Checkout</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkout-modal-backdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4" onclick="closeCheckoutModal(event)">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-[var(--border-color)]" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-5 pb-3 border-b border-gray-100">
+                <h3 class="font-serif font-bold text-xl text-[var(--text-primary)]">Konfirmasi Transaksi</h3>
+                <button onclick="closeCheckoutModal()" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+            </div>
+
+            <form onsubmit="handleCheckoutSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="label text-xs">Nama Lengkap Pembeli</label>
+                    <input id="checkout-name" type="text" required placeholder="Budi Santoso" class="input text-sm">
+                </div>
+                <div>
+                    <label class="label text-xs">Email Pembeli</label>
+                    <input id="checkout-email" type="email" required placeholder="budi@email.com" class="input text-sm">
+                </div>
+                <div>
+                    <label class="label text-xs">Metode Pembayaran</label>
+                    <select id="checkout-method" class="input text-sm">
+                        <option value="Transfer Bank (BCA)">Transfer Bank (BCA)</option>
+                        <option value="Mandiri Virtual Account">Mandiri Virtual Account</option>
+                        <option value="QRIS Instant Pay">QRIS Instant Pay</option>
+                        <option value="Bayar di Toko (COD)">Bayar di Toko (COD)</option>
+                    </select>
+                </div>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800">
+                    <p class="font-semibold mb-0.5"><i class="fas fa-info-circle mr-1"></i>Informasi Stok Persisten:</p>
+                    <p>Setelah konfirmasi, stok produk di database server akan terpotong secara real-time.</p>
+                </div>
+
+                <div class="pt-2 flex gap-3">
+                    <button type="button" onclick="closeCheckoutModal()" class="btn btn-outline flex-1 py-2.5">Batal</button>
+                    <button type="submit" class="btn btn-primary flex-1 py-2.5">Konfirmasi Pesanan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- OWNER ADD/EDIT PRODUCT MODAL -->
+    <div id="product-crud-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4" onclick="closeProductCrudModal(event)">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-[var(--border-color)]" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-5 pb-3 border-b border-gray-100">
+                <h3 id="product-crud-title" class="font-serif font-bold text-xl text-[var(--text-primary)]">Tambah Produk Baru</h3>
+                <button onclick="closeProductCrudModal()" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+            </div>
+
+            <form onsubmit="handleProductCrudSubmit(event)" class="space-y-4">
+                <input id="crud-product-id" type="hidden">
+
+                <div>
+                    <label class="label text-xs">Nama Instrumen</label>
+                    <input id="crud-product-name" type="text" required placeholder="Contoh: Fender Stratocaster" class="input text-sm">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="label text-xs">Merk / Brand</label>
+                        <input id="crud-product-brand" type="text" placeholder="Fender, Gibson..." class="input text-sm">
+                    </div>
+                    <div>
+                        <label class="label text-xs">Kategori</label>
+                        <select id="crud-product-category" class="input text-sm">
+                            <option value="Gitar">Gitar</option>
+                            <option value="Keyboard & Piano">Keyboard &amp; Piano</option>
+                            <option value="Drum & Perkusi">Drum &amp; Perkusi</option>
+                            <option value="Audio & Studio">Audio &amp; Studio</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="label text-xs">Harga (Rp)</label>
+                        <input id="crud-product-price" type="number" required placeholder="28500000" class="input text-sm">
+                    </div>
+                    <div>
+                        <label class="label text-xs">Jumlah Stok</label>
+                        <input id="crud-product-stock" type="number" required placeholder="5" class="input text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="label text-xs">URL Foto Produk</label>
+                    <input id="crud-product-image" type="text" placeholder="https://images.unsplash.com/..." class="input text-sm">
+                </div>
+
+                <div>
+                    <label class="label text-xs">Deskripsi Produk</label>
+                    <textarea id="crud-product-desc" rows="3" placeholder="Spesifikasi dan deskripsi instrumen..." class="input text-sm"></textarea>
+                </div>
+
+                <div class="pt-2 flex gap-3">
+                    <button type="button" onclick="closeProductCrudModal()" class="btn btn-outline flex-1 py-2.5">Batal</button>
+                    <button type="submit" class="btn btn-primary flex-1 py-2.5">Simpan Produk</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT LOGIC                             -->
+    <!-- ============================================ -->
+    <script>
+// --- Default Mock Data (Seed Data for Offline / Static Web Hosting) ---
+const DEFAULT_SEED_DATA = {
+    storeConfig: {
+        name: "Dinasti Musik",
+        ownerName: "Riski Ganjani",
+        ownerRole: "Owner / Pemilik Dinasti Musik",
+        whatsapp: "6281234567890",
+        email: "admin@dinastimusik.com",
+        address: "Jl. Melodi Harmoni No. 88, Jakarta Selatan",
+        ownerPhoto: "assets/owner/riski-ganjani.jpg",
+        bio: "Dedikasi menyajikan instrumen musik kualitas dunia dan layanan profesional bagi musisi Indonesia.",
+        established: 2018
+    },
+    users: [
+        {
+            id: "USR-OWNER",
+            email: "admin@dinastimusik.com",
+            password: "dinasti2026",
+            name: "Riski Ganjani",
+            role: "owner",
+            phone: "+6281234567890"
+        },
+        {
+            id: "USR-CUST-1",
+            email: "customer@email.com",
+            password: "customer123",
+            name: "Budi Santoso",
+            role: "customer",
+            phone: "081298765432"
+        }
+    ],
+    products: [
+        {
+            id: "PROD-001",
+            name: "Fender American Professional II Stratocaster",
+            brand: "Fender",
+            category: "Gitar",
+            price: 28500000,
+            stock: 4,
+            image: "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?w=800&auto=format&fit=crop&q=80",
+            rating: 4.9,
+            status: "In Stock",
+            description: "Gitar listrik legendaris buatan AS dengan pickup V-Mod II single-coil, neck Deep C yang nyaman, dan finish Olympic White."
+        },
+        {
+            id: "PROD-002",
+            name: "Gibson Les Paul Standard '60s Bourbon Burst",
+            brand: "Gibson",
+            category: "Gitar",
+            price: 38900000,
+            stock: 2,
+            image: "https://images.unsplash.com/photo-1550985616-10810253b84d?w=800&auto=format&fit=crop&q=80",
+            rating: 5.0,
+            status: "In Stock",
+            description: "Les Paul klasik bernuansa warm vintage, bodi mahogany tebal, AA figured maple top, dan 60s Burstbucker pickups."
+        },
+        {
+            id: "PROD-003",
+            name: "Yamaha U1 Studio Upright Piano Black",
+            brand: "Yamaha",
+            category: "Keyboard & Piano",
+            price: 95000000,
+            stock: 2,
+            image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&auto=format&fit=crop&q=80",
+            rating: 4.9,
+            status: "In Stock",
+            description: "Piano tegak standar industri musik internasional dengan kualitas suara kaya dan mekanisme tuts presisi tinggi."
+        },
+        {
+            id: "PROD-004",
+            name: "Roland V-Drums TD-27KV2 Electronic Kit",
+            brand: "Roland",
+            category: "Drum & Perkusi",
+            price: 46500000,
+            stock: 4,
+            image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&auto=format&fit=crop&q=80",
+            rating: 4.8,
+            status: "In Stock",
+            description: "Drum elektrik flagship dengan pad snare digital PD-140DS dan cymbal ride digital CY-18DR berespon ultra-natural."
+        },
+        {
+            id: "PROD-005",
+            name: "Martin D-28 Standard Dreadnought Acoustic",
+            brand: "Martin",
+            category: "Gitar",
+            price: 44800000,
+            stock: 3,
+            image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&auto=format&fit=crop&q=80",
+            rating: 5.0,
+            status: "In Stock",
+            description: "Standar akustik dunia dengan Sitka Spruce top solid dan East Indian Rosewood back/sides untuk tone hangat dan resonansi maksimal."
+        },
+        {
+            id: "PROD-006",
+            name: "Nord Stage 4 88-Key Fully Weighted Keyboard",
+            brand: "Nord",
+            category: "Keyboard & Piano",
+            price: 72000000,
+            stock: 2,
+            image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&auto=format&fit=crop&q=80",
+            rating: 4.9,
+            status: "In Stock",
+            description: "Keyboard stage flagship dari Swedia dengan engine organ, piano, dan synth kelas profesional serta triple sensor bed."
+        },
+        {
+            id: "PROD-007",
+            name: "Neumann U87 Ai Studio Condenser Microphone",
+            brand: "Neumann",
+            category: "Audio & Studio",
+            price: 49500000,
+            stock: 6,
+            image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80",
+            rating: 5.0,
+            status: "In Stock",
+            description: "Mikrofon studio legendaris standar rekaman vocal & instrumen dunia dengan 3 polar pattern switcher."
+        },
+        {
+            id: "PROD-008",
+            name: "Universal Audio Apollo Twin X Duo Heritage Edition",
+            brand: "Universal Audio",
+            category: "Audio & Studio",
+            price: 16800000,
+            stock: 8,
+            image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&auto=format&fit=crop&q=80",
+            rating: 4.8,
+            status: "In Stock",
+            description: "Audio interface Thunderbolt 3 dengan pemrosesan UAD DSP real-time dan konversi 24-bit/192 kHz terkemuka."
+        }
+    ],
+    orders: [
+        {
+            id: "TRX-20260914-337",
+            date: "2026-09-14T07:34:12.046Z",
+            customerId: "USR-CUST-1",
+            customerName: "Budi Santoso",
+            customerEmail: "customer@email.com",
+            items: [
+                {
+                    productId: "PROD-002",
+                    name: "Gibson Les Paul Standard '60s Bourbon Burst",
+                    price: 38900000,
+                    image: "https://images.unsplash.com/photo-1550985616-10810253b84d?w=800&auto=format&fit=crop&q=80",
+                    qty: 3
+                }
+            ],
+            subtotal: 116700000,
+            total: 116700000,
+            paymentMethod: "Transfer Bank (BCA)",
+            status: "Pending"
+        },
+        {
+            id: "TRX-20260912-709",
+            date: "2026-09-12T10:34:07.046Z",
+            customerId: "USR-CUST-1",
+            customerName: "Budi Santoso",
+            customerEmail: "customer@email.com",
+            items: [
+                {
+                    productId: "PROD-001",
+                    name: "Fender American Professional II Stratocaster",
+                    qty: 1,
+                    price: 28500000
+                }
+            ],
+            subtotal: 28500000,
+            total: 28500000,
+            paymentMethod: "QRIS",
+            status: "Pending"
+        },
+        {
+            id: "TRX-20260912-001",
+            date: "2026-09-12T10:30:00.000Z",
+            customerId: "USR-CUST-1",
+            customerName: "Budi Santoso",
+            customerEmail: "customer@email.com",
+            items: [
+                {
+                    productId: "PROD-001",
+                    name: "Fender American Professional II Stratocaster",
+                    qty: 1,
+                    price: 28500000
+                }
+            ],
+            subtotal: 28500000,
+            total: 28500000,
+            paymentMethod: "Transfer Bank (BCA)",
+            status: "Completed"
+        }
+    ]
+};
+
+// --- Local Storage Helper (Auto Init) ---
+function getStoredProducts() {
+    try {
+        const data = localStorage.getItem('dm_products');
+        if (data) {
+            const parsed = JSON.parse(data);
+            if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+        localStorage.setItem('dm_products', JSON.stringify(DEFAULT_SEED_DATA.products));
+        return DEFAULT_SEED_DATA.products;
+    } catch (e) {
+        return DEFAULT_SEED_DATA.products;
+    }
+}
+
+function saveStoredProducts(prods) {
+    try {
+        localStorage.setItem('dm_products', JSON.stringify(prods));
+    } catch (e) {}
+}
+
+function getStoredUsers() {
+    try {
+        const data = localStorage.getItem('dm_users');
+        if (data) {
+            const parsed = JSON.parse(data);
+            if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+        localStorage.setItem('dm_users', JSON.stringify(DEFAULT_SEED_DATA.users));
+        return DEFAULT_SEED_DATA.users;
+    } catch (e) {
+        return DEFAULT_SEED_DATA.users;
+    }
+}
+
+function getStoredOrders() {
+    try {
+        const data = localStorage.getItem('dm_orders');
+        if (data) {
+            const parsed = JSON.parse(data);
+            if (Array.isArray(parsed)) return parsed;
+        }
+        localStorage.setItem('dm_orders', JSON.stringify(DEFAULT_SEED_DATA.orders));
+        return DEFAULT_SEED_DATA.orders;
+    } catch (e) {
+        return DEFAULT_SEED_DATA.orders;
+    }
+}
+
+function saveStoredOrders(orders) {
+    try {
+        localStorage.setItem('dm_orders', JSON.stringify(orders));
+    } catch (e) {}
+}
+
+// --- State Variables ---
+let currentUser = null; // { email, name, role }
+let currentLoginRole = 'customer';
+let allProducts = [];
+let activeCategoryFilter = 'Semua';
+let searchQuery = '';
+let cartItems = [];
+
+// --- Helper: Format Rupiah ---
+function formatRupiah(number) {
+    return 'Rp ' + Number(number || 0).toLocaleString('id-ID');
+}
+
+// --- Toast Notification ---
+function showToast(message, type = 'info') {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    const icons = {
+        success: 'fa-check-circle text-emerald-500',
+        error: 'fa-exclamation-circle text-red-500',
+        info: 'fa-info-circle text-amber-600'
+    };
+    toast.className = 'flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-xl border border-gray-100 text-sm font-medium text-gray-800 transition-all duration-300 pointer-events-auto transform translate-y-2 opacity-0';
+    toast.innerHTML = `<i class="fas ${icons[type] || icons.info} text-lg"></i><span>${message}</span>`;
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+    }, 10);
+
+    setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+    }, 3500);
+}
+
+// --- Auth Role Selector ---
+function setLoginRole(role) {
+    currentLoginRole = role;
+    const custTab = document.getElementById('role-tab-customer');
+    const ownerTab = document.getElementById('role-tab-owner');
+    const heading = document.getElementById('login-heading');
+    const subheading = document.getElementById('login-subheading');
+    const badgeTag = document.getElementById('owner-badge-tag');
+
+    if (role === 'customer') {
+        custTab.className = 'flex-1 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 bg-[var(--color-accent)] text-white';
+        ownerTab.className = 'flex-1 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 text-white/50 hover:text-white/80';
+        heading.textContent = 'Selamat Datang';
+        subheading.textContent = 'Masuk ke akun Dinasti Musik Anda';
+        badgeTag.classList.add('hidden');
+        document.getElementById('login-email').placeholder = 'customer@email.com';
+    } else {
+        ownerTab.className = 'flex-1 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 bg-[var(--color-accent)] text-white';
+        custTab.className = 'flex-1 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 text-white/50 hover:text-white/80';
+        heading.textContent = 'Owner Portal';
+        subheading.textContent = 'Akses khusus pemilik & manajemen toko';
+        badgeTag.classList.remove('hidden');
+        document.getElementById('login-email').placeholder = 'admin@dinastimusik.com';
+    }
+}
+
+function togglePwdVisibility(inputId, btn) {
+    const input = document.getElementById(inputId);
+    const icon = btn.querySelector('i');
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'fas fa-eye-slash text-sm';
+    } else {
+        input.type = 'password';
+        icon.className = 'fas fa-eye text-sm';
+    }
+}
+
+// --- Login API Handler (Hybrid: API + Local Storage Fallback) ---
+async function handleLoginSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-pwd').value;
+
+    let loginSuccess = false;
+    let loggedUser = null;
+
+    // 1. Coba lewat REST API jika server Node.js aktif
+    try {
+        const res = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password, role: currentLoginRole })
+        });
+        if (res.ok) {
+            const data = await res.json();
+            loggedUser = data.user;
+            loginSuccess = true;
+        } else if (res.status === 401 || res.status === 403 || res.status === 400) {
+            const data = await res.json().catch(() => ({}));
+            showToast(data.error || 'Email atau password tidak sesuai.', 'error');
+            return;
+        }
+    } catch (err) {
+        // Server Node.js offline / running on static shared hosting
+    }
+
+    // 2. Fallback autentikasi lokal
+    if (!loginSuccess) {
+        const users = getStoredUsers();
+        const found = users.find(u => u.email.toLowerCase() === email.toLowerCase() && u.password === password);
+        if (!found) {
+            showToast('Email atau password tidak sesuai. Silakan coba lagi.', 'error');
+            return;
+        }
+        if (currentLoginRole && found.role !== currentLoginRole) {
+            showToast(`Akun ini tidak memiliki akses sebagai ${currentLoginRole === 'owner' ? 'Owner' : 'Customer'}.`, 'error');
+            return;
+        }
+        loggedUser = { id: found.id, name: found.name, email: found.email, role: found.role, phone: found.phone };
+        loginSuccess = true;
+    }
+
+    currentUser = loggedUser;
+    sessionStorage.setItem('dm_user', JSON.stringify(currentUser));
+    showToast(`Selamat datang kembali, ${currentUser.name}!`, 'success');
+
+    if (currentUser.role === 'owner') {
+        switchView('admin');
+    } else {
+        switchView('customer');
+    }
+}
+
+function logout() {
+    currentUser = null;
+    sessionStorage.removeItem('dm_user');
+    switchView('login');
+    showToast('Anda telah keluar dari akun.', 'info');
+}
+
+// --- View Switcher ---
+function switchView(viewName) {
+    document.getElementById('login-page').classList.add('hidden');
+    document.getElementById('customer-wrapper').classList.add('hidden');
+    document.getElementById('admin-wrapper').classList.add('hidden');
+    document.getElementById('whatsapp-floating-btn').classList.add('hidden');
+
+    if (viewName === 'login') {
+        document.getElementById('login-page').classList.remove('hidden');
+    } else if (viewName === 'customer') {
+        document.getElementById('customer-wrapper').classList.remove('hidden');
+        document.getElementById('whatsapp-floating-btn').classList.remove('hidden');
+        showCustomerSection('home');
+        loadCustomerCatalog();
+        updateCustomerNavState();
+    } else if (viewName === 'admin') {
+        if (!currentUser || currentUser.role !== 'owner') {
+            showToast('Akses khusus Owner. Silakan login terlebih dahulu.', 'error');
+            switchView('login');
+            setLoginRole('owner');
+            return;
+        }
+        document.getElementById('admin-wrapper').classList.remove('hidden');
+        showAdminSection('dashboard');
+    }
+    window.scrollTo(0, 0);
+}
+
+// --- Customer Sections Navigation ---
+function showCustomerSection(sectionId) {
+    document.querySelectorAll('.cust-page-view').forEach(sec => sec.classList.add('hidden'));
+
+    const navIds = { home: 'cust-nav-home', catalog: 'cust-nav-catalog', orders: 'cust-nav-orders', profile: 'cust-nav-profile' };
+    Object.values(navIds).forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.classList.remove('active');
+    });
+
+    const target = document.getElementById('cust-' + sectionId);
+    if (target) target.classList.remove('hidden');
+    const activeNav = document.getElementById(navIds[sectionId]);
+    if (activeNav) activeNav.classList.add('active');
+
+    if (sectionId === 'catalog') {
+        loadCustomerCatalog();
+    } else if (sectionId === 'orders') {
+        loadCustomerOrders();
+    } else if (sectionId === 'profile') {
+        updateProfileViewInfo();
+    }
+    window.scrollTo(0, 0);
+}
+
+function toggleMobileCustomerNav() {
+    document.getElementById('mobile-cust-nav').classList.toggle('hidden');
+}
+
+function updateCustomerNavState() {
+    const statusArea = document.getElementById('cust-user-status-area');
+    if (!statusArea) return;
+    if (currentUser) {
+        statusArea.innerHTML = `
+            <div class="flex items-center gap-2">
+                <span class="text-xs text-white/80 hidden lg:inline-block font-medium">Halo, <strong>${currentUser.name}</strong></span>
+                <button onclick="logout()" class="btn btn-sm btn-outline text-white/70 hover:text-white border-white/20" title="Keluar">
+                    <i class="fas fa-sign-out-alt text-xs"></i>
+                </button>
+            </div>
+        `;
+    } else {
+        statusArea.innerHTML = `
+            <button onclick="switchView('login')" class="inline-flex items-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white px-3.5 py-2 rounded-lg text-xs font-semibold transition">
+                <i class="fas fa-sign-in-alt text-xs"></i>
+                <span>Masuk</span>
+            </button>
+        `;
+    }
+}
+
+// --- Fetch & Render Customer Products Catalog (Hybrid: API + Local Storage) ---
+async function loadCustomerCatalog() {
+    const query = searchQuery.trim().toLowerCase();
+    let loadedFromApi = false;
+
+    try {
+        let url = `/api/products?category=${encodeURIComponent(activeCategoryFilter)}`;
+        if (query) url += `&q=${encodeURIComponent(query)}`;
+
+        const res = await fetch(url);
+        if (res.ok) {
+            const data = await res.json();
+            if (data && Array.isArray(data.products)) {
+                allProducts = data.products;
+                loadedFromApi = true;
+            }
+        }
+    } catch (err) {
+        // Offline fallback
+    }
+
+    if (!loadedFromApi) {
+        let prods = getStoredProducts();
+        if (activeCategoryFilter && activeCategoryFilter !== 'Semua') {
+            prods = prods.filter(p => p.category === activeCategoryFilter);
+        }
+        if (query) {
+            prods = prods.filter(p => 
+                (p.name && p.name.toLowerCase().includes(query)) ||
+                (p.brand && p.brand.toLowerCase().includes(query)) ||
+                (p.description && p.description.toLowerCase().includes(query))
+            );
+        }
+        allProducts = prods;
+    }
+
+    renderCustomerCatalogGrid();
+}
+
+function renderCustomerCatalogGrid() {
+    const grid = document.getElementById('customer-products-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    if (allProducts.length === 0) {
+        // NO RESULTS STATE
+        grid.innerHTML = `
+            <div class="col-span-full search-no-results">
+                <div class="w-16 h-16 rounded-2xl bg-[var(--color-primary)]/10 text-[var(--color-accent)] flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fas fa-magnifying-glass-minus"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-[var(--text-primary)] mb-2">Produk Tidak Ditemukan</h3>
+                <p class="text-xs sm:text-sm text-[var(--text-secondary)] max-w-md mx-auto mb-6">
+                    Maaf, kami tidak dapat menemukan instrumen yang cocok dengan filter atau kata kunci
+                    "<span class="font-semibold text-[var(--color-accent)]">${searchQuery || activeCategoryFilter}</span>".
+                </p>
+                <div class="flex items-center justify-center gap-3">
+                    <button onclick="clearCatalogSearch()" class="btn btn-outline btn-sm bg-white">
+                        <i class="fas fa-times text-xs mr-1"></i>Hapus Pencarian
+                    </button>
+                    <button onclick="filterCatalogByCategory('Semua')" class="btn btn-primary btn-sm">
+                        <i class="fas fa-th-large text-xs mr-1"></i>Lihat Semua Produk
+                    </button>
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    allProducts.forEach(prod => {
+        const card = document.createElement('div');
+        card.className = 'card bg-white rounded-2xl overflow-hidden border border-[var(--border-color)] hover:shadow-xl transition flex flex-col justify-between group';
+        card.innerHTML = `
+            <div>
+                <div class="relative overflow-hidden bg-gray-100" style="height: 210px;">
+                    <img src="${prod.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="${prod.name}">
+                    <span class="absolute top-3 left-3 badge badge-dark text-[10px]">${prod.category}</span>
+                    <span class="absolute top-3 right-3 badge ${prod.stock > 0 ? 'badge-success' : 'badge-danger'} text-[10px]">
+                        ${prod.stock > 0 ? 'Stok: ' + prod.stock : 'Habis'}
+                    </span>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center gap-1 text-[var(--color-accent)] text-xs mb-1">
+                        <i class="fas fa-star text-[10px]"></i>
+                        <span class="font-bold text-[var(--text-primary)] text-xs">${prod.rating || 5.0}</span>
+                        <span class="text-gray-400 text-[10px] ml-1">(${prod.brand})</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-sm text-[var(--text-primary)] line-clamp-2 mb-2">${prod.name}</h3>
+                    <p class="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-3">${prod.description || ''}</p>
+                </div>
+            </div>
+            <div class="p-5 pt-0 flex items-center justify-between border-t border-gray-100">
+                <div>
+                    <span class="text-[10px] text-gray-400 uppercase tracking-wider block">Harga</span>
+                    <span class="font-serif font-bold text-[var(--color-accent)] text-base">${formatRupiah(prod.price)}</span>
+                </div>
+                <button onclick="addToCart('${prod.id}')" ${prod.stock <= 0 ? 'disabled' : ''}
+                        class="btn ${prod.stock <= 0 ? 'btn-outline opacity-50 cursor-not-allowed' : 'btn-primary'} btn-sm">
+                    <i class="fas fa-cart-plus text-xs"></i>
+                    <span>Beli</span>
+                </button>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// --- Search Input Listener ---
+function handleCatalogSearchInput(e) {
+    searchQuery = e.target.value;
+    const clearBtn = document.getElementById('clear-search-btn');
+    if (searchQuery.trim() !== '') {
+        clearBtn.classList.remove('hidden');
+    } else {
+        clearBtn.classList.add('hidden');
+    }
+    loadCustomerCatalog();
+}
+
+function clearCatalogSearch() {
+    searchQuery = '';
+    const input = document.getElementById('catalog-search-input');
+    if (input) input.value = '';
+    document.getElementById('clear-search-btn').classList.add('hidden');
+    loadCustomerCatalog();
+}
+
+function filterCatalogByCategory(cat) {
+    activeCategoryFilter = cat;
+    document.querySelectorAll('#catalog-category-pills .cat-pill').forEach(btn => {
+        if (btn.textContent.includes(cat) || (cat === 'Semua' && btn.textContent.includes('Semua'))) {
+            btn.className = 'cat-pill active btn btn-sm bg-[var(--color-primary)] text-white border-0';
+        } else {
+            btn.className = 'cat-pill btn btn-sm btn-outline bg-white';
+        }
+    });
+    showCustomerSection('catalog');
+    loadCustomerCatalog();
+}
+
+// --- Cart Operations ---
+function addToCart(productId) {
+    const prod = allProducts.find(p => p.id === productId) || getStoredProducts().find(p => p.id === productId);
+    if (!prod) return;
+    if (prod.stock <= 0) {
+        showToast('Stok produk habis.', 'error');
+        return;
+    }
+
+    const existing = cartItems.find(item => item.productId === productId);
+    if (existing) {
+        if (existing.qty + 1 > prod.stock) {
+            showToast(`Batas stok tercapai (${prod.stock} unit).`, 'error');
+            return;
+        }
+        existing.qty++;
+    } else {
+        cartItems.push({
+            productId: prod.id,
+            name: prod.name,
+            price: prod.price,
+            image: prod.image,
+            qty: 1
+        });
+    }
+
+    updateCartUI();
+    showToast(`"${prod.name}" berhasil ditambahkan ke keranjang.`, 'success');
+}
+
+function updateCartUI() {
+    const badge = document.getElementById('cust-cart-badge');
+    const totalCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
+    if (badge) badge.textContent = totalCount;
+
+    const container = document.getElementById('cart-items-container');
+    const totalPriceEl = document.getElementById('cart-total-price');
+    if (!container) return;
+
+    container.innerHTML = '';
+    let total = 0;
+
+    if (cartItems.length === 0) {
+        container.innerHTML = `
+            <div class="text-center py-12 text-gray-400">
+                <i class="fas fa-shopping-bag text-3xl mb-2 opacity-40"></i>
+                <p class="text-sm">Keranjang Anda masih kosong.</p>
+            </div>
+        `;
+        if (totalPriceEl) totalPriceEl.textContent = 'Rp 0';
+        return;
+    }
+
+    cartItems.forEach((item, idx) => {
+        total += item.price * item.qty;
+        const div = document.createElement('div');
+        div.className = 'flex items-center gap-3 p-3 rounded-xl border border-gray-100 bg-gray-50';
+        div.innerHTML = `
+            <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover" alt="${item.name}">
+            <div class="flex-1 min-w-0">
+                <h4 class="font-medium text-xs text-gray-800 truncate">${item.name}</h4>
+                <span class="text-[var(--color-accent)] font-bold text-xs">${formatRupiah(item.price)}</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="changeCartQty(${idx}, -1)" class="w-6 h-6 rounded bg-white border border-gray-200 text-xs flex items-center justify-center font-bold text-gray-600">-</button>
+                <span class="text-xs font-semibold">${item.qty}</span>
+                <button onclick="changeCartQty(${idx}, 1)" class="w-6 h-6 rounded bg-white border border-gray-200 text-xs flex items-center justify-center font-bold text-gray-600">+</button>
+                <button onclick="removeCartItem(${idx})" class="text-red-400 hover:text-red-600 text-xs p-1 ml-1"><i class="fas fa-trash"></i></button>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+
+    if (totalPriceEl) totalPriceEl.textContent = formatRupiah(total);
+}
+
+function changeCartQty(index, delta) {
+    cartItems[index].qty += delta;
+    if (cartItems[index].qty <= 0) {
+        cartItems.splice(index, 1);
+    }
+    updateCartUI();
+}
+
+function removeCartItem(index) {
+    cartItems.splice(index, 1);
+    updateCartUI();
+}
+
+function toggleCartDrawer() {
+    const drawer = document.getElementById('cart-drawer');
+    const backdrop = document.getElementById('cart-drawer-backdrop');
+    drawer.classList.toggle('translate-x-full');
+    backdrop.classList.toggle('hidden');
+}
+
+function openCheckoutModal() {
+    if (cartItems.length === 0) {
+        showToast('Keranjang belanja kosong.', 'error');
+        return;
+    }
+    if (currentUser) {
+        document.getElementById('checkout-name').value = currentUser.name;
+        document.getElementById('checkout-email').value = currentUser.email;
+    }
+    toggleCartDrawer();
+    document.getElementById('checkout-modal-backdrop').classList.remove('hidden');
+}
+
+function closeCheckoutModal(e) {
+    document.getElementById('checkout-modal-backdrop').classList.add('hidden');
+}
+
+// --- Checkout Handler (Hybrid: API + Local Storage) ---
+async function handleCheckoutSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('checkout-name').value;
+    const email = document.getElementById('checkout-email').value;
+    const method = document.getElementById('checkout-method').value;
+
+    let orderCreated = null;
+
+    // 1. Coba REST API
+    try {
+        const res = await fetch('/api/orders', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                customerId: currentUser ? currentUser.id : 'GUEST',
+                customerName: name,
+                customerEmail: email,
+                items: cartItems,
+                paymentMethod: method
+            })
+        });
+        if (res.ok) {
+            const data = await res.json();
+            orderCreated = data.order;
+        }
+    } catch (err) {
+        // Offline fallback
+    }
+
+    // 2. Fallback simpan lokal
+    if (!orderCreated) {
+        const total = cartItems.reduce((sum, i) => sum + (i.price * i.qty), 0);
+        orderCreated = {
+            id: 'TRX-' + Date.now().toString().slice(-6),
+            date: new Date().toISOString(),
+            customerId: currentUser ? currentUser.id : 'GUEST',
+            customerName: name,
+            customerEmail: email,
+            items: [...cartItems],
+            subtotal: total,
+            total: total,
+            paymentMethod: method,
+            status: 'Pending'
+        };
+
+        const orders = getStoredOrders();
+        orders.unshift(orderCreated);
+        saveStoredOrders(orders);
+
+        // Potong stok produk lokal
+        const products = getStoredProducts();
+        cartItems.forEach(ci => {
+            const p = products.find(prod => prod.id === ci.productId);
+            if (p) p.stock = Math.max(0, p.stock - ci.qty);
+        });
+        saveStoredProducts(products);
+    }
+
+    cartItems = [];
+    updateCartUI();
+    closeCheckoutModal();
+    showToast(`Transaksi ${orderCreated.id} berhasil dibuat!`, 'success');
+    showCustomerSection('orders');
+}
+
+// --- Fetch & Render Customer Orders (Hybrid) ---
+async function loadCustomerOrders() {
+    const container = document.getElementById('customer-orders-container');
+    if (!container) return;
+    container.innerHTML = '<p class="text-center text-sm text-gray-400 py-8">Memuat transaksi...</p>';
+
+    let orders = [];
+    let loadedFromApi = false;
+
+    try {
+        const customerId = currentUser ? currentUser.id : 'GUEST';
+        const res = await fetch(`/api/orders?customerId=${customerId}`);
+        if (res.ok) {
+            orders = await res.json();
+            loadedFromApi = true;
+        }
+    } catch (err) {
+        // Offline fallback
+    }
+
+    if (!loadedFromApi) {
+        const allOrders = getStoredOrders();
+        if (currentUser) {
+            orders = allOrders.filter(o => 
+                o.customerId === currentUser.id || 
+                (o.customerEmail && currentUser.email && o.customerEmail.toLowerCase() === currentUser.email.toLowerCase())
+            );
+        } else {
+            orders = allOrders;
+        }
+    }
+
+    container.innerHTML = '';
+    if (!orders || orders.length === 0) {
+        container.innerHTML = `
+            <div class="card p-10 text-center bg-white border border-[var(--border-color)]">
+                <i class="fas fa-receipt text-3xl text-gray-300 mb-3"></i>
+                <h4 class="font-serif font-bold text-lg text-gray-700">Belum Ada Transaksi</h4>
+                <p class="text-xs text-gray-400 mt-1 mb-5">Anda belum pernah melakukan pemesanan instrumen.</p>
+                <button onclick="showCustomerSection('catalog')" class="btn btn-primary btn-sm mx-auto">
+                    <i class="fas fa-store mr-1"></i>Jelajahi Produk Sekarang
+                </button>
+            </div>
+        `;
+        return;
+    }
+
+    const statusBadges = {
+        Pending: 'bg-amber-50 text-amber-700 border-amber-200',
+        Confirmed: 'bg-blue-50 text-blue-700 border-blue-200',
+        Processing: 'bg-purple-50 text-purple-700 border-purple-200',
+        Completed: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+        Cancelled: 'bg-red-50 text-red-700 border-red-200'
+    };
+
+    orders.forEach(order => {
+        const card = document.createElement('div');
+        card.className = 'card bg-white p-5 rounded-2xl border border-[var(--border-color)] shadow-xs space-y-3';
+
+        let itemsHtml = (order.items || []).map(i => `
+            <div class="flex justify-between items-center text-xs py-1">
+                <span class="text-gray-700 font-medium">${i.name} (x${i.qty})</span>
+                <span class="font-semibold text-gray-900">${formatRupiah(i.price * i.qty)}</span>
+            </div>
+        `).join('');
+
+        card.innerHTML = `
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                <div>
+                    <span class="font-bold text-sm text-[var(--color-accent)]">${order.id}</span>
+                    <span class="text-[10px] text-gray-400 block">${new Date(order.date).toLocaleString('id-ID')}</span>
+                </div>
+                <span class="px-2.5 py-1 rounded-full border text-[10px] font-bold ${statusBadges[order.status] || 'bg-gray-50 text-gray-600'}">
+                    ${order.status}
+                </span>
+            </div>
+            <div class="space-y-1">
+                ${itemsHtml}
+            </div>
+            <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                <span class="text-gray-500">Metode: <strong>${order.paymentMethod}</strong></span>
+                <span class="font-serif font-bold text-base text-[var(--color-accent)]">Total: ${formatRupiah(order.total)}</span>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// --- Update Customer Profile View ---
+function updateProfileViewInfo() {
+    if (currentUser) {
+        document.getElementById('cust-profile-name').textContent = currentUser.name;
+        document.getElementById('cust-profile-email').textContent = currentUser.email;
+        document.getElementById('cust-profile-phone').textContent = currentUser.phone || '081298765432';
+    }
+}
+
+// --- Owner Profile Sheet (Riski Ganjani) ---
+async function openOwnerProfileSheet() {
+    const sheet = document.getElementById('owner-sheet-backdrop');
+    sheet.classList.add('active');
+
+    try {
+        const ordersCountEl = document.getElementById('sheet-orders-count');
+        const customersCountEl = document.getElementById('sheet-customers-count');
+
+        let totalOrders = 24;
+        let totalCustomers = 18;
+
+        const localOrders = getStoredOrders();
+        const localUsers = getStoredUsers();
+        if (localOrders.length) totalOrders = localOrders.length;
+        if (localUsers.length) totalCustomers = localUsers.filter(u => u.role === 'customer').length || totalCustomers;
+
+        if (ordersCountEl) ordersCountEl.textContent = totalOrders + ' Pesanan';
+        if (customersCountEl) customersCountEl.textContent = totalCustomers + ' Pelanggan';
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+function closeOwnerProfileSheet(e) {
+    document.getElementById('owner-sheet-backdrop').classList.remove('active');
+}
+
+// --- Owner Dashboard Navigation & API Data ---
+function showAdminSection(sectionId) {
+    document.querySelectorAll('.admin-tab-content').forEach(s => s.classList.add('hidden'));
+    document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+
+    const target = document.getElementById('sec-' + sectionId);
+    const targetBtn = document.getElementById('nav-btn-' + sectionId);
+
+    if (target) target.classList.remove('hidden');
+    if (targetBtn) targetBtn.classList.add('active');
+
+    if (sectionId === 'dashboard') loadOwnerStats();
+    if (sectionId === 'products') loadOwnerProductsTable();
+    if (sectionId === 'transactions') loadOwnerOrdersTable();
+    if (sectionId === 'stock') loadOwnerStockView();
+    if (sectionId === 'customers') loadOwnerCustomersView();
+
+    const overlay = document.getElementById('admin-sidebar-overlay');
+    if (!overlay.classList.contains('hidden')) toggleAdminSidebar();
+}
+
+function toggleAdminSidebar() {
+    document.getElementById('sidebar').classList.toggle('-translate-x-full');
+    document.getElementById('admin-sidebar-overlay').classList.toggle('hidden');
+}
+
+async function loadOwnerStats() {
+    let stats = null;
+    try {
+        const res = await fetch('/api/owner/stats');
+        if (res.ok) stats = await res.json();
+    } catch (err) {}
+
+    if (!stats) {
+        const orders = getStoredOrders();
+        const prods = getStoredProducts();
+        const rev = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+        stats = {
+            totalRevenue: rev,
+            totalOrders: orders.length,
+            totalProducts: prods.length,
+            lowStockCount: prods.filter(p => p.stock <= 2).length,
+            recentOrders: orders.slice(0, 5)
+        };
+    }
+
+    document.getElementById('owner-stat-revenue').textContent = formatRupiah(stats.totalRevenue);
+    document.getElementById('owner-stat-orders').textContent = stats.totalOrders;
+    document.getElementById('owner-stat-products').textContent = stats.totalProducts;
+    document.getElementById('owner-stat-lowstock').textContent = stats.lowStockCount;
+
+    const tbody = document.getElementById('owner-recent-orders-body');
+    if (!tbody) return;
+    tbody.innerHTML = '';
+
+    if (!stats.recentOrders || stats.recentOrders.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="text-center py-6 text-gray-400">Belum ada transaksi.</td></tr>';
+        return;
+    }
+
+    stats.recentOrders.forEach(o => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-gray-50';
+        tr.innerHTML = `
+            <td class="p-3 font-bold text-[var(--color-accent)]">${o.id}</td>
+            <td class="p-3 text-gray-500 text-xs">${new Date(o.date).toLocaleDateString('id-ID')}</td>
+            <td class="p-3 font-medium">${o.customerName}</td>
+            <td class="p-3 font-bold">${formatRupiah(o.total)}</td>
+            <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-700">${o.status}</span></td>
+            <td class="p-3 text-right">
+                <select onchange="updateOrderStatus('${o.id}', this.value)" class="text-xs border rounded p-1">
+                    <option value="Pending" ${o.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                    <option value="Confirmed" ${o.status === 'Confirmed' ? 'selected' : ''}>Confirmed</option>
+                    <option value="Processing" ${o.status === 'Processing' ? 'selected' : ''}>Processing</option>
+                    <option value="Completed" ${o.status === 'Completed' ? 'selected' : ''}>Completed</option>
+                    <option value="Cancelled" ${o.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+                </select>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+async function loadOwnerProductsTable() {
+    const tbody = document.getElementById('owner-products-table-body');
+    if (!tbody) return;
+
+    let products = [];
+    let fromApi = false;
+
+    try {
+        const res = await fetch('/api/products');
+        if (res.ok) {
+            const data = await res.json();
+            products = data.products || [];
+            fromApi = true;
+        }
+    } catch (err) {}
+
+    if (!fromApi) {
+        products = getStoredProducts();
+    }
+
+    tbody.innerHTML = '';
+    if (products.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="text-center py-6 text-gray-400">Katalog kosong.</td></tr>';
+        return;
+    }
+
+    products.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-gray-50';
+        tr.innerHTML = `
+            <td class="p-3"><div class="flex items-center gap-3"><img src="${p.image}" class="w-10 h-10 rounded-lg object-cover border" alt="${p.name}"><div><h4 class="font-semibold text-xs">${p.name}</h4><span class="text-[10px] text-gray-400">${p.id}</span></div></div></td>
+            <td class="p-3 text-xs text-gray-600">${p.category}</td>
+            <td class="p-3 font-bold text-xs text-[var(--color-accent)]">${formatRupiah(p.price)}</td>
+            <td class="p-3 font-bold text-xs ${p.stock <= 2 ? 'text-red-600' : 'text-gray-800'}">${p.stock} Unit</td>
+            <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${p.stock > 0 ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'}">${p.stock > 0 ? 'In Stock' : 'Out of Stock'}</span></td>
+            <td class="p-3 text-right">
+                <button onclick="editProductPrompt('${p.id}')" class="text-blue-600 hover:text-blue-800 text-xs mr-2 font-medium">Edit</button>
+                <button onclick="deleteProduct('${p.id}')" class="text-red-600 hover:text-red-800 text-xs font-medium">Hapus</button>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+async function loadOwnerOrdersTable() {
+    const tbody = document.getElementById('owner-all-orders-body');
+    if (!tbody) return;
+
+    let orders = [];
+    let fromApi = false;
+
+    try {
+        const res = await fetch('/api/orders');
+        if (res.ok) {
+            orders = await res.json();
+            fromApi = true;
+        }
+    } catch (err) {}
+
+    if (!fromApi) {
+        orders = getStoredOrders();
+    }
+
+    tbody.innerHTML = '';
+    if (orders.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="text-center py-6 text-gray-400">Belum ada transaksi.</td></tr>';
+        return;
+    }
+
+    orders.forEach(o => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-gray-50';
+        tr.innerHTML = `
+            <td class="p-3 font-bold text-xs text-[var(--color-accent)]">${o.id}</td>
+            <td class="p-3 text-xs text-gray-500">${new Date(o.date).toLocaleString('id-ID')}</td>
+            <td class="p-3 font-medium text-xs">${o.customerName}</td>
+            <td class="p-3 text-xs text-gray-600">${(o.items || []).map(i => `${i.name} (x${i.qty})`).join(', ')}</td>
+            <td class="p-3 font-bold text-xs">${formatRupiah(o.total)}</td>
+            <td class="p-3 text-xs text-gray-500">${o.paymentMethod}</td>
+            <td class="p-3">
+                <select onchange="updateOrderStatus('${o.id}', this.value)" class="text-xs border rounded p-1 bg-white font-medium">
+                    <option value="Pending" ${o.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                    <option value="Confirmed" ${o.status === 'Confirmed' ? 'selected' : ''}>Confirmed</option>
+                    <option value="Processing" ${o.status === 'Processing' ? 'selected' : ''}>Processing</option>
+                    <option value="Completed" ${o.status === 'Completed' ? 'selected' : ''}>Completed</option>
+                    <option value="Cancelled" ${o.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+                </select>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+async function updateOrderStatus(orderId, newStatus) {
+    try {
+        await fetch(`/api/orders/${orderId}/status`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: newStatus })
+        });
+    } catch (err) {}
+
+    const orders = getStoredOrders();
+    const ord = orders.find(o => o.id === orderId);
+    if (ord) {
+        ord.status = newStatus;
+        saveStoredOrders(orders);
+    }
+    showToast(`Status transaksi ${orderId} diperbarui menjadi ${newStatus}.`, 'success');
+}
+
+async function loadOwnerStockView() {
+    const container = document.getElementById('owner-stock-list');
+    if (!container) return;
+
+    let products = [];
+    try {
+        const res = await fetch('/api/products');
+        if (res.ok) {
+            const data = await res.json();
+            products = data.products || [];
+        }
+    } catch (err) {}
+
+    if (!products || products.length === 0) {
+        products = getStoredProducts();
+    }
+
+    container.innerHTML = '';
+    products.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'flex items-center justify-between p-3 rounded-xl border border-gray-100 bg-gray-50';
+        div.innerHTML = `
+            <div class="flex items-center gap-3">
+                <img src="${p.image}" class="w-10 h-10 rounded-lg object-cover" alt="${p.name}">
+                <div>
+                    <h4 class="font-bold text-xs text-gray-800">${p.name}</h4>
+                    <span class="text-[10px] text-gray-500">${p.category}</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="font-bold text-xs ${p.stock <= 3 ? 'text-red-600' : 'text-emerald-700'}">${p.stock} Unit Tersedia</span>
+                <button onclick="editStockPrompt('${p.id}', ${p.stock})" class="btn btn-outline btn-sm py-1 px-2 text-[10px]">Restock</button>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
+
+async function editStockPrompt(id, currentStock) {
+    const newVal = prompt('Masukkan kuantitas stok baru:', currentStock);
+    if (newVal !== null && !isNaN(newVal)) {
+        const parsedStock = Number(newVal);
+        try {
+            await fetch(`/api/products/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ stock: parsedStock })
+            });
+        } catch (e) {}
+
+        const products = getStoredProducts();
+        const p = products.find(prod => prod.id === id);
+        if (p) {
+            p.stock = parsedStock;
+            saveStoredProducts(products);
+        }
+        showToast('Stok berhasil diperbarui!', 'success');
+        loadOwnerStockView();
+    }
+}
+
+async function loadOwnerCustomersView() {
+    const container = document.getElementById('owner-customers-list');
+    if (!container) return;
+
+    let orders = [];
+    try {
+        const res = await fetch('/api/orders');
+        if (res.ok) orders = await res.json();
+    } catch (err) {}
+
+    if (!orders || orders.length === 0) {
+        orders = getStoredOrders();
+    }
+
+    const customersMap = {};
+    orders.forEach(o => {
+        const email = o.customerEmail || 'unknown';
+        if (!customersMap[email]) {
+            customersMap[email] = { name: o.customerName || 'Customer', email: email, count: 0, total: 0 };
+        }
+        customersMap[email].count++;
+        customersMap[email].total += (o.total || 0);
+    });
+
+    const list = Object.values(customersMap);
+    container.innerHTML = '';
+    if (list.length === 0) {
+        container.innerHTML = '<p class="text-center py-6 text-gray-400 text-xs">Belum ada pelanggan terdaftar.</p>';
+        return;
+    }
+
+    list.forEach(c => {
+        const div = document.createElement('div');
+        div.className = 'py-3 flex justify-between items-center text-xs';
+        div.innerHTML = `
+            <div>
+                <h4 class="font-bold text-gray-800">${c.name}</h4>
+                <span class="text-gray-400 text-[10px]">${c.email}</span>
+            </div>
+            <div class="text-right">
+                <span class="font-semibold text-gray-700 block">${c.count} Transaksi</span>
+                <span class="font-bold text-[var(--color-accent)]">${formatRupiah(c.total)}</span>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
+
+// --- Product CRUD Modal ---
+function openAddProductModal() {
+    document.getElementById('crud-product-id').value = '';
+    document.getElementById('crud-product-name').value = '';
+    document.getElementById('crud-product-brand').value = '';
+    document.getElementById('crud-product-price').value = '';
+    document.getElementById('crud-product-stock').value = '';
+    document.getElementById('crud-product-image').value = '';
+    document.getElementById('crud-product-desc').value = '';
+    document.getElementById('product-crud-title').textContent = 'Tambah Produk Baru';
+    document.getElementById('product-crud-modal').classList.remove('hidden');
+}
+
+function closeProductCrudModal(e) {
+    document.getElementById('product-crud-modal').classList.add('hidden');
+}
+
+async function editProductPrompt(id) {
+    const products = getStoredProducts();
+    const prod = products.find(p => p.id === id);
+    if (!prod) return;
+
+    document.getElementById('crud-product-id').value = prod.id;
+    document.getElementById('crud-product-name').value = prod.name;
+    document.getElementById('crud-product-brand').value = prod.brand || '';
+    document.getElementById('crud-product-category').value = prod.category;
+    document.getElementById('crud-product-price').value = prod.price;
+    document.getElementById('crud-product-stock').value = prod.stock;
+    document.getElementById('crud-product-image').value = prod.image;
+    document.getElementById('crud-product-desc').value = prod.description || '';
+    document.getElementById('product-crud-title').textContent = 'Edit Produk';
+    document.getElementById('product-crud-modal').classList.remove('hidden');
+}
+
+async function handleProductCrudSubmit(e) {
+    e.preventDefault();
+    const id = document.getElementById('crud-product-id').value;
+    const payload = {
+        name: document.getElementById('crud-product-name').value,
+        brand: document.getElementById('crud-product-brand').value,
+        category: document.getElementById('crud-product-category').value,
+        price: Number(document.getElementById('crud-product-price').value),
+        stock: Number(document.getElementById('crud-product-stock').value),
+        image: document.getElementById('crud-product-image').value || 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&auto=format&fit=crop&q=80',
+        description: document.getElementById('crud-product-desc').value
+    };
+
+    // Coba API
+    try {
+        if (id) {
+            await fetch(`/api/products/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+        } else {
+            await fetch('/api/products', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+        }
+    } catch (err) {}
+
+    // Update LocalStorage
+    const products = getStoredProducts();
+    if (id) {
+        const idx = products.findIndex(p => p.id === id);
+        if (idx !== -1) {
+            products[idx] = { ...products[idx], ...payload };
+        }
+    } else {
+        products.push({
+            id: 'PROD-' + Date.now().toString().slice(-4),
+            ...payload,
+            rating: 5.0,
+            status: payload.stock > 0 ? 'In Stock' : 'Out of Stock'
+        });
+    }
+    saveStoredProducts(products);
+
+    showToast(id ? 'Produk berhasil diperbarui!' : 'Produk berhasil ditambahkan!', 'success');
+    closeProductCrudModal();
+    loadOwnerProductsTable();
+}
+
+async function deleteProduct(id) {
+    if (!confirm('Yakin ingin menghapus produk ini?')) return;
+    try {
+        await fetch(`/api/products/${id}`, { method: 'DELETE' });
+    } catch (err) {}
+
+    let products = getStoredProducts();
+    products = products.filter(p => p.id !== id);
+    saveStoredProducts(products);
+
+    showToast('Produk berhasil dihapus.', 'success');
+    loadOwnerProductsTable();
+}
+
+// --- Window Event Listeners ---
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeOwnerProfileSheet();
+        closeCheckoutModal();
+        closeProductCrudModal();
+    }
+});
+
+// --- App Initialization ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Inisialisasi seed data awal jika belum ada di browser
+    getStoredProducts();
+    getStoredUsers();
+    getStoredOrders();
+
+    const savedUser = sessionStorage.getItem('dm_user');
+    if (savedUser) {
+        try {
+            currentUser = JSON.parse(savedUser);
+        } catch (e) {}
+    }
+
+    if (currentUser && currentUser.role === 'owner') {
+        switchView('admin');
+    } else {
+        switchView('customer');
+    }
+});
+
+    </script>
+</body>
+</html>

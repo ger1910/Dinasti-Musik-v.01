@@ -1,0 +1,13 @@
+{
+  "name": "dinasti-music",
+  "version": "1.0.0",
+  "description": "Aplikasi kelola toko alat musik premium — Creative Hub & Customer Store",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
