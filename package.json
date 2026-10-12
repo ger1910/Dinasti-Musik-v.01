@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Dinasti Musik Workspace Runner",
   "scripts": {
-    "start": "npm start --prefix \"dinasti music\"",
-    "dev": "npm start --prefix \"dinasti music\""
+    "dev": "npm run dev --prefix dinasti-musik",
+    "build": "npm run build --prefix dinasti-musik",
+    "start": "npm start --prefix dinasti-musik",
+    "legacy": "node \"dinasti music/server.js\""
   }
 }

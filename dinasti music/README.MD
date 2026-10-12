@@ -1,47 +1,50 @@
-# Dinasti Musik — Web Management & Store
+<div align="center">
 
-Aplikasi sistem manajemen toko alat musik premium (Creative Hub Admin) dan katalog toko pelanggan. 
+# 🏛️ DINASTI MUSIK
+### *Haute Horlogerie of Musical Instruments & Creative Management Hub*
 
-## Struktur Proyek
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-0D1317?style=for-the-badge&logo=node.js&logoColor=C59B6D)](https://nodejs.org)
+[![Express](https://img.shields.io/badge/Express-REST_API-0D1317?style=for-the-badge&logo=express&logoColor=FFFFFF)](https://expressjs.com)
+[![Architecture](https://img.shields.io/badge/Architecture-Modular_ES6+-0D1317?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](../README.md)
+[![Design](https://img.shields.io/badge/Design_System-Double--Bezel_Luxury-0D1317?style=for-the-badge&logo=figma&logoColor=C59B6D)](styles.css)
+[![Status](https://img.shields.io/badge/Production-Ready-0D1317?style=for-the-badge&logo=checkmarx&logoColor=10B981)](http://localhost:3000)
+
+<p align="center">
+  Platform e-commerce instrumen musik kurasi premium dan Creative Hub manajemen toko. <br>
+  Dirancang dengan standar arsitektur perangkat lunak modular modern, bebas dari monolitik code-spaghetti ("vibecoding anti-pattern"), mengusung estetika editorial luxury bergaya <i>Awwwards / Linear-tier</i>.
+</p>
+
+</div>
+
+---
+
+## 🚀 Panduan Cepat Menjalankan
+
+```bash
+# 1. Pasang dependensi
+npm install
+
+# 2. Jalankan server
+npm start
 ```
-dinasti music/
-├── index.html       # Single-Page Application (Admin Dashboard, POS Kasir, Katalog Pelanggan)
-├── server.js        # Server Node.js (Express & Native HTTP fallback)
-├── package.json     # Konfigurasi dependensi & npm scripts
-├── package-lock.json
-└── README.MD        # Dokumentasi panduan proyek
-```
+Buka peramban ke **http://localhost:3000**
 
-## Cara Menjalankan
-1. Pastikan **Node.js** sudah terpasang di komputer.
-2. Buka terminal pada folder `dinasti music`:
-   ```bash
-   cd "dinasti music"
-   ```
-3. Pasang dependensi:
-   ```bash
-   npm install
-   ```
-4. Jalankan server:
-   ```bash
-   npm start
-   ```
-5. Buka peramban ke **http://localhost:3000**
+---
 
-## Fitur Utama
+## 🔑 Kredensial Pengujian (Demo Accounts)
 
-### 1. Admin Creative Hub
-- **Login Admin**: Autentikasi dengan toggle tampil/sembunyi sandi.
-- **Dashboard Ringkasan Bisnis**: Metrik omzet, total inventaris, pesanan hari ini, dan peringatan stok menipis.
-- **Manajemen Produk**: CRUD produk lengkap (tambah, perbarui, hapus) dengan pencarian dan filter kategori.
-- **Manajemen Stok**: Pemantauan level stok dan status restock inventaris.
-- **Kasir & POS**: Pemilihan produk instan, keranjang belanja, kalkulasi otomatis, dan cetak struk transaksi digital.
-- **Laporan Keuangan**: Analisis penjualan berkala dan ekspor data transaksi.
+| Role | Tab Login | Email | Password |
+| :--- | :--- | :--- | :--- |
+| **Owner / Manajemen** | Tab "Owner" | `admin@dinastimusik.com` | `dinasti2026` |
+| **Customer / Pembeli** | Tab "Customer" | `customer@email.com` | `customer123` |
 
-### 2. Front-End Toko Pelanggan (Customer Experience)
-- **Beranda (Home)**: Tampilan visual showcase instrumen musik premium.
-- **Katalog Produk**: Filter instrumen (Gitar, Drum, Keyboard/Piano, Audio, Aksesori).
-- **Detail Produk**: Spesifikasi teknis instrumen dan galeri foto.
-- **Keranjang & Kontak**: Pemesanan langsung dan integrasi layanan pelanggan.
+---
 
-> **Penyimpanan Data**: Data disimpan secara lokal di browser (`localStorage`) sehingga data tetap tersimpan saat tab ditutup atau direfresh.
+## 📐 Arsitektur Modular
+
+- `index.html`: Shell presentasi bersih semantik (< 900 baris, tanpa inline script raksasa).
+- `assets/js/modules/`: Modul ES6 terisolasi (`api.js`, `auth.js`, `catalog.js`, `cart.js`, `admin.js`, `ui.js`, `storage.js`).
+- `server/`: Backend terstruktur (`db.js`, `routes/auth.js`, `routes/products.js`, `routes/orders.js`, `routes/owner.js`).
+- `styles.css`: Luxury design tokens, Double-Bezel hardware styling, subtle film grain noise, spring transitions.
+
+*Untuk dokumentasi teknis lengkap dan diagram alur sistem, silakan baca [README Utama Proyek](../README.md).*

@@ -307,15 +307,7 @@
     }
   ],
   "carts": {},
-  "sessions": [
-    {
-      "id": "ff387008-a255-481b-9504-9e8f36e19197",
-      "userId": "USR-OWNER",
-      "role": "owner",
-      "createdAt": "2026-10-10T06:52:40.494Z",
-      "expiresAt": "2026-10-17T06:52:40.494Z"
-    }
-  ],
+  "sessions": [],
   "notifications": [
     {
       "id": "NOTIF-279B239C",
@@ -363,6 +355,51 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "AUDIT-6002D367",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-12T10:47:32.138Z"
+    },
+    {
+      "id": "AUDIT-EF25D984",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-12T10:47:22.711Z"
+    },
+    {
+      "id": "AUDIT-F7DEAB92",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-12T10:46:41.092Z"
+    },
+    {
+      "id": "AUDIT-5D45766C",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-12T10:46:32.577Z"
+    },
+    {
+      "id": "AUDIT-F685F718",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-12T10:45:41.128Z"
+    },
     {
       "id": "AUDIT-E9ED2480",
       "userId": "USR-OWNER",

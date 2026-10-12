@@ -134,14 +134,6 @@ export function Navbar({
                 <UserIcon className="w-3 h-3" />
                 <span>Akun Saya</span>
               </Link>
-              <button
-                type="button"
-                onClick={handleInfoTokoClick}
-                className="px-3.5 py-1.5 rounded-full text-[11px] font-medium text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white transition-all flex items-center gap-1.5"
-              >
-                <ShieldCheck className="w-3.5 h-3.5 text-[#bb6a33]" />
-                <span>Info Toko</span>
-              </button>
             </>
           )}
 
@@ -155,14 +147,6 @@ export function Navbar({
               <Link href="/catalog" className={getLinkClass("/catalog")}>
                 <span>Katalog Produk</span>
               </Link>
-              <button
-                type="button"
-                onClick={handleInfoTokoClick}
-                className="px-3.5 py-1.5 rounded-full text-[11px] font-medium text-gray-600 dark:text-white/70 hover:text-black dark:hover:text-white transition-all flex items-center gap-1.5"
-              >
-                <ShieldCheck className="w-3.5 h-3.5 text-[#bb6a33]" />
-                <span>Info Toko</span>
-              </button>
             </>
           )}
         </nav>
@@ -305,14 +289,6 @@ export function Navbar({
                 <UserIcon className="w-4 h-4 text-[#bb6a33]" />
                 <span>Akun Saya</span>
               </Link>
-              <button
-                type="button"
-                onClick={handleInfoTokoClick}
-                className="px-4 py-2.5 rounded-xl font-medium text-left text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-2"
-              >
-                <ShieldCheck className="w-4 h-4 text-[#bb6a33]" />
-                <span>Info Toko</span>
-              </button>
             </>
           )}
 
@@ -333,14 +309,6 @@ export function Navbar({
               >
                 Katalog Produk
               </Link>
-              <button
-                type="button"
-                onClick={handleInfoTokoClick}
-                className="px-4 py-2.5 rounded-xl font-medium text-left text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-2"
-              >
-                <ShieldCheck className="w-4 h-4 text-[#bb6a33]" />
-                <span>Info Toko</span>
-              </button>
             </>
           )}
         </div>

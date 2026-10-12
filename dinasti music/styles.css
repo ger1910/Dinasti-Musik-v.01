@@ -1,5 +1,5 @@
 /* ============================================================
-   DINASTI MUSIK — Premium Design System
+   DINASTI MUSIK: Premium Design System
    Strict 3-Color Hierarchy:
    1. Obsidian Noir (#0D1317) - Primary Dark & Crisp Typography
    2. Canvas White (#FFFFFF & #F8F9FA) - Crisp Surfaces & Cards
@@ -15,7 +15,8 @@
     --color-surface-lighter: #F2F4F7;          /* Color 2 Subtle Canvas */
     --color-accent: #C59B6D;                   /* Color 3: Warm Brass Accent */
     --color-accent-light: #D4AF85;             /* Color 3 Tint */
-    --color-accent-dark: #A97E4F;              /* Color 3 Shade */
+    --color-accent-dark: #8C5E28;              /* Color 3 Shade (WCAG AA Compliant) */
+    --text-accent-accessible: #7C5329;         /* High-contrast text on white (6.72:1 ratio) */
     --color-dark: #0D1317;
     --color-dark-surface: #141B20;
     --color-white: #FFFFFF;
@@ -30,7 +31,7 @@
     /* Semantic Accents (Clean & Restrained) */
     --color-success: #1E7E4A;
     --color-success-bg: rgba(30, 126, 74, 0.08);
-    --color-warning: #C59B6D;
+    --color-warning: #7C5329;
     --color-warning-bg: rgba(197, 155, 109, 0.12);
     --color-danger: #C0392B;
     --color-danger-bg: rgba(192, 57, 43, 0.08);
@@ -40,11 +41,11 @@
     /* Text Colors */
     --text-primary: #0D1317;
     --text-secondary: rgba(13, 19, 23, 0.70);
-    --text-muted: rgba(13, 19, 23, 0.45);
+    --text-muted: rgba(13, 19, 23, 0.55);
     --text-inverse: #FFFFFF;
     --text-accent: #C59B6D;
     /* Typography */
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-serif: 'Playfair Display', 'Georgia', serif;
 
     /* Spacing (8px grid) */
@@ -175,10 +176,16 @@ h4 { font-size: 1rem; font-weight: 600; }
 
 .btn-primary {
     background: var(--color-accent);
-    color: var(--color-white);
+    color: var(--color-primary);
+    font-weight: 700;
     box-shadow: var(--shadow-sm);
 }
-.btn-primary:hover { background: var(--color-accent-dark); box-shadow: var(--shadow-accent); transform: translateY(-1px); }
+.btn-primary:hover { 
+    background: var(--color-accent-dark); 
+    color: var(--color-white);
+    box-shadow: var(--shadow-accent); 
+    transform: translateY(-1px); 
+}
 
 .btn-secondary {
     background: var(--color-primary);
@@ -1274,6 +1281,85 @@ h4 { font-size: 1rem; font-weight: 600; }
     background: #0D1317;
     color: #FFFFFF;
     border-radius: 20px;
+}
+
+/* ============================================================
+   HIGH-END AGENCY DESIGN ENHANCEMENTS
+   Double-Bezel Architecture & Micro-Interactions
+   ============================================================ */
+
+/* CSS Noise Film Grain Overlay */
+.noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+/* Double-Bezel Hardware Enclosure */
+.double-bezel {
+    border-radius: 2rem;
+    padding: 0.375rem;
+    background: rgba(13, 19, 23, 0.03);
+    border: 1px solid rgba(13, 19, 23, 0.08);
+}
+
+.double-bezel-inner {
+    border-radius: calc(2rem - 0.375rem);
+    background: #FFFFFF;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 4px 16px rgba(13, 19, 23, 0.03);
+}
+
+/* Button-in-Button Island CTA */
+.btn-island {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 9999px;
+    background: #0D1317;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-island:hover {
+    background: #1A2228;
+    transform: translateY(-1px);
+}
+
+.btn-island:active {
+    transform: scale(0.98);
+}
+
+.btn-island-bubble {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6875rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-island:hover .btn-island-bubble {
+    background: var(--color-accent);
+    transform: translateX(2px);
+}
+
+/* Editorial Serif Heading */
+.heading-editorial {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+}
+
+/* Smooth Spring Interpolation */
+.spring-transition {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 
