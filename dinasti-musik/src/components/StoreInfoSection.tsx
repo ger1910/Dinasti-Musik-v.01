@@ -7,11 +7,6 @@ import {
   Phone,
   Mail,
   MessageCircle,
-  Award,
-  ShieldCheck,
-  CheckCircle2,
-  Truck,
-  Sparkles,
 } from "lucide-react";
 import { StoreConfig } from "@/types";
 
@@ -26,178 +21,138 @@ export function StoreInfoSection({ config, onOpenAuth }: StoreInfoSectionProps) 
   const hours = config?.openingHours || "Senin – Sabtu: 09.00 – 18.00 WIB";
   const whatsapp = config?.whatsapp || "6289512430608";
   const email = config?.email || "admin@dinastimusik.com";
-  const bio =
-    config?.bio ||
-    "Dedikasi menyajikan instrumen musik kualitas dunia dan layanan profesional bagi musisi, komposer, dan studio rekaman Indonesia.";
 
-  const highlights = [
+  const pillars = [
     {
-      icon: ShieldCheck,
-      title: "100% Orisinal & Autentik",
-      desc: "Semua instrumen didatangkan langsung melalui distributor resmi dengan sertifikat keaslian dan nomor seri terdaftar.",
+      num: "01",
+      title: "Kurasi Autentik & Legalitas Distributor",
+      desc: "Tidak ada unit tiruan atau grey market. Setiap nomor seri gitar, synth, dan drum dapat dilacak dan terdaftar garansi resmi pabrikan.",
     },
     {
-      icon: Award,
-      title: "Inspeksi 24 Titik Profesional",
-      desc: "Setiap gitar, drum, dan keyboard dicek intonasi, action, fret leveling, dan kelistrikannya oleh luthier berpengalaman sebelum dikirim.",
+      num: "02",
+      title: "Inspeksi 24 Titik & Kalibrasi Akustik",
+      desc: "Sebelum instrumen diserahkan ke tangan musisi, action neck, kerataan fretwire, intonasi bridge, dan kelistrikan disetel presisi oleh luthier berpengalaman.",
     },
     {
-      icon: Truck,
-      title: "Proteksi Pengiriman Berasuransi",
-      desc: "Packing kayu solid khusus alat musik, bubble wrap berlapis, dan asuransi penuh untuk pengiriman ke seluruh kota di Indonesia.",
+      num: "03",
+      title: "Proteksi Pengiriman Solid Wood Box",
+      desc: "Pengiriman antar pulau menggunakan box kayu berbusa tebal dan asuransi penuh untuk menjamin instrumen tiba dalam kondisi zero-damage.",
     },
     {
-      icon: Sparkles,
-      title: "Konsultasi Nada & Setup Khusus",
-      desc: "Layanan konsultasi pemilihan instrumen dan kustomisasi string action gratis bagi seluruh pelanggan Dinasti Musik.",
+      num: "04",
+      title: "Ruang Uji Akustik Kedap Suara",
+      desc: "Musisi dipersilakan mencoba karakter amplifier, pedalboard, dan intonasi instrumen secara privat di ruang studio uji Bandung kami.",
     },
   ];
 
   return (
     <section
       id="tentang-toko"
-      className="relative py-24 px-4 sm:px-6 max-w-7xl mx-auto w-full space-y-16 bg-[#080F0F] text-[#F3F0E8] scroll-mt-20"
-      aria-label="Informasi Profil dan Lokasi Dinasti Musik"
+      className="relative py-28 px-4 sm:px-8 max-w-7xl mx-auto w-full space-y-24 bg-[#080F0F] text-[#F3F0E8] scroll-mt-20 border-t border-white/10"
+      aria-label="Profil dan Showroom Dinasti Musik"
     >
-      {/* Header Section */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#bb6a33] font-bold">
-          Galeri &amp; Workshop Resmi
-        </span>
-        <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
-          Tentang <span className="text-[#C59B6D] italic">{storeName}</span>
-        </h2>
-        <p className="text-sm sm:text-base text-white/70 leading-relaxed font-sans">
-          {bio}
-        </p>
-      </div>
-
-      {/* 4 Keunggulan Toko (Bento Cards) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {highlights.map((h, i) => {
-          const Icon = h.icon;
-          return (
-            <div
-              key={i}
-              className="p-6 rounded-3xl bg-[#0c1414] border border-white/10 hover:border-[#bb6a33]/40 transition-all duration-300 space-y-3 shadow-lg group"
-            >
-              <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#bb6a33] group-hover:scale-110 group-hover:bg-[#bb6a33]/20 transition-transform">
-                <Icon className="w-5 h-5" />
-              </div>
-              <h3 className="font-serif font-bold text-base text-white">{h.title}</h3>
-              <p className="text-xs text-white/65 leading-relaxed">{h.desc}</p>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Detail Lokasi, Kontak, dan Jam Buka */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        {/* Kolom Informasi Kontak & Alamat */}
-        <div className="lg:col-span-5 p-8 rounded-3xl bg-[#0c1414] border border-white/10 flex flex-col justify-between space-y-8 shadow-xl">
-          <div className="space-y-6">
+      {/* Editorial Headline & Pillars (Asymmetric Magazine Layout) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Sisi Kiri: Pernyataan Karakter & Filosofi */}
+        <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
+            Standar Musisi, <br />
+            Bukan Sekadar <span className="text-[#C59B6D] italic">Etalase Toko.</span>
+          </h2>
+          <p className="text-sm sm:text-base text-white/70 leading-relaxed font-sans max-w-md">
+            {storeName} didirikan atas dedikasi menghadirkan instrumen musik kualitas panggung dunia dengan rasa hormat penuh terhadap telinga dan tangan musisi Indonesia.
+          </p>
+          <div className="pt-4 flex items-center gap-6 text-xs font-mono text-white/50">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#bb6a33] font-bold block mb-1">
-                Kunjungi Galeri Kami
+              <span className="block text-2xl font-serif font-bold text-white">2018</span>
+              <span>ESTABLISHED</span>
+            </div>
+            <div className="h-8 w-[1px] bg-white/15" />
+            <div>
+              <span className="block text-2xl font-serif font-bold text-[#bb6a33]">24-PT</span>
+              <span>INSPECTION</span>
+            </div>
+            <div className="h-8 w-[1px] bg-white/15" />
+            <div>
+              <span className="block text-2xl font-serif font-bold text-white">100%</span>
+              <span>ORIGINAL</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Sisi Kanan: Daftar 4 Pilar Kualitas (Bukan Kotak-Kotak AI) */}
+        <div className="lg:col-span-7 divide-y divide-white/10 border-t border-b border-white/10">
+          {pillars.map((item) => (
+            <div key={item.num} className="py-7 flex items-start gap-6 group">
+              <span className="text-xs font-mono text-[#bb6a33] font-bold tracking-widest pt-1">
+                [{item.num}]
               </span>
-              <h3 className="font-serif font-bold text-2xl text-white">
-                Bandung Showroom
+              <div className="space-y-2">
+                <h3 className="font-serif font-bold text-xl text-white group-hover:text-[#C59B6D] transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-white/65 leading-relaxed font-sans max-w-xl">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Showroom & Informasi Kontak (Minimalist Gallery Invitation) */}
+      <div className="p-8 sm:p-12 rounded-3xl bg-[#0c1414] border border-white/10 shadow-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <div className="space-y-2">
+              <h3 className="font-serif font-bold text-3xl sm:text-4xl text-white">
+                Bandung Workshop &amp; Galeri
               </h3>
+              <p className="text-sm text-white/70 max-w-lg leading-relaxed">
+                Kunjungi kami untuk berdiskusi langsung seputar setup instrumen, string tension, atau konsultasi gear rekaman studio Anda.
+              </p>
             </div>
 
-            <div className="space-y-4 text-xs text-white/80">
-              <div className="flex items-start gap-3.5">
-                <MapPin className="w-4 h-4 text-[#C59B6D] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="block text-white font-semibold mb-0.5">Alamat</strong>
-                  <span>{address}</span>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-white/80 pt-2 font-sans">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#bb6a33] shrink-0 mt-0.5" />
+                <span>{address}</span>
               </div>
-
-              <div className="flex items-start gap-3.5">
-                <Clock className="w-4 h-4 text-[#C59B6D] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="block text-white font-semibold mb-0.5">Jam Operasional</strong>
-                  <span>{hours}</span>
-                </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-[#bb6a33] shrink-0 mt-0.5" />
+                <span>{hours}</span>
               </div>
-
-              <div className="flex items-start gap-3.5">
-                <Phone className="w-4 h-4 text-[#C59B6D] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="block text-white font-semibold mb-0.5">WhatsApp Konsultasi</strong>
-                  <span>+{whatsapp}</span>
-                </div>
+              <div className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-[#bb6a33] shrink-0 mt-0.5" />
+                <span>+{whatsapp}</span>
               </div>
-
-              <div className="flex items-start gap-3.5">
-                <Mail className="w-4 h-4 text-[#C59B6D] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="block text-white font-semibold mb-0.5">Email Resmi</strong>
-                  <span>{email}</span>
-                </div>
+              <div className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-[#bb6a33] shrink-0 mt-0.5" />
+                <span>{email}</span>
               </div>
             </div>
           </div>
 
-          <div className="space-y-3 pt-4 border-t border-white/10">
+          <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
             <a
-              href={`https://wa.me/${whatsapp}?text=Halo%20Dinasti%20Musik,%20saya%20tertarik%20dengan%20koleksi%20instrumen%20Anda.`}
+              href={`https://wa.me/${whatsapp}?text=Halo%20Dinasti%20Musik,%20saya%20ingin%20berkonsultasi%20seputar%20instrumen.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3.5 rounded-full bg-[#1E7E4A] hover:bg-[#16653A] text-white font-semibold text-xs tracking-wider uppercase transition flex items-center justify-center gap-2 shadow-sm active:scale-98"
+              className="py-4 px-6 rounded-full bg-[#1E7E4A] hover:bg-[#16653A] text-white font-semibold text-xs tracking-wider uppercase transition flex items-center justify-center gap-2 shadow-sm active:scale-98"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Hubungi via WhatsApp</span>
+              <span>Konsultasi WhatsApp Langsung</span>
             </a>
 
             {onOpenAuth && (
               <button
                 type="button"
                 onClick={onOpenAuth}
-                className="w-full py-3 rounded-full border border-white/20 hover:bg-white/5 text-white/90 text-xs font-semibold uppercase tracking-wider transition"
+                className="py-3.5 px-6 rounded-full border border-white/20 hover:bg-white/10 text-white text-xs font-semibold uppercase tracking-wider transition"
               >
                 Masuk ke Akun Pelanggan
               </button>
             )}
-          </div>
-        </div>
-
-        {/* Kolom Peta & Visual Studio */}
-        <div className="lg:col-span-7 rounded-3xl bg-[#0c1414] border border-white/10 overflow-hidden relative min-h-[320px] flex flex-col justify-between p-8 shadow-xl">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1600&auto=format&fit=crop&q=80')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080F0F] via-[#080F0F]/70 to-transparent" />
-
-          <div className="relative z-10 space-y-2">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#e9b999] font-bold">
-              Showroom &amp; Testing Room
-            </span>
-            <h4 className="font-serif font-bold text-xl text-white">
-              Coba Langsung Instrumen Impian Anda
-            </h4>
-            <p className="text-xs text-white/70 max-w-md">
-              Kami menyediakan ruangan kedap suara akustik bagi musisi yang ingin mencoba karakter suara instrumen sebelum memutuskan pembelian.
-            </p>
-          </div>
-
-          <div className="relative z-10 pt-6 flex flex-wrap gap-4 text-xs">
-            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-white/90">
-              <CheckCircle2 className="w-4 h-4 text-[#bb6a33]" />
-              <span>Acoustic Testing Booth</span>
-            </div>
-            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-white/90">
-              <CheckCircle2 className="w-4 h-4 text-[#bb6a33]" />
-              <span>Amp &amp; Pedalboard Rig</span>
-            </div>
-            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-white/90">
-              <CheckCircle2 className="w-4 h-4 text-[#bb6a33]" />
-              <span>On-site Luthier Setup</span>
-            </div>
           </div>
         </div>
       </div>
