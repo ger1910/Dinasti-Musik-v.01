@@ -1,0 +1,817 @@
+{
+  "storeConfig": {
+    "name": "Dinasti Musik",
+    "ownerName": "Riski Ganjani",
+    "ownerRole": "Owner / Pemilik Dinasti Musik",
+    "whatsapp": "6289512430608",
+    "email": "admin@dinastimusik.com",
+    "address": "Jl. Pasir Rahayu IV, CC No. 22, Bandung",
+    "ownerPhoto": "/assets/owner/riski-ganjani.jpg",
+    "bio": "Dedikasi menyajikan instrumen musik kualitas dunia dan layanan profesional bagi musisi Indonesia.",
+    "established": 2018,
+    "city": "Bandung",
+    "openingHours": "Senin-Sabtu: 09.00-18.00 WIB"
+  },
+  "users": [
+    {
+      "id": "USR-OWNER",
+      "email": "admin@dinastimusik.com",
+      "password": "$2b$12$8w6zcTulCnPKq.oW7qxzR.0q6VszT25x89l9kghimJItj6J5nf6wy",
+      "name": "Riski Ganjani",
+      "role": "owner",
+      "phone": "+6289512430608",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "USR-CUST-1",
+      "email": "customer@email.com",
+      "password": "$2b$12$1UA0fICrXAJY.ReFbAwUSuvH3wJzFMY69p3uIYtvw316qHsbxj/YW",
+      "name": "Budi Santoso",
+      "role": "customer",
+      "phone": "081298765432",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "USR-511C3CD2",
+      "name": "Geraldo Geraldo zeyyad",
+      "email": "geraldozeyyad3@gmail.com",
+      "password": "$2b$12$rl9ayhv30Mfr332nlH8wmucaNX66K0rzY.hd6gHJkmEm9iRjLow7S",
+      "role": "customer",
+      "phone": "081221195581",
+      "createdAt": "2026-10-02T12:12:11.242Z"
+    },
+    {
+      "id": "USR-E6F96E4D",
+      "name": "Geraldo Geraldo zeyyad",
+      "email": "zeyyad@gmail.com",
+      "password": "$2b$12$Ybt0zUfZh3jsm47Ydtv/XuHOHNCKkFWK41Foug3ahVlCQ3MPlSRha",
+      "role": "customer",
+      "phone": "08231232132",
+      "createdAt": "2026-10-04T13:44:06.114Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "PROD-001",
+      "name": "Fender American Professional II Stratocaster",
+      "brand": "Fender",
+      "category": "Gitar",
+      "price": 28500000,
+      "stock": 3,
+      "image": "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.9,
+      "status": "In Stock",
+      "description": "Gitar listrik legendaris buatan AS dengan pickup V-Mod II single-coil, neck Deep C yang nyaman, dan finish Olympic White.",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-10-04T13:49:37.651Z"
+    },
+    {
+      "id": "PROD-002",
+      "name": "Gibson Les Paul Standard '60s Bourbon Burst",
+      "brand": "Gibson",
+      "category": "Gitar",
+      "price": 38900000,
+      "stock": 0,
+      "image": "https://images.unsplash.com/photo-1550985616-10810253b84d?w=800&auto=format&fit=crop&q=80",
+      "rating": 5,
+      "status": "Out of Stock",
+      "description": "Les Paul klasik bernuansa warm vintage, bodi mahogany tebal, AA figured maple top, dan 60s Burstbucker pickups.",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "PROD-003",
+      "name": "Yamaha U1 Studio Upright Piano Black",
+      "brand": "Yamaha",
+      "category": "Keyboard & Piano",
+      "price": 95000000,
+      "stock": 2,
+      "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.9,
+      "status": "In Stock",
+      "description": "Piano tegak standar industri musik internasional dengan kualitas suara kaya dan mekanisme tuts presisi tinggi.",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "PROD-004",
+      "name": "Roland V-Drums TD-27KV2 Electronic Kit",
+      "brand": "Roland",
+      "category": "Drum & Perkusi",
+      "price": 46500000,
+      "stock": 3,
+      "image": "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.8,
+      "status": "In Stock",
+      "description": "Drum elektrik flagship dengan pad snare digital PD-140DS dan cymbal ride digital CY-18DR berespon ultra-natural.",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-10-02T12:28:53.969Z"
+    },
+    {
+      "id": "PROD-005",
+      "name": "Martin D-28 Standard Dreadnought Acoustic",
+      "brand": "Martin",
+      "category": "Gitar",
+      "price": 44800000,
+      "stock": 3,
+      "image": "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&auto=format&fit=crop&q=80",
+      "rating": 5,
+      "status": "In Stock",
+      "description": "Standar akustik dunia dengan Sitka Spruce top solid dan East Indian Rosewood back/sides untuk tone hangat dan resonansi maksimal.",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "PROD-006",
+      "name": "Nord Stage 4 88-Key Fully Weighted Keyboard",
+      "brand": "Nord",
+      "category": "Keyboard & Piano",
+      "price": 72000000,
+      "stock": 3,
+      "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.9,
+      "status": "In Stock",
+      "description": "Keyboard stage flagship dari Swedia dengan engine organ, piano, dan synth kelas profesional serta triple sensor bed.",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "PROD-007",
+      "name": "Neumann U87 Ai Studio Condenser Microphone",
+      "brand": "Neumann",
+      "category": "Audio & Studio",
+      "price": 49500000,
+      "stock": 6,
+      "image": "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80",
+      "rating": 5,
+      "status": "In Stock",
+      "description": "Mikrofon studio legendaris standar rekaman vocal & instrumen dunia dengan 3 polar pattern switcher.",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "PROD-008",
+      "name": "Universal Audio Apollo Twin X Duo Heritage Edition",
+      "brand": "Universal Audio",
+      "category": "Audio & Studio",
+      "price": 16800000,
+      "stock": 8,
+      "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&auto=format&fit=crop&q=80",
+      "rating": 4.8,
+      "status": "In Stock",
+      "description": "Audio interface Thunderbolt 3 dengan pemrosesan UAD DSP real-time dan konversi 24-bit/192 kHz terkemuka.",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "TRX-20261004-885",
+      "date": "2026-10-04T13:49:37.651Z",
+      "createdAt": "2026-10-04T13:49:37.651Z",
+      "updatedAt": "2026-10-04T13:49:37.651Z",
+      "customerId": "USR-E6F96E4D",
+      "customerName": "Geraldo Geraldo zeyyad",
+      "customerEmail": "zeyyad@gmail.com",
+      "customerPhone": "08231232132",
+      "shippingAddress": {
+        "fullName": "Geraldo Geraldo zeyyad",
+        "phone": "0921380218313",
+        "address": "ngawi land",
+        "city": "ngwawi",
+        "province": "ngawi",
+        "postalCode": "9230123",
+        "notes": ""
+      },
+      "items": [
+        {
+          "productId": "PROD-001",
+          "name": "Fender American Professional II Stratocaster",
+          "price": 28500000,
+          "image": "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?w=800&auto=format&fit=crop&q=80",
+          "qty": 1
+        }
+      ],
+      "subtotal": 28500000,
+      "shippingCost": 0,
+      "total": 28500000,
+      "paymentMethod": "Transfer Bank (BCA)",
+      "paymentStatus": "Unpaid",
+      "status": "Pending"
+    },
+    {
+      "id": "TRX-20261002-162",
+      "date": "2026-10-02T12:28:53.970Z",
+      "createdAt": "2026-10-02T12:28:53.970Z",
+      "updatedAt": "2026-10-02T12:28:53.970Z",
+      "customerId": "USR-511C3CD2",
+      "customerName": "Geraldo Geraldo zeyyad",
+      "customerEmail": "geraldozeyyad3@gmail.com",
+      "customerPhone": "081221195581",
+      "shippingAddress": {
+        "fullName": "Geraldo zeyyad",
+        "phone": "08351126313",
+        "address": "rumah ngawi",
+        "city": "ngawi",
+        "province": "ngawi barat",
+        "postalCode": "88888",
+        "notes": ""
+      },
+      "items": [
+        {
+          "productId": "PROD-004",
+          "name": "Roland V-Drums TD-27KV2 Electronic Kit",
+          "price": 46500000,
+          "image": "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&auto=format&fit=crop&q=80",
+          "qty": 1
+        }
+      ],
+      "subtotal": 46500000,
+      "shippingCost": 0,
+      "total": 46500000,
+      "paymentMethod": "QRIS Real-Time",
+      "paymentStatus": "Unpaid",
+      "status": "Pending"
+    },
+    {
+      "id": "TRX-20260914-337",
+      "date": "2026-09-14T07:34:12.046Z",
+      "customerId": "USR-CUST-1",
+      "customerName": "Budi Santoso",
+      "customerEmail": "customer@email.com",
+      "items": [
+        {
+          "productId": "PROD-002",
+          "name": "Gibson Les Paul Standard '60s Bourbon Burst",
+          "price": 38900000,
+          "image": "https://images.unsplash.com/photo-1550985616-10810253b84d?w=800&auto=format&fit=crop&q=80",
+          "qty": 3
+        }
+      ],
+      "subtotal": 116700000,
+      "total": 116700000,
+      "paymentMethod": "Transfer Bank (BCA)",
+      "status": "Pending",
+      "paymentStatus": "Unpaid",
+      "createdAt": "2026-09-14T07:34:12.046Z",
+      "updatedAt": "2026-09-14T07:34:12.046Z",
+      "shippingCost": 0
+    },
+    {
+      "id": "TRX-20260912-709",
+      "date": "2026-09-12T10:34:07.046Z",
+      "customerId": "USR-CUST-1",
+      "customerName": "Budi Santoso",
+      "customerEmail": "customer@email.com",
+      "items": [
+        {
+          "productId": "PROD-001",
+          "qty": 1,
+          "price": 28500000,
+          "name": "Produk",
+          "image": ""
+        }
+      ],
+      "subtotal": 28500000,
+      "total": 28500000,
+      "paymentMethod": "QRIS",
+      "status": "Pending",
+      "paymentStatus": "Unpaid",
+      "createdAt": "2026-09-12T10:34:07.046Z",
+      "updatedAt": "2026-09-12T10:34:07.046Z",
+      "shippingCost": 0
+    },
+    {
+      "id": "TRX-20260912-001",
+      "date": "2026-09-12T10:30:00.000Z",
+      "customerId": "USR-CUST-1",
+      "customerName": "Budi Santoso",
+      "customerEmail": "customer@email.com",
+      "items": [
+        {
+          "productId": "PROD-001",
+          "name": "Fender American Professional II Stratocaster",
+          "qty": 1,
+          "price": 28500000,
+          "image": ""
+        }
+      ],
+      "subtotal": 28500000,
+      "total": 28500000,
+      "paymentMethod": "Transfer Bank (BCA)",
+      "status": "Completed",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-09-12T10:30:00.000Z",
+      "updatedAt": "2026-09-12T10:30:00.000Z",
+      "shippingCost": 0
+    }
+  ],
+  "carts": {},
+  "sessions": [
+    {
+      "id": "ff387008-a255-481b-9504-9e8f36e19197",
+      "userId": "USR-OWNER",
+      "role": "owner",
+      "createdAt": "2026-10-10T06:52:40.494Z",
+      "expiresAt": "2026-10-17T06:52:40.494Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "NOTIF-279B239C",
+      "type": "order",
+      "title": "Pesanan Baru",
+      "message": "Pesanan TRX-20261004-885 dari Geraldo Geraldo zeyyad sebesar Rp 28.500.000.",
+      "isRead": false,
+      "entityId": "TRX-20261004-885",
+      "createdAt": "2026-10-04T13:49:37.717Z"
+    },
+    {
+      "id": "NOTIF-F6BE2FC1",
+      "type": "system",
+      "title": "Pelanggan Baru",
+      "message": "Geraldo Geraldo zeyyad baru saja mendaftar.",
+      "isRead": false,
+      "entityId": "USR-E6F96E4D",
+      "createdAt": "2026-10-04T13:44:06.122Z"
+    },
+    {
+      "id": "NOTIF-5B15472F",
+      "type": "order",
+      "title": "Pesanan Baru",
+      "message": "Pesanan TRX-20261002-162 dari Geraldo Geraldo zeyyad sebesar Rp 46.500.000.",
+      "isRead": false,
+      "entityId": "TRX-20261002-162",
+      "createdAt": "2026-10-02T12:28:54.032Z"
+    },
+    {
+      "id": "NOTIF-55F674DC",
+      "type": "system",
+      "title": "Pelanggan Baru",
+      "message": "Geraldo Geraldo zeyyad baru saja mendaftar.",
+      "isRead": false,
+      "entityId": "USR-511C3CD2",
+      "createdAt": "2026-10-02T12:12:11.259Z"
+    },
+    {
+      "id": "NOTIF-001",
+      "type": "system",
+      "title": "Sistem Aktif",
+      "message": "Dashboard Dinasti Musik berhasil diinisialisasi.",
+      "isRead": false,
+      "createdAt": "2026-09-30T12:23:54.392Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "AUDIT-E9ED2480",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-10T06:52:40.500Z"
+    },
+    {
+      "id": "AUDIT-3E367F9B",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-10T06:52:10.559Z"
+    },
+    {
+      "id": "AUDIT-4829038B",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-10T06:18:00.685Z"
+    },
+    {
+      "id": "AUDIT-68C8FB42",
+      "userId": "UNKNOWN",
+      "userName": "zeyyadvymanda@gmail.com",
+      "action": "LOGIN_FAILED",
+      "entity": "AUTH",
+      "metadata": {
+        "reason": "user_not_found"
+      },
+      "timestamp": "2026-10-10T06:17:46.845Z"
+    },
+    {
+      "id": "AUDIT-DEA90FD7",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-10T06:17:14.698Z"
+    },
+    {
+      "id": "AUDIT-808FCA18",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-06T12:19:41.921Z"
+    },
+    {
+      "id": "AUDIT-1C5061B8",
+      "userId": "UNKNOWN",
+      "userName": "admin@dinastimusik",
+      "action": "LOGIN_FAILED",
+      "entity": "AUTH",
+      "metadata": {
+        "reason": "user_not_found"
+      },
+      "timestamp": "2026-10-06T12:19:37.494Z"
+    },
+    {
+      "id": "AUDIT-A38831A5",
+      "userId": "UNKNOWN",
+      "userName": "admin@dinastimuskemail.com",
+      "action": "LOGIN_FAILED",
+      "entity": "AUTH",
+      "metadata": {
+        "reason": "user_not_found"
+      },
+      "timestamp": "2026-10-06T12:19:23.215Z"
+    },
+    {
+      "id": "AUDIT-FEEFE5C0",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T12:18:50.731Z"
+    },
+    {
+      "id": "AUDIT-EEAFBDDF",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T12:04:32.654Z"
+    },
+    {
+      "id": "AUDIT-6799C541",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T11:46:20.569Z"
+    },
+    {
+      "id": "AUDIT-BEADE197",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T11:43:33.416Z"
+    },
+    {
+      "id": "AUDIT-C4E99C83",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_FAILED",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "metadata": {
+        "reason": "wrong_password"
+      },
+      "timestamp": "2026-10-06T11:43:27.333Z"
+    },
+    {
+      "id": "AUDIT-83C4BA45",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-06T11:43:01.794Z"
+    },
+    {
+      "id": "AUDIT-4BC3D56F",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-06T11:41:19.449Z"
+    },
+    {
+      "id": "AUDIT-CB0B6352",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T11:40:45.103Z"
+    },
+    {
+      "id": "AUDIT-6E713EA4",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T11:40:13.332Z"
+    },
+    {
+      "id": "AUDIT-C074A3CD",
+      "userId": "UNKNOWN",
+      "userName": "dinastimusik@gmail.com",
+      "action": "LOGIN_FAILED",
+      "entity": "AUTH",
+      "metadata": {
+        "reason": "user_not_found"
+      },
+      "timestamp": "2026-10-06T11:31:26.008Z"
+    },
+    {
+      "id": "AUDIT-0FF10FB9",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T11:30:54.610Z"
+    },
+    {
+      "id": "AUDIT-5DD57788",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T11:30:20.600Z"
+    },
+    {
+      "id": "AUDIT-7D44B949",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_FAILED",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "metadata": {
+        "reason": "wrong_password"
+      },
+      "timestamp": "2026-10-06T11:30:12.539Z"
+    },
+    {
+      "id": "AUDIT-5553344E",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-06T11:13:14.920Z"
+    },
+    {
+      "id": "AUDIT-5F9D5839",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-06T01:05:07.465Z"
+    },
+    {
+      "id": "AUDIT-7C0A4E3C",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T01:04:14.616Z"
+    },
+    {
+      "id": "AUDIT-CC75AB1C",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T00:54:54.993Z"
+    },
+    {
+      "id": "AUDIT-15D20213",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-06T00:50:43.503Z"
+    },
+    {
+      "id": "AUDIT-7D01AD2E",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-05T12:58:06.137Z"
+    },
+    {
+      "id": "AUDIT-F2CECBB0",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-05T12:57:42.788Z"
+    },
+    {
+      "id": "AUDIT-734D8909",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-05T12:30:24.314Z"
+    },
+    {
+      "id": "AUDIT-05DA03E4",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-04T13:58:09.484Z"
+    },
+    {
+      "id": "AUDIT-FA3AEF51",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-04T13:57:14.131Z"
+    },
+    {
+      "id": "AUDIT-E70D4AE6",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-04T13:54:53.079Z"
+    },
+    {
+      "id": "AUDIT-35401028",
+      "userId": "UNKNOWN",
+      "userName": "zeyyadvymanda@gmail.com",
+      "action": "LOGIN_FAILED",
+      "entity": "AUTH",
+      "metadata": {
+        "reason": "user_not_found"
+      },
+      "timestamp": "2026-10-04T13:54:47.108Z"
+    },
+    {
+      "id": "AUDIT-6B743342",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-04T13:54:15.012Z"
+    },
+    {
+      "id": "AUDIT-4CD4690E",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-04T13:50:26.814Z"
+    },
+    {
+      "id": "AUDIT-B5F77B56",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-04T13:50:03.015Z"
+    },
+    {
+      "id": "AUDIT-E26E0CEA",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "ORDER_CREATED",
+      "entity": "ORDER",
+      "entityId": "TRX-20261004-885",
+      "metadata": {
+        "total": 28500000,
+        "items": 1
+      },
+      "timestamp": "2026-10-04T13:49:37.657Z"
+    },
+    {
+      "id": "AUDIT-07C50B3D",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-04T13:49:00.790Z"
+    },
+    {
+      "id": "AUDIT-0F3BA507",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-04T13:47:01.173Z"
+    },
+    {
+      "id": "AUDIT-B1CBD63F",
+      "userId": "USR-E6F96E4D",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "REGISTER",
+      "entity": "USER",
+      "entityId": "USR-E6F96E4D",
+      "timestamp": "2026-10-04T13:44:06.120Z"
+    },
+    {
+      "id": "AUDIT-77F123D0",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-04T13:38:17.170Z"
+    },
+    {
+      "id": "AUDIT-BE67D402",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-OWNER",
+      "timestamp": "2026-10-02T12:30:05.098Z"
+    },
+    {
+      "id": "AUDIT-A05C7D77",
+      "userId": "USR-511C3CD2",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-511C3CD2",
+      "timestamp": "2026-10-02T12:29:06.666Z"
+    },
+    {
+      "id": "AUDIT-06C07E0B",
+      "userId": "USR-511C3CD2",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "ORDER_CREATED",
+      "entity": "ORDER",
+      "entityId": "TRX-20261002-162",
+      "metadata": {
+        "total": 46500000,
+        "items": 1
+      },
+      "timestamp": "2026-10-02T12:28:53.979Z"
+    },
+    {
+      "id": "AUDIT-34D86658",
+      "userId": "USR-511C3CD2",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "REGISTER",
+      "entity": "USER",
+      "entityId": "USR-511C3CD2",
+      "timestamp": "2026-10-02T12:12:11.253Z"
+    },
+    {
+      "id": "AUDIT-001",
+      "userId": "USR-OWNER",
+      "userName": "Riski Ganjani",
+      "action": "SYSTEM_INIT",
+      "entity": "SYSTEM",
+      "timestamp": "2026-09-30T12:23:54.392Z"
+    }
+  ],
+  "expenses": [],
+  "wishlists": {
+    "USR-E6F96E4D": [
+      "PROD-001",
+      "PROD-002",
+      "PROD-003"
+    ],
+    "USR-OWNER": [
+      "PROD-002",
+      "PROD-001",
+      "PROD-003"
+    ]
+  }
+}

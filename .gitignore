@@ -2,3 +2,10 @@ node_modules/
 .env
 .DS_Store
 *.log
+*.zip
+.vscode/
+dist/
+dinasti-musik/.next/
+dinasti-musik/node_modules/
+dinasti-musik/*.tsbuildinfo
+dinasti-musik/next-env.d.ts
