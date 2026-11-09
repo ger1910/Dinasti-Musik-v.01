@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { UserDashboard } from "@/components/UserDashboard";
-import { useApp } from "@/components/AppProvider";
+import { UserDashboard } from "@/components/dashboard/UserDashboard";
+import { useApp } from "@/components/layout/AppProvider";
 import { useRouter } from "next/navigation";
 import { User, LogIn } from "lucide-react";
 

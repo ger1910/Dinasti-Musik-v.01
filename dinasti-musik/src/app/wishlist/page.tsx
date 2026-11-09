@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { useApp } from "@/components/AppProvider";
-import { Catalog } from "@/components/Catalog";
-import { ProductDetailModal } from "@/components/ProductDetailModal";
+import { useApp } from "@/components/layout/AppProvider";
+import { Catalog } from "@/components/catalog/Catalog";
+import { ProductDetailModal } from "@/components/catalog/ProductDetailModal";
 import { Product } from "@/types";
 import { Heart, ArrowRight, UserCheck } from "lucide-react";
 import Link from "next/link";

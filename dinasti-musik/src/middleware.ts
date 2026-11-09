@@ -8,14 +8,8 @@ export function middleware(request: NextRequest) {
 
   const isAuthenticated = Boolean(session);
 
-  // 1. Root ("/") — Pengguna yang sudah login dilarang melihat landing page publik
+  // 1. Root ("/") — Selalu izinkan akses ke beranda (landing page) untuk semua pengunjung
   if (pathname === "/") {
-    if (isAuthenticated) {
-      if (role === "owner") {
-        return NextResponse.redirect(new URL("/admin", request.url));
-      }
-      return NextResponse.redirect(new URL("/catalog", request.url));
-    }
     return NextResponse.next();
   }
 

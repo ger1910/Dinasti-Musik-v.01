@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
-import { OwnerDashboardView } from "@/components/OwnerDashboardView";
-import { ProductCrudModal } from "@/components/ProductCrudModal";
-import { AdminSettingsView } from "@/components/AdminSettingsView";
-import { useApp } from "@/components/AppProvider";
+import { OwnerDashboardView } from "@/components/admin/OwnerDashboardView";
+import { ProductCrudModal } from "@/components/admin/ProductCrudModal";
+import { AdminSettingsView } from "@/components/admin/AdminSettingsView";
+import { useApp } from "@/components/layout/AppProvider";
 import { Product, Order } from "@/types";
 import {
   BarChart3,
@@ -20,6 +20,7 @@ import {
   Filter,
   RefreshCw,
   ShieldAlert,
+  Trash2,
 } from "lucide-react";
 import { formatRupiah, formatDate } from "@/lib/utils";
 
@@ -151,6 +152,23 @@ export default function AdminPage() {
       await fetchData();
       setIsCrudOpen(false);
       setEditingProduct(null);
+    }
+  };
+
+  const handleDeleteProduct = async (productId: string, productName: string) => {
+    if (!window.confirm(`Yakin ingin menghapus "${productName}" dari katalog?`)) return;
+    try {
+      const res = await fetch(`/api/products/${productId}`, { method: "DELETE" });
+      if (res.ok) {
+        await fetchData();
+        setActionMessage(`Produk "${productName}" berhasil dihapus.`);
+        setTimeout(() => setActionMessage(null), 3500);
+      } else {
+        const err = await res.json();
+        setActionMessage(`Gagal menghapus produk: ${err.error || "Terjadi kesalahan"}`);
+      }
+    } catch {
+      setActionMessage("Gagal menghubungi server untuk menghapus produk.");
     }
   };
 
@@ -329,18 +347,29 @@ export default function AdminPage() {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-[#292929] flex items-center justify-between">
+                <div className="pt-3 border-t border-[#292929] flex items-center justify-between gap-2">
                   <span className="text-[10px] text-[#666666] font-mono">{p.id}</span>
-                  <button
-                    onClick={() => {
-                      setEditingProduct(p);
-                      setIsCrudOpen(true);
-                    }}
-                    className="px-3 py-1 bg-[#141414] hover:bg-[#222222] border border-[#292929] text-xs font-medium text-[#F3F0E8] transition-colors flex items-center gap-1.5"
-                  >
-                    <Edit2 className="w-3 h-3 text-[#D97732]" />
-                    <span>Edit</span>
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => {
+                        setEditingProduct(p);
+                        setIsCrudOpen(true);
+                      }}
+                      className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg transition-colors flex items-center gap-1.5 shadow-sm active:scale-95"
+                      title="Edit Spesifikasi Instrumen"
+                    >
+                      <Edit2 className="w-3.5 h-3.5" />
+                      <span>Edit</span>
+                    </button>
+                    <button
+                      onClick={() => handleDeleteProduct(p.id, p.name)}
+                      className="px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white text-xs font-semibold rounded-lg transition-colors flex items-center gap-1.5 shadow-sm active:scale-95"
+                      title="Hapus Instrumen"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" />
+                      <span>Hapus</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

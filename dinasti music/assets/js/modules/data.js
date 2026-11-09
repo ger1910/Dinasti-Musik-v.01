@@ -8,7 +8,7 @@ export const DEFAULT_SEED_DATA = {
         name: "Dinasti Musik",
         ownerName: "Riski Ganjani",
         ownerRole: "Owner / Pemilik Dinasti Musik",
-        whatsapp: "6289512430608",
+        whatsapp: "628992221537",
         email: "admin@dinastimusik.com",
         address: "Jl. Melodi Harmoni No. 88, Jakarta Selatan",
         ownerPhoto: "assets/owner/riski-ganjani.jpg",
@@ -22,7 +22,7 @@ export const DEFAULT_SEED_DATA = {
             password: "dinasti2026",
             name: "Riski Ganjani",
             role: "owner",
-            phone: "+6289512430608"
+            phone: "+628992221537"
         },
         {
             id: "USR-CUST-1",

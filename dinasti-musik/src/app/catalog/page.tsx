@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useMemo } from "react";
-import { Catalog } from "@/components/Catalog";
-import { ProductDetailModal } from "@/components/ProductDetailModal";
-import { useApp } from "@/components/AppProvider";
+import { Catalog } from "@/components/catalog/Catalog";
+import { ProductDetailModal } from "@/components/catalog/ProductDetailModal";
+import { useApp } from "@/components/layout/AppProvider";
 import { Product } from "@/types";
 import { Search, X } from "lucide-react";
 
