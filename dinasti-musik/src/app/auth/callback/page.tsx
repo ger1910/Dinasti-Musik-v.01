@@ -17,9 +17,10 @@ export default function GoogleAuthCallbackPage() {
         const idToken = params.get("id_token");
         const accessToken = params.get("access_token");
 
+        // If we have id_token or access_token (implicit flow)
         if (idToken || accessToken) {
           setStatus("Menghubungkan profil Google ke Dinasti Musik...");
-          
+
           let profile = { email: "", name: "", image: "" };
 
           if (accessToken) {
@@ -58,45 +59,104 @@ export default function GoogleAuthCallbackPage() {
           } else {
             setError(data.error || "Gagal verifikasi dengan server.");
           }
+        } else if (params.get("code")) {
+          // Authorization Code flow handling for mobile/Android
+          const code = params.get("code");
+          setStatus("Menukarkan kode otentikasi Google...");
+          const tokenRes = await fetch("/api/auth/google", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ code }),
+          });
+          const tokenData = await tokenRes.json();
+          if (tokenRes.ok) {
+            setStatus("Berhasil masuk! Mengarahkan ke beranda...");
+            window.location.href = "/";
+          } else {
+            setError(tokenData.error || "Gagal menukarkan kode Google.");
+          }
         } else {
           setError("Tidak menemukan token otentikasi dari Google.");
         }
-      } catch (err) {
-        console.error(err);
-        setError("Terjadi kesalahan sistem saat memproses login Google.");
+        setStatus("Menghubungkan profil Google ke Dinasti Musik...");
+
+        let profile = { email: "", name: "", image: "" };
+
+        if (accessToken) {
+          try {
+            const userinfoRes = await fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
+              headers: { Authorization: `Bearer ${accessToken}` },
+            });
+            if (userinfoRes.ok) {
+              const info = await userinfoRes.json();
+              profile = {
+                email: info.email,
+                name: info.name || info.email.split("@")[0],
+                image: info.picture || "",
+              };
+            }
+          } catch (fetchErr) {
+            console.warn("Gagal mengambil userinfo langsung, menggunakan credential:", fetchErr);
+          }
+        }
+
+        const res = await fetch("/api/auth/google", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            credential: idToken || undefined,
+            email: profile.email || undefined,
+            name: profile.name || undefined,
+            image: profile.image || undefined,
+          }),
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          setStatus("Berhasil masuk! Mengarahkan ke beranda...");
+          window.location.href = "/";
+        } else {
+          setError(data.error || "Gagal verifikasi dengan server.");
+        }
+      } else {
+        setError("Tidak menemukan token otentikasi dari Google.");
       }
+    } catch (err) {
+      console.error(err);
+      setError("Terjadi kesalahan sistem saat memproses login Google.");
     }
+  }
 
     handleAuth();
-  }, [router]);
+}, [router]);
 
-  return (
-    <div className="min-h-screen bg-[#080F0F] flex items-center justify-center p-4 text-white">
-      <div className="bg-[#141414] border border-[#292929] max-w-md w-full p-8 rounded-2xl text-center shadow-2xl">
-        <div className="w-12 h-12 rounded-full bg-[#bb6a33]/10 text-[#bb6a33] flex items-center justify-center mx-auto mb-4 font-bold text-xl">
-          DM
-        </div>
-
-        {error ? (
-          <div>
-            <h2 className="text-lg font-bold text-red-400 mb-2">Gagal Masuk Google</h2>
-            <p className="text-xs text-gray-400 mb-6">{error}</p>
-            <button
-              onClick={() => (window.location.href = "/")}
-              className="px-6 py-2.5 bg-[#bb6a33] hover:bg-[#a55a29] text-white text-xs font-semibold rounded-full transition-colors"
-            >
-              Kembali ke Beranda
-            </button>
-          </div>
-        ) : (
-          <div>
-            <div className="w-6 h-6 border-2 border-[#bb6a33] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <h2 className="text-base font-bold text-white mb-2">Login dengan Google</h2>
-            <p className="text-xs text-gray-400">{status}</p>
-          </div>
-        )}
+return (
+  <div className="min-h-screen bg-[#080F0F] flex items-center justify-center p-4 text-white">
+    <div className="bg-[#141414] border border-[#292929] max-w-md w-full p-8 rounded-2xl text-center shadow-2xl">
+      <div className="w-12 h-12 rounded-full bg-[#bb6a33]/10 text-[#bb6a33] flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+        DM
       </div>
+
+      {error ? (
+        <div>
+          <h2 className="text-lg font-bold text-red-400 mb-2">Gagal Masuk Google</h2>
+          <p className="text-xs text-gray-400 mb-6">{error}</p>
+          <button
+            onClick={() => (window.location.href = "/")}
+            className="px-6 py-2.5 bg-[#bb6a33] hover:bg-[#a55a29] text-white text-xs font-semibold rounded-full transition-colors"
+          >
+            Kembali ke Beranda
+          </button>
+        </div>
+      ) : (
+        <div>
+          <div className="w-6 h-6 border-2 border-[#bb6a33] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <h2 className="text-base font-bold text-white mb-2">Login dengan Google</h2>
+          <p className="text-xs text-gray-400">{status}</p>
+        </div>
+      )}
     </div>
-  );
+  </div>
+);
 }
 

@@ -1,0 +1,538 @@
+P[000]: LEMBAR KERJA PESERTA DIDIK (LKPD)
+P[001]: HEALN’GO DATABASE CHALLENGE
+P[002]: “Cabut Sebentar, Pulang Bawa Cerita.”
+P[003]: 
+P[004]: Identitas Kelompok
+P[005]: Nama Kelompok:  kelompok 8
+P[006]: Anggota:
+P[007]: 1 Anjely Nurafrin Jaga Dita
+P[008]: 2. Muhammad Syabil Putra Firdaus
+P[009]: 3. geraldo z.v
+P[010]: A. CLIENT BRIEF
+P[011]: Healn’go merupakan perusahaan travel yang menyediakan berbagai perjalanan dari Bandung menuju berbagai destinasi di Indonesia.
+P[012]: Saat ini informasi perjalanan Healn’go masih disajikan dalam bentuk poster promosi. Seiring bertambahnya jumlah perjalanan, perusahaan membutuhkan database untuk menyimpan, mengelola, dan mencari informasi perjalanan dengan lebih mudah.
+P[013]: Kalian berperan sebagai Junior Database Developer yang bertugas mengubah informasi pada poster Healn’go menjadi sebuah database yang dapat digunakan oleh perusahaan.
+P[014]: Target pekerjaan kalian
+P[015]: Kalian harus mampu:
+P[016]: Poster → Analisis Data → Rancangan Database → SQL Database → Data → Query
+P[017]: Catatan: Tidak ada struktur tabel yang diberikan. Kalian harus menentukan sendiri bagaimana informasi pada poster sebaiknya disimpan dalam database.
+P[018]: B. MISSION 01 — POSTER INVESTIGATION
+P[019]: Instruksi
+P[020]: Amati poster Healn’go dengan teliti.
+P[021]: Jangan membuat tabel terlebih dahulu.
+P[022]: Identifikasi seluruh informasi yang menurut kelompok kalian penting untuk disimpan ke dalam database.
+P[023]: Tuliskan informasi yang kalian temukan pada kolom berikut.
+P[024]: 
+P[025]: Temuan kelompok
+P[026]: Informasi yang menurut kami paling penting untuk sistem database adalah:
+P[027]: Nama destinasi, tanggal, durasi, harga, dan jumlah seat karena ini adalah data inti setiap trip.
+P[028]: 
+P[029]: 
+P[030]: C. MISSION 02 — DATA CLASSIFICATION
+P[031]: Sekarang kelompokkan informasi yang telah ditemukan.
+P[032]: Perhatikan bahwa tidak semua informasi memiliki fungsi yang sama. Ada informasi yang menggambarkan perjalanan, ada yang menggambarkan orang, ada yang menggambarkan kendaraan, dan mungkin ada kelompok data lain yang kalian temukan.
+P[033]: 1. Kelompokkan data
+P[034]: 2. Data yang berulang
+P[035]: Tuliskan data yang kalian temukan muncul lebih dari satu kali.
+P[036]: 3. Temuan penting
+P[037]: Menurut kelompok kalian, mengapa data yang sama sebaiknya tidak selalu ditulis berulang-ulang?
+P[038]: Menghindari redundansi data, Mempermudah update, Mengurangi risiko inkonsistensi
+P[039]: 
+P[040]: 
+P[041]: 
+P[042]: D. MISSION 03 — DATABASE DESIGN
+P[043]: Sekarang ubah hasil analisis kalian menjadi rancangan database. Kalian bebas menentukan jumlah tabel. Namun, rancangan harus memenuhi ketentuan:
+P[044]: Setiap tabel memiliki primary key.
+P[045]: Atribut harus sesuai dengan kebutuhan data.
+P[046]: Hubungan antartabel harus jelas.
+P[047]: Data yang sama tidak disimpan secara tidak perlu.
+P[048]: Seluruh informasi penting dari poster dapat ditampung.
+P[049]: 1. Tentukan tabel
+P[050]: 2. Struktur setiap tabel
+P[051]: Tabel 1: leaders
+P[052]: 
+P[053]: Tabel 2: armada
+P[054]: 
+P[055]: 
+P[056]: 
+P[057]: 
+P[058]: 
+P[059]: Tabel 3: trips
+P[060]: 
+P[061]: Tabel 4: trip_aktivitas
+P[062]: 
+P[063]: 
+P[064]: 
+P[065]: 
+P[066]: 
+P[067]: 
+P[068]: 
+P[069]: 
+P[070]: 
+P[071]: 
+P[072]: 
+P[073]: 
+P[074]: 
+P[075]: 
+P[076]: 
+P[077]: 
+P[078]: Tambahkan lembar jika kelompok kalian membutuhkan tabel lebih banyak.
+P[079]: E. MISSION 04 — BUILD THE DATABASE
+P[080]: Sekarang waktunya mengubah rancangan menjadi database sungguhan. Gunakan SQL yang telah kalian pelajari.
+P[081]: 1. Membuat Database
+P[082]: Sintaks SQL:
+P[083]: 
+P[084]: Screenshot hasil eksekusi:
+P[085]: 
+P[086]: 2. Membuat Tabel
+P[087]: Tabel:  armada
+P[088]: Sintaks SQL:
+P[089]: 
+P[090]: Screenshot hasil eksekusi:
+P[091]: 
+P[092]: Status:   ✅ Berhasil     ☐ Error → diperbaiki
+P[093]: Jika mengalami error, tuliskan penyebab dan perbaikannya:
+P[094]: 
+P[095]: 
+P[096]: Tabel:  leaders
+P[097]: Sintaks SQL:
+P[098]: 
+P[099]: Screenshot hasil eksekusi:
+P[100]: 
+P[101]: Status:   ✅ Berhasil     ☐ Error → diperbaiki
+P[102]: Jika mengalami error, tuliskan penyebab dan perbaikannya:
+P[103]: 
+P[104]: 
+P[105]: 
+P[106]: 
+P[107]: Tabel: trip
+P[108]: Sintaks SQL:
+P[109]: 
+P[110]: Screenshot hasil eksekusi:
+P[111]: 
+P[112]: Status:   ✅ Berhasil     ☐ Error → diperbaiki
+P[113]: Jika mengalami error, tuliskan penyebab dan perbaikannya:
+P[114]: 
+P[115]: 
+P[116]: 
+P[117]: Tabel: trip_aktivitas
+P[118]: Sintaks SQL:
+P[119]: 
+P[120]: Screenshot hasil eksekusi:
+P[121]: 
+P[122]: Status:   ☐ Berhasil     ☐ Error → diperbaiki
+P[123]: Jika mengalami error, tuliskan penyebab dan perbaikannya:
+P[124]: 
+P[125]: 
+P[126]: Catatan: Screenshot harus menunjukkan bahwa sintaks benar-benar telah dijalankan. Screenshot hanya kode SQL tanpa hasil eksekusi belum dianggap sebagai bukti pengerjaan.
+P[127]: F. MISSION 05 — LOAD THE DATA
+P[128]: Database sudah dibuat. Sekarang masukkan data Healn’go berdasarkan informasi pada poster. Gunakan perintah INSERT.
+P[129]: Data Tabel: armada
+P[130]: Sintaks SQL:
+P[131]: 
+P[132]: Screenshot hasil eksekusi:
+P[133]: 
+P[134]: Jumlah data yang berhasil dimasukkan: 4.
+P[135]: 
+P[136]: Data Tabel: leaders
+P[137]: Sintaks SQL:
+P[138]: 
+P[139]: Screenshot hasil eksekusi:
+P[140]: 
+P[141]: Jumlah data yang berhasil dimasukkan: 3.
+P[142]: 
+P[143]: Data Tabel: trips
+P[144]: Sintaks SQL:
+P[145]: 
+P[146]: Screenshot hasil eksekusi:
+P[147]: 
+P[148]: Jumlah data yang berhasil dimasukkan:10
+P[149]: 
+P[150]: Data Tabel: trip_aktivitas
+P[151]: Sintaks SQL:
+P[152]: 
+P[153]: Screenshot hasil eksekusi:
+P[154]: 
+P[155]: Jumlah data yang berhasil dimasukkan: 30
+P[156]: 
+P[157]: Database Check
+P[158]: Setelah seluruh data dimasukkan, lakukan pengecekan.
+P[159]: G. MISSION 06 — CLIENT REQUEST
+P[160]: Attention, Developer! Healn’go sekarang membutuhkan bantuan kalian untuk mendapatkan informasi dari database. Beberapa kebutuhan client akan ditampilkan oleh guru melalui presentasi.
+P[161]: Jangan membuka atau mengerjakan bagian ini sebelum instruksi ditampilkan oleh guru.
+P[162]: Tiap Client Request punya tempat untuk bukti (screenshot SQL dan hasil) dan jawaban tertulis. Keduanya wajib diisi.
+P[163]: CLIENT REQUEST 01
+P[164]: Instruksi dari client ditampilkan melalui PPT. Jawab pertanyaan pada bagian Jawaban Pertanyaan Client.
+P[165]: SQL Query
+P[166]: 
+P[167]: Query Result
+P[168]: 
+P[169]: Jawaban Pertanyaan Client
+P[170]: Pertanyaan 1: Tuliskan kondisi WHERE (dan operator AND/OR bila dipakai) pada tiap permintaan, lalu jelaskan alasan memilih kondisi tersebut.
+P[171]: 
+P[172]: Catatan: tulis jawaban dengan kalimat sendiri (1-3 kalimat per pertanyaan). Jawaban tanpa alasan belum dianggap lengkap.
+P[173]: CLIENT REQUEST 02
+P[174]: Instruksi dari client ditampilkan melalui PPT. Jawab pertanyaan pada bagian Jawaban Pertanyaan Client.
+P[175]: SQL Query
+P[176]: 
+P[177]: Query Result
+P[178]: 
+P[179]: Jawaban Pertanyaan Client
+P[180]: Pertanyaan 1: Apakah database sudah melindungi dari salah input leader atau armada? Apa dasarnya dari struktur tabel (PK, UNIQUE, NOT NULL, FK)? Apa hasilnya kalau dibuktikan?
+P[181]: 
+P[182]: Pertanyaan 2: Bagaimana kalian menghapus trip Semarang, dan apakah ada hal yang perlu diperhatikan?
+P[183]: 
+P[184]: Pertanyaan 3: Apa risiko UPDATE atau DELETE tanpa WHERE?
+P[185]: 
+P[186]: Pertanyaan 4: Kenapa cukup satu UPDATE untuk mengganti nama Raka, padahal ia memegang beberapa trip?
+P[187]: 
+P[188]: Catatan: tulis jawaban dengan kalimat sendiri (1-3 kalimat per pertanyaan). Jawaban tanpa alasan belum dianggap lengkap.
+P[189]: CLIENT REQUEST 03
+P[190]: Instruksi dari client ditampilkan melalui PPT. Jawab pertanyaan pada bagian Jawaban Pertanyaan Client.
+P[191]: SQL Query
+P[192]: 
+P[193]: Query Result
+P[194]: 
+P[195]: Jawaban Pertanyaan Client
+P[196]: Pertanyaan 1: Kolom mana yang datanya muncul berulang? Jelaskan kenapa kalian memakai (atau tidak memakai) DISTINCT pada kolom tersebut.
+P[197]: 
+P[198]: Pertanyaan 2: Nama alias apa yang kalian pilih? Mengapa nama itu lebih mudah dipahami pembaca Marketing?
+P[199]: 
+P[200]: Catatan: tulis jawaban dengan kalimat sendiri (1-3 kalimat per pertanyaan). Jawaban tanpa alasan belum dianggap lengkap.
+P[201]: CLIENT REQUEST 04
+P[202]: Instruksi dari client ditampilkan melalui PPT. Jawab pertanyaan pada bagian Jawaban Pertanyaan Client.
+P[203]: SQL Query
+P[204]: 
+P[205]: Query Result
+P[206]: 
+P[207]: Jawaban Pertanyaan Client
+P[208]: Pertanyaan 1: Tuliskan kriteria dan jumlah LIMIT yang dipilih untuk setiap laporan.
+P[209]: 
+P[210]: Pertanyaan 2: Kenapa kalian memilih data tersebut? Jelaskan alasan bisnisnya.
+P[211]: 
+P[212]: Catatan: tulis jawaban dengan kalimat sendiri (1-3 kalimat per pertanyaan). Jawaban tanpa alasan belum dianggap lengkap.
+P[213]: CLIENT REQUEST 05
+P[214]: Instruksi dari client ditampilkan melalui PPT. Jawab pertanyaan pada bagian Jawaban Pertanyaan Client.
+P[215]: SQL Query
+P[216]: 
+P[217]: Query Result
+P[218]: 
+P[219]: Jawaban Pertanyaan Client
+P[220]: Pertanyaan 1: Dari perubahan yang kalian lakukan, mana yang memakai CHANGE dan mana yang memakai MODIFY? Jelaskan alasannya.
+P[221]: 
+P[222]: Pertanyaan 2: Buktikan: trip mana yang belum punya armada? (Hasil query ditempel di Query Result, kesimpulan ditulis di sini.)
+P[223]: 
+P[224]: Pertanyaan 3: Kenapa harus IS NULL, bukan = NULL? Apa yang terjadi bila urutan UPDATE dan MODIFY dibalik?
+P[225]: 
+P[226]: Catatan: tulis jawaban dengan kalimat sendiri (1-3 kalimat per pertanyaan). Jawaban tanpa alasan belum dianggap lengkap.
+P[227]: CLIENT REQUEST — FINAL CHALLENGE
+P[228]: Instruksi final challenge ditampilkan melalui PPT. Jawab pertanyaan pada bagian Jawaban per Divisi.
+P[229]: SQL Query
+P[230]: 
+P[231]: Query Result
+P[232]: 
+P[233]: Jawaban per Divisi
+P[234]: Pertanyaan 1: Operations: teknik dan kondisi apa yang dipilih, dan mengapa?
+P[235]: 
+P[236]: Pertanyaan 2: Booking: bagaimana menemukan data yang belum lengkap dan yang sudah lengkap, dan apa kesimpulannya?
+P[237]: 
+P[238]: Pertanyaan 3: Marketing: teknik apa yang dipakai agar laporan ringkas dan mudah dibaca?
+P[239]: 
+P[240]: Pertanyaan 4: Campaign: kriteria dan jumlah data apa yang dipilih, dan mengapa dianggap paling menarik?
+P[241]: 
+P[242]: Pertanyaan 5: Database Team: kolom mana yang diperbaiki, memakai CHANGE atau MODIFY, dan apa alasannya?
+P[243]: 
+P[244]: Pertanyaan 6: Uji ketahanan: apa hasil uji data ganda, kosong di kolom wajib, dan ID tidak ada? Kenapa PK, UNIQUE, NOT NULL, dan DEFAULT dirancang begitu?
+P[245]: 
+P[246]: Tempel screenshot tiap divisi di kolom SQL Query dan Query Result di atas (beri label nama divisi).
+P[247]: Kesimpulan
+P[248]: 
+P[249]: H. DATABASE REVIEW
+P[250]: Sebelum proyek dikumpulkan, lakukan pengecekan bersama anggota kelompok.
+P[251]: I. REFLECTION — “FROM POSTER TO DATABASE”
+P[252]: Jawab secara singkat dan jujur.
+P[253]: 1. Informasi apa dari poster yang paling sulit kalian ubah menjadi struktur database? Mengapa?
+P[254]: 
+P[255]: 
+P[256]: 2. Apa masalah yang muncul ketika kalian mulai membuat database dengan SQL?
+P[257]: 
+P[258]: 
+P[259]: 3. Error apa yang paling membantu kalian memahami cara kerja SQL?
+P[260]: 
+P[261]: 
+P[262]: 4. Jika jumlah trip Healn’go bertambah dari 10 menjadi 1.000 trip, bagian mana dari database kalian yang paling membantu pengelolaan data?
+P[263]: 
+P[264]: 
+P[265]: 5. Jika kalian diberi kesempatan memperbaiki database ini, apa yang akan kalian ubah?
+P[266]: 
+P[267]: 
+P[268]: J. SIGN-OFF
+P[269]: Nama Kelompok: ............................................................
+P[270]: Database Developer:
+P[271]: ☐ Kami memahami rancangan database yang kami buat.
+P[272]: SQL Developer:
+P[273]: ☐ Kami telah menjalankan SQL dan memeriksa hasilnya.
+P[274]: Database Analyst:
+P[275]: ☐ Kami dapat menjelaskan hubungan antar data.
+P[276]: Quality Checker:
+P[277]: ☐ Kami telah memeriksa kembali hasil pengerjaan.
+P[278]: Kesimpulan Kelompok
+P[279]: “Database Healn’go kami dirancang dengan ........ tabel karena ............................................................................................”
+P[280]: 
+P[281]: 
+P[282]: 
+
+==================================================
+TABLES INVENTORY
+==================================================
+
+--- Table 0 (rows: 5, cols: 2) ---
+  R0: Mata Pelajaran | Basis Data
+  R1: Kelas | XI RPL
+  R2: Alokasi Waktu | 4 JP
+  R3: Bentuk | Kelompok
+  R4: Studi Kasus | Healn’go Travel
+
+--- Table 1 (rows: 21, cols: 4) ---
+  R0: No. | Informasi yang ditemukan | Contoh Data | Menurut kami penting karena...
+  R1: 1 | Nama Destinasi | Pangandaran, Yogyakarta, Bromo | Destinasi adalah inti dari setiap trip yang ditawarkan
+  R2: 2 | Tanggal keberangkatan | 08 Nov 2026, 15 Nov 2026 | Untuk mengetahui jadwal trip dan menghindari bentrok
+  R3: 3 | Durasi trip | 2D1N, 3D2N, 4D3N | Membantu traveler menentukan waktu luang yang diperlukan
+  R4: 4 | harga trip | Rp450K, Rp675K, Rp850K | Informasi biaya penting untuk keputusan pemesana
+  R5: 5 | Nama trip leader | Dimas, Raka, Naya | Perlu disimpan terpisah karena satu leader bisa memimpin banyak trip
+  R6: 6 | Kode armada/ride | HEAL 01, HEAL 02, HEAL 03, HEAL 04 | Identifikasi kendaraan yang digunakan untuk setiap tri
+  R7: 7 | Aktivitas trip | Beach, Camping, Sunset, City Tour, Heritage | Informasi aktivitas menarik untuk promosi dan filter Titik keberangkatan penting untuk koordinasi peserta
+  R8: 8 | Kota asal keberangkatan | bandung — Leuwipanjang | Titik keberangkatan penting untuk koordinasi peserta
+  R9: 9 | Fasilitas termasuk | Transport, Tour Leader, Mineral Water, Travel Insurance | Peserta perlu tahu apa saja yang sudah termasuk
+  R10: 10 |  |  | 
+  R11: 11 |  |  | 
+  R12: 12 |  |  | 
+  R13: 13 |  |  | 
+  R14: 14 |  |  | 
+  R15: 15 |  |  | 
+  R16: 16 |  |  | 
+  R17: 17 |  |  | 
+  R18: 18 |  |  | 
+  R19: 19 |  |  | 
+  R20: 20 |  |  | 
+
+--- Table 2 (rows: 7, cols: 2) ---
+  R0: Kelompok Data | Informasi yang Termasuk
+  R1: Kelompok 1: Trip (Perjalanan) | Nama destinasi, tanggal keberangkatan, durasi, harga, jumlah seat, jenis trip
+  R2: Kelompok 2: Trip Leader | Nama leader (Dimas, Raka, Naya)
+  R3: Kelompok 3: Armada (Kendaraan) | Kode armada (HEAL 01, HEAL 02, HEAL 03, HEAL 04)
+  R4: Kelompok 4: Aktivitas | Beach, Camping, Sunset, City Tour, Heritage, Jeep, Sunrise, Homestay, Culinary, Hotel, Local Tour, Island Hopping, Snorkeling, Theme Park, Ijen
+  R5: Kelompok 5: Fasilitas | Transport, Tour Leader, Mineral Water, Travel Insurance, Trip Documentation, Travel Itinerary
+  R6: Kelompok 6: Kontak & Info Perusahaan | Instagram, Website, WhatsApp, Tagline, Hashtag
+
+--- Table 3 (rows: 6, cols: 4) ---
+  R0: Data | Muncul pada... | Apakah perlu ditulis berulang? | Alasan
+  R1: Trip Leader "Raka" | Yogyakarta, Malang, Solo, Banyuwangi | Tidak | Cukup satu kali di tabel leader, lalu dihubungkan dengan ID
+  R2: Trip Leader "Naya" | Bromo, Dieng, Batu | Tidak | Sama — hindari redundansi
+  R3: Armada "HEAL 01" | Yogyakarta, Malang, Solo | Tidak | Kendaraan yang sama dipakai banyak trip, simpan sekali saja
+  R4: Armada "HEAL 03 | Pangandaran, Semarang | Tidak | Sama
+  R5: Armada "HEAL 04” | Karimunjawa, Banyuwangi | Tidak | Sama
+
+--- Table 4 (rows: 7, cols: 3) ---
+  R0: No. | Nama Tabel | Fungsi Tabel
+  R1: 1 | leaders | Menyimpan data trip leader
+  R2: 2 | armada | Menyimpan data kendaraan/armada
+  R3: 3 | trips | Menyimpan data perjalanan/trip
+  R4: 4 | trip_aktivitas | Menyimpan aktivitas dari setiap trip (relasi many-to-many)
+  R5: 5 |  | 
+  R6: 6 |  | 
+
+--- Table 5 (rows: 3, cols: 5) ---
+  R0: No. | Nama Field | Tipe Data | Key/Constraint | Keterangan
+  R1: 1 | leader_id | INT | PRIMARY KEY, AUTO_INCREMENT | ID unik trip leader
+  R2: 2 | nama_leader | VARCHAR(50) | NOT NULL, UNIQUE | Nama lengkap trip leader
+
+--- Table 6 (rows: 2, cols: 5) ---
+  R0: No. | Nama Field | Tipe Data | Key/Constraint | Keterangan
+  R1: 1 | armada_id | INT | PRIMARY KEY, AUTO_INCREMENT | ID unik armada
+
+--- Table 7 (rows: 9, cols: 5) ---
+  R0: No. | Nama Field | Tipe Data | Key/Constraint | Keterangan
+  R1: 1 | trip_id | INT | PRIMARY KEY, AUTO_INCREMENT | ID unik trip
+  R2: 2 | destinasi | VARCHAR(50) | NOT NULL | Nama kota/destinasi tujuan
+  R3: 3 | tanggal_berangkat | DATE | NOT NULL | Tanggal keberangkatan
+  R4: 4 | durasi | VARCHAR(10) | NOT NULL | Durasi trip (2D1N, 3D2N, dll.)
+  R5: 5 | harga | INT | NOT NULL | Harga trip dalam rupiah
+  R6: 6 | jumlah_seat | INT | NOT NULL | Kapasitas peserta
+  R7: 7 | leader_id | INT | FOREIGN KEY → leaders(leader_id) | Referensi ke trip leader
+  R8: 8 | armada_id | INT | FOREIGN KEY → armada(armada_id) | Referensi ke armada
+
+--- Table 8 (rows: 4, cols: 5) ---
+  R0: No. | Nama Field | Tipe Data | Key/Constraint | Keterangan
+  R1: 1 | id | INT | PRIMARY KEY, AUTO_INCREMENT | ID unik
+  R2: 2 | trip_id | INT | FOREIGN KEY → trips(trip_id) | Referensi ke trip
+  R3: 3 | aktivitas | VARCHAR(50) | NOT NULL | Nama aktivitas (Beach, Camping, dll.)
+
+--- Table 9 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 10 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 11 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 12 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 13 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 14 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 15 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 16 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 17 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 18 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 19 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 20 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 21 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 22 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 23 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 24 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 25 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 26 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 27 (rows: 6, cols: 2) ---
+  R0: Pemeriksaan | Hasil
+  R1: Seluruh tabel berhasil dibuat | ✅ Ya   ☐ Tidak
+  R2: Data berhasil dimasukkan | ✅Ya   ☐ Tidak
+  R3: Primary key berjalan | ✅Ya   ☐ Tidak
+  R4: Foreign key berjalan | ✅Ya   ☐ Tidak   ☐ Tidak digunakan
+  R5: Tidak ada data penting yang terlewat | ☐ Ya   ☐ Tidak
+
+--- Table 28 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 29 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 30 (rows: 1, cols: 1) ---
+  R0: Pada select pertama, menggunakan where dan operator AND digunakan untuk mendapatkan trip yang memiliki kode armada “HEAL 02”  Pada select kedua, menggunakan where dan operator “>” (lebih dari)  untuk mendapatkan jumlah tempat duduk yang lebih dari 16  Pada select ketiga, menggunakan where dan operator “<” (kurang dari) untuk mendapatkan trip dengan harga dibawah Rp 800.000
+
+--- Table 31 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 32 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 33 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 34 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 35 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 36 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 37 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 38 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 39 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 40 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 41 (rows: 1, cols: 1) ---
+  R0: [ [IMG]
+
+--- Table 42 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 43 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 44 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 45 (rows: 1, cols: 1) ---
+  R0:  [IMG]
+
+--- Table 46 (rows: 1, cols: 1) ---
+  R0: [AREA SCREENSHOT] Tempel screenshot hasil query
+
+--- Table 47 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 48 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 49 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 50 (rows: 1, cols: 1) ---
+  R0: [AREA SCREENSHOT] Tempel screenshot sintaks SQL yang sudah dijalankan
+
+--- Table 51 (rows: 1, cols: 1) ---
+  R0: [AREA SCREENSHOT] Tempel screenshot hasil query
+
+--- Table 52 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 53 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 54 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 55 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 56 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 57 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 58 (rows: 1, cols: 1) ---
+  R0: 
+
+--- Table 59 (rows: 12, cols: 3) ---
+  R0: Checklist | Ya | Belum
+  R1: Kami sudah mengidentifikasi kebutuhan data dari poster | ☐ | ☐
+  R2: Kami sudah menentukan entitas/tabel | ☐ | ☐
+  R3: Setiap tabel memiliki primary key | ☐ | ☐
+  R4: Relasi antartabel sudah ditentukan | ☐ | ☐
+  R5: Database berhasil dibuat | ☐ | ☐
+  R6: Seluruh tabel berhasil dibuat | ☐ | ☐
+  R7: Data poster sudah dimasukkan | ☐ | ☐
+  R8: Kami sudah menguji database dengan query | ☐ | ☐
+  R9: Screenshot sintaks sudah lengkap | ☐ | ☐
+  R10: Screenshot hasil eksekusi sudah lengkap | ☐ | ☐
+  R11: Kami dapat menjelaskan alasan desain database kami | ☐ | ☐

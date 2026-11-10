@@ -1,0 +1,510 @@
+Normalisasi Basis Data, Contoh Studi Kasus : Koperasi Sekolah — Teacherjourney
+←
+Kembali ke
+Forum Diskusi
+Forum Diskusi
+3 November 2026
+25
+menit baca
+Normalisasi Basis Data, Contoh Studi Kasus : Koperasi Sekolah
+Pelajari normalisasi UNF, 1NF, 2NF, hingga 3NF melalui analogi koperasi sekolah, contoh tabel bertahap, relasi PK/FK, dan SQL. Dilengkapi pengayaan BCNF–5NF, LKPD perpustakaan, panduan pengerjaan, rubrik, dan pengumpulan melalui Tanggapan dengan format Nama-Kelas.
+11
+views
+·
+1
+tanggapan
+Normalisasi Basis Data: dari Nota Koperasi Menjadi Tabel yang Rapi
+Basis Data • Kelas XI RPL • Materi, contoh bertahap, praktik SQL, dan LKPD
+Bayangkan setiap membeli pulpen di koperasi, petugas harus menulis ulang nama dan identitasmu. Ketika namamu salah, semua nota harus diperbaiki satu per satu. Bagaimana jika identitas disimpan sekali, lalu nota cukup menyebut kodenya? Dari persoalan sederhana inilah kita mulai memahami normalisasi.
+Target utama:
+mampu menjelaskan alasan pemisahan tabel dan mengubah data UNF menjadi 1NF, 2NF, serta 3NF tanpa kehilangan informasi. BCNF, 4NF, dan 5NF tersedia sebagai pengayaan. Seluruh nama dan data pada latihan adalah fiktif.
+A. Tujuan dan alur belajar
+Setelah belajar, kamu diharapkan dapat:
+Mengenali pengulangan data serta anomali tambah, ubah, dan hapus.
+Menentukan candidate key, primary key (PK), foreign key (FK), dan ketergantungan fungsional.
+Menyusun tabel UNF → 1NF → 2NF → 3NF dengan alasan yang tepat.
+Menggambar relasi, mengisi contoh data, dan memeriksa hasil penggabungan tabel.
+Mengerjakan LKPD dan mengumpulkan tautannya melalui Tanggapan dengan format
+Nama-Kelas
+.
+Prasyarat:
+memahami tabel, baris, kolom, serta pengertian dasar kunci. Alat: buku tulis atau pengolah dokumen; praktik tambahan dapat memakai MySQL/MariaDB melalui phpMyAdmin. Usulan waktu: dua pertemuan, masing-masing 3 JP; pembagian kegiatan mengikuti arahan guru.
+Urutan:
+baca analogi → ikuti contoh koperasi → pelajari kunci dan ketergantungan → bandingkan tiap bentuk normal → uji relasi → kerjakan LKPD perpustakaan → kirim melalui Tanggapan.
+B. Normalisasi itu seperti merapikan loker kelas
+Satu loker berisi sepatu, buku, alat praktik, dan makanan sekaligus akan sulit dirawat. Kita menempatkan barang sesuai jenisnya dan memberi label agar mudah ditemukan. Pada basis data, data siswa disimpan bersama data siswa, data produk bersama data produk, dan transaksi mencatat hubungan di antara keduanya.
+Normalisasi adalah proses menata relasi berdasarkan kunci dan ketergantungan data untuk mengurangi pengulangan yang tidak perlu serta mencegah anomali.
+Kita tidak sekadar memperbanyak tabel atau menghapus baris yang terlihat sama. Tabel hasil pemisahan harus tetap dapat dihubungkan untuk memperoleh informasi semula.
+CATATAN 1
+Masalah: Update anomaly
+Analogi koperasi: Nama siswa diperbaiki di satu nota, tetapi tidak di nota lainnya.
+Akibat pada tabel campuran: Satu ID siswa mempunyai nama yang tidak konsisten.
+CATATAN 2
+Masalah: Insert anomaly
+Analogi koperasi: Produk baru belum pernah dibeli.
+Akibat pada tabel campuran: Data produk sulit dicatat tanpa membuat transaksi yang sebenarnya belum terjadi.
+CATATAN 3
+Masalah: Delete anomaly
+Analogi koperasi: Satu-satunya transaksi produk dihapus.
+Akibat pada tabel campuran: Informasi nama produk ikut hilang jika hanya disimpan dalam transaksi.
+Pertanyaan pemantik:
+apakah menghapus transaksi terakhir seorang siswa seharusnya menghapus identitas siswa itu juga? Jelaskan alasanmu.
+C. Bekal penting: kunci dan ketergantungan
+1. Mengenali kunci
+Superkey:
+sekumpulan atribut yang dapat membedakan setiap baris secara unik, meskipun mungkin masih mengandung atribut tambahan.
+Candidate key:
+superkey yang minimal; jika satu atributnya dibuang, keunikannya tidak lagi terjamin.
+Primary key/PK:
+satu candidate key yang dipilih sebagai identitas utama. Nilainya unik dan tidak NULL.
+Composite key:
+kunci yang terdiri atas lebih dari satu atribut, misalnya (NoTransaksi, KodeProduk).
+Foreign key/FK:
+atribut yang merujuk kunci unik pada tabel lain; dalam contoh kita FK merujuk PK. FK boleh berulang pada baris yang berbeda.
+Analogi:
+nomor induk adalah identitas siswa; nama bukan pilihan yang aman karena dua siswa dapat bernama sama. Pada detail nota, NoTransaksi saja belum unik karena satu nota dapat berisi beberapa produk. KodeProduk saja juga belum unik karena produk yang sama dapat muncul pada banyak nota.
+2. Ketergantungan fungsional (functional dependency/FD)
+Notasi
+X → Y
+dibaca “X menentukan Y”. Jika nilai X sama, nilai Y harus sama menurut aturan sistem. Contoh: IDSiswa → NamaSiswa. FD ditentukan oleh aturan bisnis, bukan hanya karena kebetulan cocok pada beberapa baris contoh.
+Ketergantungan penuh:
+Jumlah bergantung pada keseluruhan pasangan (NoTransaksi, KodeProduk).
+Ketergantungan parsial:
+NamaProduk hanya bergantung pada KodeProduk, yaitu sebagian dari kunci gabungan.
+Ketergantungan transitif:
+NoTransaksi → IDSiswa dan IDSiswa → NamaSiswa; nama siswa tersimpan melalui perantara IDSiswa.
+Penting:
+normalisasi mempertimbangkan seluruh candidate key, bukan hanya kolom yang diberi nama “id”. Menambahkan ID otomatis tidak dengan sendirinya menghilangkan ketergantungan yang salah.
+D. Contoh lengkap: penjualan koperasi sekolah
+Aturan yang digunakan
+Satu nomor transaksi memiliki satu tanggal dan satu siswa pembeli.
+Satu siswa dapat mempunyai banyak transaksi. Satu IDSiswa mengacu pada satu nama siswa pada data contoh.
+Satu kode produk memiliki satu nama produk. Produk yang berbeda dapat memiliki nama mirip; gunakan kode sebagai identitas.
+Satu produk hanya dicatat satu kali dalam satu transaksi; pembelian beberapa unit digabung dalam Jumlah.
+HargaJual adalah harga per unit pada transaksi tersebut. Harga dapat berbeda pada transaksi lain, misalnya karena diskon. Harga ini harus menjaga riwayat nota.
+Tahap 0 — UNF: daftar belanja masih menumpuk dalam satu sel
+UNF (Unnormalized Form)
+adalah data yang belum memenuhi 1NF. Perhatikan kolom DaftarBelanja berikut. Setiap item ditulis dengan pola kode / nama / jumlah / harga per unit.
+CATATAN 1
+NoTransaksi: T001
+Tanggal: 2026-11-03
+IDSiswa: S01
+NamaSiswa: Alya
+DaftarBelanja: P01 / Pulpen / 2 / 3000; P02 / Buku Tulis / 1 / 5000
+CATATAN 2
+NoTransaksi: T002
+Tanggal: 2026-11-03
+IDSiswa: S02
+NamaSiswa: Bima
+DaftarBelanja: P01 / Pulpen / 1 / 3000
+CATATAN 3
+NoTransaksi: T003
+Tanggal: 2026-11-04
+IDSiswa: S01
+NamaSiswa: Alya
+DaftarBelanja: P02 / Buku Tulis / 2 / 4500; P03 / Penghapus / 1 / 2000
+Mengapa bermasalah?
+satu sel menyimpan beberapa item. Pencarian jumlah pulpen menjadi sulit. Menambah Produk1, Produk2, Produk3 sebagai kolom baru juga bukan penyelesaian yang baik karena jumlah produk setiap nota bisa berbeda.
+Tahap 1 — 1NF: satu sel, satu nilai sesuai domain
+Pisahkan daftar belanja menjadi satu baris per produk per transaksi. Tidak ada kelompok kolom berulang seperti Produk1 dan Produk2. Nilai bersifat atomik sesuai kebutuhan aplikasi; nama lengkap boleh tetap satu kolom jika memang diperlakukan sebagai satu nilai.
+No   | Tanggal    | ID  | NamaSiswa | Kode | NamaProduk | Jumlah | HargaJual
+-----+------------+-----+-----------+------+------------+--------+----------
+T001 | 2026-11-03 | S01 | Alya      | P01  | Pulpen     | 2      | 3000
+T001 | 2026-11-03 | S01 | Alya      | P02  | Buku Tulis | 1      | 5000
+T002 | 2026-11-03 | S02 | Bima      | P01  | Pulpen     | 1      | 3000
+T003 | 2026-11-04 | S01 | Alya      | P02  | Buku Tulis | 2      | 4500
+T003 | 2026-11-04 | S01 | Alya      | P03  | Penghapus  | 1      | 2000
+Pada tabel di atas, No = NoTransaksi, ID = IDSiswa, dan Kode = KodeProduk. Nama dipendekkan hanya agar tabel mudah dibaca.
+Candidate key sekaligus PK yang dipilih: (NoTransaksi, KodeProduk).
+Pasangan ini unik berdasarkan aturan satu produk satu baris per nota.
+FD yang digunakan:
+NoTransaksi → Tanggal, IDSiswa.
+IDSiswa → NamaSiswa.
+KodeProduk → NamaProduk.
+(NoTransaksi, KodeProduk) → Jumlah, HargaJual.
+Sudah 1NF, belum 2NF:
+tanggal dan identitas pembeli berulang untuk setiap item; nama produk juga berulang di berbagai nota. Atomik tidak berarti tidak ada pengulangan sama sekali.
+Tahap 2 — 2NF: pisahkan yang bergantung pada sebagian kunci
+Syarat:
+sudah 1NF dan setiap atribut non-prime (atribut yang bukan bagian dari candidate key mana pun) bergantung penuh pada setiap candidate key, bukan hanya sebagian atribut kunci gabungan. Dalam contoh sederhana ini, cukup periksa pasangan PK di atas.
+Analogi: keterangan tentang nota disimpan di kepala nota, keterangan produk di katalog produk, dan jumlah pembelian di baris detail nota.
+Tabel Transaksi_2NF
+— PK: NoTransaksi.
+NoTransaksi | Tanggal    | IDSiswa | NamaSiswa
+------------+------------+---------+----------
+T001        | 2026-11-03 | S01     | Alya
+T002        | 2026-11-03 | S02     | Bima
+T003        | 2026-11-04 | S01     | Alya
+Tabel Produk
+— PK: KodeProduk.
+KodeProduk | NamaProduk
+-----------+-----------
+P01        | Pulpen
+P02        | Buku Tulis
+P03        | Penghapus
+Tabel DetailTransaksi
+— PK: (NoTransaksi, KodeProduk); NoTransaksi dan KodeProduk juga menjadi FK.
+NoTransaksi | KodeProduk | Jumlah | HargaJual
+------------+------------+--------+----------
+T001        | P01        | 2      | 3000
+T001        | P02        | 1      | 5000
+T002        | P01        | 1      | 3000
+T003        | P02        | 2      | 4500
+T003        | P03        | 1      | 2000
+Mengapa HargaJual tetap di detail?
+harga buku pada T001 adalah 5000, sedangkan pada T003 adalah 4500. Menaruh hanya satu harga di Produk dan memakainya untuk semua nota akan mengubah makna riwayat transaksi. Harga katalog saat ini, jika diperlukan, adalah fakta berbeda.
+Masalah yang tersisa:
+pada Transaksi_2NF, nama Alya masih berulang. Ada rantai NoTransaksi → IDSiswa → NamaSiswa. Inilah sasaran tahap berikutnya.
+Tahap 3 — 3NF: hilangkan ketergantungan transitif yang bermasalah
+Untuk contoh kita:
+setelah 2NF, pindahkan NamaSiswa ke tabel Siswa karena nama menerangkan siswa, bukan nota. Transaksi cukup menyimpan IDSiswa sebagai penghubung.
+Tabel Siswa
+— PK: IDSiswa.
+IDSiswa | NamaSiswa
+--------+----------
+S01     | Alya
+S02     | Bima
+Tabel Transaksi
+— PK: NoTransaksi; FK: IDSiswa → Siswa.IDSiswa.
+NoTransaksi | Tanggal    | IDSiswa
+------------+------------+--------
+T001        | 2026-11-03 | S01
+T002        | 2026-11-03 | S02
+T003        | 2026-11-04 | S01
+Produk dan DetailTransaksi tetap seperti tahap 2NF. Jadi rancangan akhir terdiri atas
+empat tabel
+: Siswa, Transaksi, Produk, dan DetailTransaksi.
+Catatan formal:
+sebuah relasi memenuhi 3NF jika untuk setiap FD nontrivial X → A, X merupakan superkey atau A merupakan atribut prime. Ringkasan “tidak ada ketergantungan transitif antaratribut non-kunci” membantu pada contoh sederhana, tetapi bukan pengganti seluruh definisi formal ketika ada candidate key yang saling tumpang tindih.
+Relasi akhir dan alasan pemisahan
+Siswa (1) ───&lt; Transaksi (banyak)
+Transaksi (1) ───&lt; DetailTransaksi (banyak)
+Produk (1) ───&lt; DetailTransaksi (banyak)
+Siswa(IDSiswa PK, NamaSiswa)
+Transaksi(NoTransaksi PK, Tanggal, IDSiswa FK)
+Produk(KodeProduk PK, NamaProduk)
+DetailTransaksi(NoTransaksi PK/FK, KodeProduk PK/FK,
+Jumlah, HargaJual)
+Transaksi dan Produk membentuk hubungan banyak-ke-banyak yang dihubungkan DetailTransaksi. Pada skema ini tiap transaksi mempunyai satu siswa, sementara seorang siswa boleh belum memiliki transaksi. Setiap baris detail harus merujuk transaksi dan produk yang ada.
+CATATAN 1
+Tahap: UNF → 1NF
+Pertanyaan kunci: Adakah daftar/kelompok berulang di satu sel?
+Hasil contoh: Satu baris per produk dalam satu nota.
+CATATAN 2
+Tahap: 1NF → 2NF
+Pertanyaan kunci: Adakah atribut non-prime yang bergantung pada sebagian candidate key?
+Hasil contoh: Transaksi_2NF, Produk, DetailTransaksi.
+CATATAN 3
+Tahap: 2NF → 3NF
+Pertanyaan kunci: Adakah fakta non-kunci yang bergantung lewat fakta non-kunci lain?
+Hasil contoh: Pisahkan Siswa dari Transaksi.
+E. Memeriksa bahwa pemisahan tabel benar
+Data tetap lengkap:
+seluruh atribut asal masih dapat diperoleh dari tabel hasil atau perhitungan yang sengaja ditetapkan.
+Kunci benar:
+tidak ada PK ganda/NULL; FK selalu merujuk baris yang tersedia.
+Lossless join:
+penggabungan kembali menghasilkan fakta semula tanpa baris palsu. Pada contoh, pemisahan memakai penentu yang menjadi kunci pada tabel hasil.
+FD terjaga:
+setiap aturan masih dapat ditegakkan. Empat FD contoh dapat diperiksa melalui tabel masing-masing.
+Uji anomali:
+produk baru bisa ditambahkan tanpa transaksi; nama siswa cukup diperbaiki di Siswa; penghapusan baris transaksi tidak berarti identitas siswa/produk harus ikut terhapus.
+Uji angka:
+detail harus tetap 5 baris. Total T001 = (2 × 3000) + (1 × 5000) =
+11000
+; T002 =
+3000
+; T003 = (2 × 4500) + (1 × 2000) =
+11000
+. Penggabungan dengan kunci yang benar tidak menggandakan nilai-nilai ini.
+Waspada:
+JOIN yang salah dapat menghasilkan data palsu. Menghubungkan tabel berdasarkan nama siswa atau nama produk, bukan kodenya, dapat mencampur orang/produk berbeda yang kebetulan bernama sama.
+F. Praktik SQL — koperasi sekolah
+Bagian ini latihan tambahan setelah rancangan tabel dipahami. Jalankan pada
+database latihan baru yang kosong
+melalui tab SQL di phpMyAdmin. Jangan menjalankan pada database produksi. Nama tabel harus belum dipakai. SQL berikut dapat digunakan pada MySQL/MariaDB yang mendukung foreign key dengan engine InnoDB.
+1. Buat tabel induk, kemudian tabel yang merujuknya
+CREATE TABLE siswa (
+id_siswa VARCHAR(5) PRIMARY KEY,
+nama_siswa VARCHAR(100) NOT NULL
+);
+CREATE TABLE produk (
+kode_produk VARCHAR(5) PRIMARY KEY,
+nama_produk VARCHAR(100) NOT NULL
+);
+CREATE TABLE transaksi (
+no_transaksi VARCHAR(10) PRIMARY KEY,
+tanggal DATE NOT NULL,
+id_siswa VARCHAR(5) NOT NULL,
+FOREIGN KEY (id_siswa) REFERENCES siswa(id_siswa)
+);
+CREATE TABLE detail_transaksi (
+no_transaksi VARCHAR(10) NOT NULL,
+kode_produk VARCHAR(5) NOT NULL,
+jumlah INT NOT NULL,
+harga_jual DECIMAL(12,2) NOT NULL,
+PRIMARY KEY (no_transaksi, kode_produk),
+FOREIGN KEY (no_transaksi) REFERENCES transaksi(no_transaksi),
+FOREIGN KEY (kode_produk) REFERENCES produk(kode_produk)
+);
+Jumlah harus positif dan harga tidak negatif. Untuk aplikasi nyata, tambahkan validasi aplikasi serta CHECK yang sesuai dukungan versi DBMS. Tidak dicantumkannya validasi tersebut bukan berarti nilai negatif diperbolehkan.
+2. Isi data contoh
+INSERT INTO siswa VALUES (&#39;S01&#39;,&#39;Alya&#39;), (&#39;S02&#39;,&#39;Bima&#39;);
+INSERT INTO produk VALUES
+(&#39;P01&#39;,&#39;Pulpen&#39;), (&#39;P02&#39;,&#39;Buku Tulis&#39;), (&#39;P03&#39;,&#39;Penghapus&#39;);
+INSERT INTO transaksi VALUES
+(&#39;T001&#39;,&#39;2026-11-03&#39;,&#39;S01&#39;),
+(&#39;T002&#39;,&#39;2026-11-03&#39;,&#39;S02&#39;),
+(&#39;T003&#39;,&#39;2026-11-04&#39;,&#39;S01&#39;);
+INSERT INTO detail_transaksi VALUES
+(&#39;T001&#39;,&#39;P01&#39;,2,3000),
+(&#39;T001&#39;,&#39;P02&#39;,1,5000),
+(&#39;T002&#39;,&#39;P01&#39;,1,3000),
+(&#39;T003&#39;,&#39;P02&#39;,2,4500),
+(&#39;T003&#39;,&#39;P03&#39;,1,2000);
+3. Gabungkan kembali dan periksa total
+SELECT t.no_transaksi, t.tanggal, s.nama_siswa,
+p.nama_produk, d.jumlah, d.harga_jual,
+d.jumlah * d.harga_jual AS subtotal
+FROM transaksi t
+JOIN siswa s ON s.id_siswa = t.id_siswa
+JOIN detail_transaksi d ON d.no_transaksi = t.no_transaksi
+JOIN produk p ON p.kode_produk = d.kode_produk
+ORDER BY t.no_transaksi, p.kode_produk;
+SELECT no_transaksi, SUM(jumlah * harga_jual) AS total
+FROM detail_transaksi
+GROUP BY no_transaksi
+ORDER BY no_transaksi;
+Cek mandiri:
+query pertama menghasilkan 5 baris; query kedua menghasilkan T001 = 11000, T002 = 3000, T003 = 11000. Jika hasil berbeda, periksa data input dan kondisi JOIN.
+G. Pengayaan — BCNF, 4NF, dan 5NF
+Fokus LKPD wajib adalah sampai 3NF. Bagian berikut memperluas pemahaman; tidak semua database harus dipaksa menjadi bentuk tertinggi. Pilihan rancangan tetap mengikuti aturan data dan kebutuhan aplikasi.
+BCNF: penentu harus superkey
+BCNF mensyaratkan setiap penentu pada FD nontrivial menjadi superkey. Contoh relasi Bimbingan(Siswa, Mapel, Guru), dengan aturan (Siswa, Mapel) → Guru dan Guru → Mapel. Seorang guru hanya membimbing satu mapel; satu mapel dapat dibimbing beberapa guru. Candidate key-nya (Siswa, Mapel) dan (Siswa, Guru). Relasi dapat memenuhi 3NF karena semua atribut prime, tetapi melanggar BCNF: Guru bukan superkey.
+Pemisahan yang mungkin: GuruMapel(Guru, Mapel) dan SiswaGuru(Siswa, Guru). JOIN-nya lossless, tetapi aturan “seorang siswa hanya satu guru untuk satu mapel” tidak dapat diperiksa lewat satu tabel hasil saja; perlu pemeriksaan tambahan. Contoh ini menunjukkan bahwa lossless join dan pelestarian seluruh FD adalah dua pertimbangan berbeda.
+4NF: pisahkan fakta multivalued yang independen
+Bayangkan seorang siswa mempunyai dua ekstrakurikuler dan dua bahasa yang dikuasai, dan kedua daftar itu tidak saling bergantung. Tabel SiswaEkskulBahasa dapat memaksa empat kombinasi. Pisahkan menjadi SiswaEkskul(Siswa, Ekskul) dan SiswaBahasa(Siswa, Bahasa). Secara formal, pada 4NF setiap penentu ketergantungan multivalued nontrivial harus superkey. Jangan memisahkan seperti ini jika bahasa justru berkaitan khusus dengan ekskul tertentu.
+5NF: periksa ketergantungan penggabungan yang lebih rumit
+5NF berhubungan dengan join dependency: pemisahan lebih lanjut hanya dibenarkan jika penggabungan kembali tepat dan ketergantungannya dijamin oleh candidate key. Contoh konteksnya hubungan Pemasok–Barang–Proyek. Fakta bahwa pemasok menyediakan barang dan melayani proyek belum otomatis berarti barang itu dipasok ke proyek tersebut. Memecah hubungan tiga arah menjadi pasangan tanpa aturan yang mendukung dapat membuat kombinasi palsu. Pembuktian rinci menjadi materi lanjutan.
+H. Kesalahan yang sering terjadi
+“Tambah id, pasti 3NF.”
+Salah. Periksa kembali FD dan seluruh candidate key.
+“Semua angka harga harus di Produk.”
+Bedakan harga katalog dengan harga historis pada detail transaksi.
+“2NF berarti tabel harus punya dua kolom.”
+Tidak. Angka bentuk normal bukan jumlah kolom atau tabel.
+“Kunci tunggal membuat semua tabel normal.”
+Kunci tunggal meniadakan pemeriksaan parsial terhadap kunci tersebut, tetapi ketergantungan transitif dan candidate key lain tetap perlu ditinjau.
+“Semua data berulang harus dihapus.”
+FK yang berulang wajar dan dibutuhkan untuk relasi. Yang dikurangi adalah pengulangan fakta yang tidak semestinya.
+“Tabel lebih banyak pasti lebih cepat.”
+Normalisasi terutama menjaga integritas. Kinerja juga bergantung pada indeks, query, ukuran data, dan pola akses.
+I. LKPD — normalisasi peminjaman buku perpustakaan
+Kerjakan secara individu.
+Diskusi diperbolehkan, tetapi setiap siswa menyusun penjelasan dan hasil sendiri. Kamu boleh menggunakan dokumen digital atau menulis rapi lalu memindainya. Gunakan data fiktif pada soal; jangan memasukkan data pribadi siswa asli.
+Unduh LKPD untuk dikerjakan
+Unduh LKPD Normalisasi Basis Data (PDF)
+Tautan membuka pratinjau Google Drive; pilih Unduh/Download untuk menyimpan PDF. Setelah dikerjakan, kumpulkan tautan jawaban di Tanggapan dengan format Nama-Kelas.
+Identitas dan hasil yang dikumpulkan
+Nama: …
+Kelas: …
+Tanggal pengerjaan: …
+Judul: LKPD Normalisasi Basis Data — Perpustakaan Sekolah
+Hasil wajib:
+analisis anomali, daftar FD dan candidate key, tabel 1NF, tabel 2NF, tabel 3NF lengkap dengan data, diagram relasi/PK/FK, bukti pemeriksaan, dan refleksi. Hasil SQL menjadi pengayaan jika perangkat tersedia.
+Kasus dan aturan bisnis
+Satu NoPinjam mempunyai satu Tanggal, satu IDAnggota, dan satu BatasKembali untuk seluruh buku pada transaksi itu.
+Satu IDAnggota mempunyai satu NamaAnggota dan satu Kelas pada periode latihan ini. Seorang anggota dapat mempunyai banyak transaksi.
+Satu KodeBuku mempunyai satu JudulBuku dan satu KodePenerbit. Satu KodePenerbit mempunyai satu NamaPenerbit.
+Dalam satu NoPinjam, satu KodeBuku hanya muncul sekali; boleh muncul lagi pada transaksi lain. Setiap peminjaman judul pada latihan ini satu unit. Pengelolaan eksemplar fisik dan riwayat pindah kelas di luar cakupan soal.
+DaftarBuku dalam UNF memuat item dengan urutan kode buku / judul / kode penerbit / nama penerbit.
+CATATAN 1
+NoPinjam: PB01
+Tanggal: 2026-11-03
+IDAnggota: A01
+Nama: Nadia
+Kelas: XI RPL 1
+BatasKembali: 2026-11-10
+DaftarBuku: B01 / Dasar SQL / PN01 / Cakrawala; B02 / Logika Algoritma / PN02 / Pelita
+CATATAN 2
+NoPinjam: PB02
+Tanggal: 2026-11-04
+IDAnggota: A02
+Nama: Raka
+Kelas: XI RPL 2
+BatasKembali: 2026-11-11
+DaftarBuku: B03 / Desain Web / PN01 / Cakrawala
+CATATAN 3
+NoPinjam: PB03
+Tanggal: 2026-11-05
+IDAnggota: A01
+Nama: Nadia
+Kelas: XI RPL 1
+BatasKembali: 2026-11-12
+DaftarBuku: B03 / Desain Web / PN01 / Cakrawala; B02 / Logika Algoritma / PN02 / Pelita
+Nama pada tabel berarti NamaAnggota. Judul dan penerbit di atas fiktif. Semua informasi pada data asal harus tetap dapat diperoleh setelah normalisasi.
+Kegiatan 1 — temukan masalah (10 poin)
+Jelaskan minimal tiga bentuk pengulangan pada tabel asal.
+Tuliskan masing-masing satu contoh update, insert, dan delete anomaly yang spesifik terhadap data perpustakaan di atas.
+Jelaskan mengapa mengganti DaftarBuku menjadi Buku1, Buku2, Buku3 tidak menyelesaikan masalah struktur.
+Panduan:
+pilih satu nama anggota atau penerbit yang muncul berulang. Bayangkan hanya satu barisnya diperbarui. Untuk anomali hapus, pikirkan informasi apa yang hilang ketika satu-satunya catatannya dihapus.
+Kegiatan 2 — tentukan kunci dan FD (15 poin)
+Tuliskan semua atribut dengan nama konsisten.
+Gunakan aturan bisnis untuk menulis FD. Untuk setiap FD, jelaskan artinya dengan satu kalimat.
+Tentukan candidate key untuk tabel detail setelah daftar buku diuraikan. Buktikan keunikan dan minimalitasnya.
+Tandai ketergantungan penuh, parsial, dan transitif yang kamu temukan.
+Panduan:
+uji apakah NoPinjam saja cukup unik. Lalu uji KodeBuku saja. Setelah itu, pertimbangkan kombinasi keduanya. Jangan menebak FD hanya dari kebetulan data.
+Kegiatan 3 — bentuk 1NF (20 poin)
+Uraikan DaftarBuku menjadi satu baris per buku per peminjaman.
+Pastikan setiap sel berisi satu nilai; jangan membuang identitas anggota atau penerbit.
+Tandai PK dan tulis mengapa tabel sudah 1NF tetapi belum tentu 2NF.
+Panduan tabel kerja:
+NoPinjam | Tanggal | IDAnggota | NamaAnggota | Kelas | BatasKembali | KodeBuku | JudulBuku | KodePenerbit | NamaPenerbit.
+Cek awal:
+hasil penguraian harus
+5 baris detail
+. Jika jumlahnya berbeda, periksa PB01 yang berisi dua buku serta PB03 yang juga berisi dua buku.
+Kegiatan 4 — bentuk 2NF (20 poin)
+Kelompokkan atribut yang hanya bergantung pada NoPinjam, yang hanya bergantung pada KodeBuku, dan yang memerlukan pasangan kunci.
+Pisahkan menjadi tabel yang tepat. Beri nama, PK, FK, dan isi contoh data hasil pemisahan.
+Jelaskan FD parsial yang dihilangkan. Jangan langsung melompati penjelasan menjadi tabel akhir 3NF.
+Panduan:
+informasi “siapa meminjam dan kapan” berbeda dari informasi “buku apa dan penerbitnya”. Simpan penghubung agar relasi peminjaman dengan buku tetap tercatat.
+Kegiatan 5 — bentuk 3NF (20 poin)
+Periksa apakah nama anggota dan kelas menerangkan peminjaman atau anggota.
+Periksa apakah nama penerbit ditentukan oleh kode buku secara langsung atau melalui kode penerbit.
+Hilangkan ketergantungan transitif yang bermasalah. Tulis seluruh tabel akhir, PK/FK, serta seluruh baris data yang konsisten.
+Jelaskan alasan setiap pemisahan. Gambar relasi satu-ke-banyak dan tabel penghubung yang diperlukan.
+Format penjelasan:
+“Saya memisahkan … ke tabel … karena … → …. Penghubungnya adalah ….” Tidak cukup hanya menulis “supaya rapi”.
+Kegiatan 6 — uji rancangan (10 poin)
+Rekonstruksi daftar peminjaman dari tabel akhir dengan penggabungan manual atau SQL. Bandingkan dengan kelima baris detail asal.
+Pastikan tidak ada pasangan NoPinjam–KodeBuku yang hilang, bertambah, atau berubah anggota/penerbitnya.
+Simulasikan penerbit baru yang belum mempunyai buku, perubahan nama anggota, dan penghapusan satu detail. Jelaskan bagaimana rancanganmu menangani ketiganya.
+Periksa semua FK. Jika mencoba SQL, sertakan query JOIN dan screenshot hasil yang terbaca.
+Kegiatan 7 — refleksi (5 poin)
+Jawab 3–5 kalimat: bagian mana paling sulit, FD apa yang semula salah kamu pahami, dan bagaimana kamu membuktikan data tidak hilang. Tambahkan satu contoh manfaat normalisasi untuk aplikasi yang ingin kamu buat.
+Rubrik penilaian (total 100)
+CATATAN 1
+Aspek: Analisis masalah
+Bobot: 10
+Indikator hasil baik: Anomali spesifik dan sesuai data.
+CATATAN 2
+Aspek: Kunci dan FD
+Bobot: 15
+Indikator hasil baik: Didukung aturan bisnis; kunci minimal; klasifikasi tepat.
+CATATAN 3
+Aspek: 1NF
+Bobot: 20
+Indikator hasil baik: Sel atomik, 5 baris detail lengkap, PK tepat.
+CATATAN 4
+Aspek: 2NF
+Bobot: 20
+Indikator hasil baik: Parsial dihilangkan; data dan penghubung tetap lengkap.
+CATATAN 5
+Aspek: 3NF dan relasi
+Bobot: 20
+Indikator hasil baik: Transitif ditangani; PK/FK, data, dan diagram konsisten.
+CATATAN 6
+Aspek: Pengujian
+Bobot: 10
+Indikator hasil baik: Rekonstruksi tepat dan skenario perubahan dijelaskan.
+CATATAN 7
+Aspek: Refleksi
+Bobot: 5
+Indikator hasil baik: Menjelaskan proses belajar dengan pemikiran sendiri.
+Penilaian tidak hanya menghitung jumlah tabel. Rancangan alternatif dapat diterima jika aturan, FD, kunci, relasi, serta bukti rekonstruksinya benar.
+J. Panduan pengerjaan dan pengumpulan LKPD
+Buat satu dokumen jawaban dengan urutan: identitas → kegiatan 1–7 → diagram → bukti uji → daftar sumber bila menggunakan referensi.
+Gunakan tabel yang dapat dibaca, tuliskan label PK/FK, dan beri alasan pada setiap tahap. Jika menulis tangan, pindai seluruh halaman secara jelas dan urut.
+Nama dokumen/file:
+Nama-Kelas-LKPD-Normalisasi
+, misalnya
+NadiaPutri-XIRPL1-LKPD-Normalisasi.pdf
+.
+Simpan sebagai PDF atau dokumen digital dan sediakan tautan yang dapat diakses guru. Atur akses baca kepada akun guru sesuai kebijakan sekolah; tidak perlu membagikan akses edit atau data pribadi secara publik.
+Buka bagian
+Tanggapan di bawah topik ini
+. Isi kolom NAMA dengan
+Nama-Kelas
+dan pilih PERAN
+Siswa
+. Pada baris pertama isi tanggapan, tulis format yang sama; gunakan tanda hubung, bukan garis bawah.
+Tempel tautan jawaban, ringkasan hasil, dan satu refleksi. Uji tautan sebelum mengirim. Kirim satu tanggapan pengumpulan; jika perlu revisi, jelaskan bahwa tautan tersebut revisi.
+Batas pengumpulan mengikuti informasi guru di kelas. Tanggapan dapat menunggu moderasi; kiriman yang belum terlihat tidak otomatis berarti gagal terkirim.
+Contoh format Tanggapan (ganti identitas dan tautannya dengan milikmu):
+NadiaPutri-XIRPL1
+LKPD Normalisasi Basis Data
+Tautan jawaban: [tempel tautan dokumen/PDF yang dapat dibaca guru]
+Ringkasan: Saya menyusun tahap UNF, 1NF, 2NF, dan 3NF,
+menandai PK/FK, serta memeriksa penggabungan kembali data.
+Refleksi: [tuliskan satu hal yang kamu pelajari atau kesulitanmu]
+Checklist sebelum kirim:
+format Nama-Kelas benar; tujuh kegiatan terisi; tabel tiap tahap ada; diagram terbaca; data detail tetap 5 baris; FK konsisten; tautan dapat dibuka guru. Jangan menuliskan password, NIK, nomor telepon, atau informasi pribadi lain pada Tanggapan.
+K. Pertanyaan diskusi kelas
+Mengapa nama siswa dipindahkan pada 3NF, sedangkan HargaJual tetap di DetailTransaksi?
+Jika satu produk boleh muncul dua baris pada nota yang sama karena diskon berbeda, apakah PK (NoTransaksi, KodeProduk) masih cukup? Usulkan kunci baru dan jelaskan perubahan aturan.
+Apa akibat menggabungkan tabel menggunakan nama, bukan ID?
+Mengapa tabel yang telah 3NF belum otomatis mempunyai query tercepat?
+Gunakan Tanggapan untuk mengajukan pertanyaan dengan santun. Untuk pengumpulan tugas, tetap gunakan format pengumpulan pada bagian J agar mudah dikenali.
+L. Ringkasan dan bacaan lanjutan
+Ingat urutannya:
+pahami aturan → tentukan kunci dan FD → uraikan kelompok berulang (1NF) → hilangkan parsial (2NF) → tangani transitif (3NF) → periksa relasi dan rekonstruksi. Normalisasi berhasil jika fakta disimpan pada tempat yang tepat dan dapat dihubungkan kembali secara benar.
+Materi dan kasus latihan disusun untuk kelas XI RPL. Untuk memperdalam konsep, baca
+Microsoft: Database design basics
+dan
+IBM: What is database normalization?
+. Contoh koperasi, dataset LKPD, panduan, serta rubrik pada topik ini merupakan contoh pembelajaran yang disusun khusus, bukan kutipan dari sumber tersebut.
+#
+basis data
+#
+normalisasi
+#
+XI RPL
+#
+1NF
+#
+2NF
+#
+3NF
+#
+SQL
+#
+LKPD
+Tanggapan (
+1
+)
+FA
+Fadly Alifa Firdaus-12-XI RPL 1
+Siswa
+·
+23 menit lalu
+https://drive.google.com/file/d/1osegDYzj5Zgk5trEboUR3qrokIWfzQWH/view?usp=drivesdk
+Tulis Tanggapan
+Tanggapan Anda akan ditinjau oleh guru sebelum tampil publik.
+Jangan isi field ini
+Nama
+Peran
+Guru
+Siswa
+Orang Tua
+Pembaca
+Tanggapan
+Kirim Tanggapan
+W
+Pratiwi
+Guru Rekayasa Perangkat Lunak
+Ruang pribadi untuk menyimpan cerita, bacaan, inspirasi, dan refleksi tentang pendidikan.
+Web Builder Guru
+PANDI × UPI
+Co-branding program website pribadi guru
+Beranda
+Profil
+Ceritaku
+Bacaanku
+Inspirasiku
+Forum Diskusi
+Pembelajaran
+© 2026 Pratiwi — Website guru

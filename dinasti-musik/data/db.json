@@ -490,6 +490,13 @@
       "role": "customer",
       "createdAt": "2026-11-09T11:54:57.843Z",
       "expiresAt": "2026-11-16T11:54:57.843Z"
+    },
+    {
+      "id": "601400ce-b80d-432e-8b2f-14909464b2e5",
+      "userId": "USR-511C3CD2",
+      "role": "customer",
+      "createdAt": "2026-11-10T10:01:05.873Z",
+      "expiresAt": "2026-11-17T10:01:05.873Z"
     }
   ],
   "notifications": [
@@ -602,6 +609,19 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "AUDIT-51CA45D1",
+      "userId": "USR-511C3CD2",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "USR-511C3CD2",
+      "metadata": {
+        "provider": "google",
+        "emailVerified": true
+      },
+      "timestamp": "2026-11-10T10:01:05.877Z"
+    },
     {
       "id": "AUDIT-00EC9D01",
       "userId": "usr_82acb224",
