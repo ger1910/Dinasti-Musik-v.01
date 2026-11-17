@@ -43,7 +43,7 @@ export function middleware(request: NextRequest) {
     }
 
     if (role !== "owner") {
-      // Pelanggan yang mencoba mengakses area admin diarahkan ke katalog mereka
+      // Pelanggan yang mencoba mengakses area admin diarahkan ke katalog mereka  
       return NextResponse.redirect(new URL("/catalog", request.url));
     }
 
@@ -60,5 +60,5 @@ export const config = {
     "/wishlist/:path*",
     "/dashboard/:path*",
     "/admin/:path*",
-  ],
+  ],  
 };

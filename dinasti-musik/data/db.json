@@ -485,18 +485,11 @@
       "expiresAt": "2026-11-03T13:30:56.781Z"
     },
     {
-      "id": "3db4215f-e8ad-40d3-8aa5-0823dcfbb5e4",
+      "id": "9a252266-27d7-400d-bc9d-ecef24a881d8",
       "userId": "usr_82acb224",
       "role": "customer",
-      "createdAt": "2026-11-09T11:54:57.843Z",
-      "expiresAt": "2026-11-16T11:54:57.843Z"
-    },
-    {
-      "id": "601400ce-b80d-432e-8b2f-14909464b2e5",
-      "userId": "USR-511C3CD2",
-      "role": "customer",
-      "createdAt": "2026-11-10T10:01:05.873Z",
-      "expiresAt": "2026-11-17T10:01:05.873Z"
+      "createdAt": "2026-11-17T00:58:01.906Z",
+      "expiresAt": "2026-11-24T00:58:01.906Z"
     }
   ],
   "notifications": [
@@ -609,6 +602,50 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "AUDIT-095CFBAF",
+      "userId": "USR-511C3CD2",
+      "userName": "Geraldo Geraldo zeyyad",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "USR-511C3CD2",
+      "timestamp": "2026-11-17T01:16:03.453Z"
+    },
+    {
+      "id": "AUDIT-EB3DC505",
+      "userId": "usr_82acb224",
+      "userName": "Zeyyad Vymanda",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "usr_82acb224",
+      "metadata": {
+        "provider": "google",
+        "emailVerified": true
+      },
+      "timestamp": "2026-11-17T00:58:01.916Z"
+    },
+    {
+      "id": "AUDIT-5DF714D1",
+      "userId": "usr_82acb224",
+      "userName": "Zeyyad Vymanda",
+      "action": "LOGOUT",
+      "entity": "AUTH",
+      "entityId": "usr_82acb224",
+      "timestamp": "2026-11-17T00:57:51.078Z"
+    },
+    {
+      "id": "AUDIT-4995E9E2",
+      "userId": "usr_82acb224",
+      "userName": "Zeyyad Vymanda",
+      "action": "LOGIN_SUCCESS",
+      "entity": "AUTH",
+      "entityId": "usr_82acb224",
+      "metadata": {
+        "provider": "google",
+        "emailVerified": true
+      },
+      "timestamp": "2026-11-17T00:35:24.530Z"
+    },
     {
       "id": "AUDIT-51CA45D1",
       "userId": "USR-511C3CD2",
