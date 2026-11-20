@@ -358,7 +358,10 @@ export function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginModalProps)
             type="button"
             onClick={() => {
               setErrorMsg("");
-              const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+              const clientId =
+                process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ||
+                "889463022518-428mp6jv6ql1h8sr0boi3sq3lu429e2f.apps.googleusercontent.com";
+
               if (clientId) {
                 // Real Google OAuth redirect flow
                 const currentOrigin = window.location.origin;
